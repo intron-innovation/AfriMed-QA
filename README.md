@@ -46,3 +46,8 @@ The project will be a timely and invaluable resource guiding the African academi
 | consumer queries  |   5500  | 
 | mcq          |         3000 | 
 | saq        |           1500 | 
+
+
+#### License
+
+&copy; 2024. This work is licensed under a CC BY-NC-SA 4.0 license.
