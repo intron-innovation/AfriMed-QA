@@ -112,19 +112,22 @@ Although the dataset has gone through rigorous review to weed our low-quality re
  raising an issue, posting on BioRAMP slack, or send an email to tobi@intron.io.
 
 ### LLMs
-The following is a non-exhaustive list of open/closed or general/biomedical LLMs to be evaluated as part of this project
-- MedPalm-2
-- GPT-4 turbo
-- Gemini Pro
-- Gemini Ultra
+The following is a non-exhaustive list of open/closed or general/biomedical LLMs to be evaluated as part of this
+ project along with contributor names
+- MedPalm-2 [Mercy, Fola]
+- GPT-4 turbo [Foutse, Fola]
+- Med-Gemini [Mercy]
+- Gemini Pro [Mercy]
+- Gemini Ultra [Mercy, Fola]
 - Gemma 1.2
 - Phi 3
-- Claude 3 sonnet
-- Cohere (R)
-- GPT 3.5 turbo
-- OpenBioLLM-70B
+- Claude 3 sonnet [Mercy]
+- Cohere CommandR [Henok]
+- GPT 3.5 turbo [Henok]
+- OpenBioLLM-70B [Ify, Fola]
 - JSL-MedLlama-3-8B
 - Meditron 70B
+- BioMistral [Foutse]
 - Orpo-Med-v0
 - Mixtral 8x22B
 - Open-bio-med-merge
