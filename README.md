@@ -46,6 +46,13 @@ The project will be a timely and invaluable resource guiding the African academi
 | AfriMed-QA-MCQ          |         3000 | 
 | AfriMed-QA-SAQ        |           1500 | 
 
+### Repo Structure
+
+- data - the dataset csv stays here
+- src - code (e.g. python file) goes here
+- results - csvs with LLM outputs go here
+- notebooks - jupyter notebooks go here
+
 ### How to Use the Data
 
 AfriMed-QA-MCQ \[Multiple Choice Questions\]: These are multiple choice questions where 2 - 5 answer options are
