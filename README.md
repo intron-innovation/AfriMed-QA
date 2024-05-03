@@ -57,16 +57,21 @@ The project will be a timely and invaluable resource guiding the African academi
 
 AfriMed-QA-MCQ \[Multiple Choice Questions\]: These are multiple choice questions where 2 - 5 answer options are
  provided with at least one correct
- answer. Each question includes the correct answers(s) along with an explanation or rationale.
+ answer. Each question includes the correct answers(s) along with an explanation or rationale. Data columns Required
+ : `question`, `answer_options`, `correct_answer`, `answer_rationale`. Please note that there are 3 types of
+  MCQ questions. 1) True/False where only 2 answer options are provided, 2) Single correct answer, and 3) Multiple
+   correct answers
 
 AfriMed-QA-SAQ \[Short Answer Questions\]: These are open-ended questions that require a short essay, usually one to
- three paragraphs. Answers must include context, rationale, or explanations.
+ three paragraphs. Answers must include context, rationale, or explanations. Data columns Required
+ : `question`, `answer_rationale`. Evaluate model performance based on overlap with human answer/rationale
 
 AfriMed-QA-Consumer-Queries: These represent questions provided by contributors in response to a prompt or clinical
  scenario. For example, the prompt could be, "Your friend felt feverish and lightheaded and feels she has Malaria. What
   questions should she ask her doctor?". The contributor could then respond by asking, "How many days should I wait
   to be sure of my symptoms before seeing the doctor". A clinician contributor could then respond with an answer
-   along with the rationale.
+   along with the rationale. Data columns Required
+ : `prompt`, `question`, `answer_rationale`. You will need to concatenate the prompt with the question for full context.
 
 #### Data Description
 
@@ -130,6 +135,7 @@ The following is a non-exhaustive list of open/closed or general/biomedical LLMs
 - BioMistral [Foutse]
 - Orpo-Med-v0
 - Mixtral 8x22B
+- PMC-LLama [Charles]
 - Open-bio-med-merge
 - Med42
 - Meta-LLAMA-3-8B
