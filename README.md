@@ -30,13 +30,13 @@ The project will be a timely and invaluable resource guiding the African academi
 ### Dataset Stats [Phase 1 release]
 
 - Number of Questions: 10,000
-- Number of Human Answers with explanations: 4,618
-- Total Number of Unique Contributors: 755
-- Countries: 14 ['KE', 'NG', 'TZ', 'UG', 'GH', 'BW', 'ZA', 'PH', 'MZ', 'LS', 'AU',
-       'US', 'SZ', 'ZW']
+- Number of Human Answers with explanations: 4,601
+- Total Number of Unique Contributors: 746
+- Countries: 15 ['NG', 'TZ', 'KE', 'GH', 'UG', 'BW', 'PH', 'ZA', 'ZW', 'LS', 'ZM',
+       'MZ', 'AU', 'SZ', 'US']
 - Medical Specialties: 32
-- Medical Schools: 50+
-- Gender: Female 48.8% / Male 50.9% / Other 0.3%
+- Medical Schools: 60+
+- Gender: Female 49.49% / Male 50.21% / Other 0.3%
 
 #### Question Type
 
