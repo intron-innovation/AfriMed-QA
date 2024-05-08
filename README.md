@@ -131,7 +131,8 @@ The following is a non-exhaustive list of open/closed or general/biomedical LLMs
 - GPT 3.5 turbo [Henok]
 - OpenBioLLM-70B [Ify, Fola]
 - JSL-MedLlama-3-8B
-- Meditron 70B
+- Meditron [Charles]
+- Meta-LLaMa-3 [Charles]
 - BioMistral [Foutse]
 - Orpo-Med-v0
 - Mixtral 8x22B
@@ -139,7 +140,7 @@ The following is a non-exhaustive list of open/closed or general/biomedical LLMs
 - Open-bio-med-merge
 - Med42
 - Meta-LLAMA-3-8B
-- MedAlpaca 
+- MedAlpaca [Charles]
 - etc
 
 #### Prompting Strategies
