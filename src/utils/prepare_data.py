@@ -34,7 +34,7 @@ def transform_saqs(data):
     for _, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
         transformed_row = {
             'sample_id': row['sample_id'],
-            'prompt': row['prompt'],
+            #'prompt': row['prompt'],
             'question': row['question'],
             'rationale': row['answer_rationale'],
         }
@@ -63,11 +63,14 @@ transformation_types = {
 } 
 
 def prep_data(args):
-    data = pd.read_csv(args.data_path).iloc[:20]
+    data = pd.read_csv(args.data_path)
     if args.q_type in transformation_types.keys():
         data = data[data['question_type']==args.q_type.strip()].copy().reset_index(drop=True)
-        data['correct_answer'] = data['correct_answer'].str.split(",").str[0]
+        if args.q_type == "mcq":
+            data['correct_answer'] = data['correct_answer'].str.split(",").str[0]
+        data = data.iloc[:20].copy()
         data = transformation_types[args.q_type.strip()](data)
+
     else:
         Exception(f"The question type `{args.q_type}` is invalid. Please provide a valid question type. Valid question types are {transformation_types.keys()}")
     return data

@@ -37,10 +37,10 @@ def eval(args, row, model, toker, **kwargs):
         pred = mcq_eval(args, row, model, toker, **kwargs)
         return pred
     elif args.q_type == "saq":
-        pred = saq_eval()
+        pred = saq_eval(args, row, model, toker, **kwargs)
         return pred
     elif args.q_type == "saq":
-        pred = consumer_queries_eval()
+        pred = consumer_queries_eval(args, row, model, toker, **kwargs)
         return pred
 
 
@@ -90,7 +90,7 @@ def main():
     data['preds'] = results
     data, score = compute_score(args, data)
     file_name = os.path.basename(args.data_path)
-    results_fname = f"results/{file_name.split('.csv')[0]}_{args.model_name.replace('/', '_')}_{args.q_type}_{score}.csv"
+    results_fname = f"results/{file_name.split('.csv')[0]}_{args.model_name.replace('/', '_')}_{args.q_type}_score-{score}_{len(data)}.csv"
     logger.info(f"Socre is {_blue(score)}")
 
     data.to_csv(results_fname, index=False)

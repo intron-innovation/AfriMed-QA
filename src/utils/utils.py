@@ -73,7 +73,7 @@ def saq_eval(args, row, model, tokenizer, **kwargs):
 
     sys_msg += ' You should directly answer the question by providing a short and consie response'
 
-    prompt = row['prompt']
+    #prompt = row['prompt']
     question = row['question']
     
     input_text = sys_msg + '\n\n'
@@ -81,10 +81,8 @@ def saq_eval(args, row, model, tokenizer, **kwargs):
     if args.num_few_shot > 0:
         for s in few_shot_samples[:args.num_few_shot]:
             input_text += s + '\n\n'
-    input_text += "Question: "  + prompt + '\n\n'
-    input_text +=  question 
+    input_text += "Question: "  + question
     
-
     pred  = model(
         input_text,
         max_length=200,
@@ -126,20 +124,23 @@ def compute_score(args, data):
         data['correct'] = data['answer'] == data['preds']
         score = data['correct'].mean()
         return data, score
-    else:
-        p, r, f1 = bert_score(data['pred'], data['answer'], lang="en", verbose=True)
+    elif args.q_type == "saq":
+        p, r, f1 = bert_score(data['preds'], data['answer'], lang="en", verbose=True)
         data['BERTScore_Precision'] = p.numpy()
         data['BERTScore_Recall'] = r.numpy()
         data['BERTScore_F1'] = f1.numpy()
 
         rouge = Rouge()
-        rouge_scores = data.apply(lambda row: rouge.get_scores(row['pred'], row['answer']), axis=1)
+        rouge_scores = data.apply(lambda row: rouge.get_scores(row['pred'], row['rationale']), axis=1)
         data['ROUGE-1'] = [score[0]['rouge-1']['f'] for score in rouge_scores]
         data['ROUGE-2'] = [score[0]['rouge-2']['f'] for score in rouge_scores]
         data['ROUGE-L'] = [score[0]['rouge-l']['f'] for score in rouge_scores]
         
         score = data['ROUGE-1'].mean()
         return data, score
+    else:
+        score = ""
+        return data, score 
 
 def get_bootstrap_accuracy_std(data, num_samples=1000):
     rng = random.Random(123)
