@@ -89,8 +89,8 @@ def main():
 
     data['preds'] = results
     data, score = compute_score(args, data)
-    breakpoint()
-    results_fname = f"results/{args.data_path.split('.csv')[0]}_{args.model_name.replace('/', '_')}_{args.q_type}_{score}.csv"
+    file_name = os.path.basename(args.data_path)
+    results_fname = f"results/{file_name.split('.csv')[0]}_{args.model_name.replace('/', '_')}_{args.q_type}_{score}.csv"
     logger.info(f"Socre is {_blue(score)}")
 
     data.to_csv(results_fname, index=False)
