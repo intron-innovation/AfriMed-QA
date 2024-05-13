@@ -195,6 +195,47 @@ Raters will be blinded to response source. Raters will randomly evaluate model a
 Some questions will receive single or multiple-reader ratings. Inter-rater reliability or agreement will be
  computed for answers with multiple ratings
 
+
+# Working with the Codebase:
+
+## Requirements
+- Python 3.9 or higher
+- PyTorch
+- Any other dependencies listed in `requirements.txt`
+
+### Installation
+Clone the repository and install the required Python packages:
+```bash
+git clone <repository-url>
+cd AfriMed-QA
+pip install -r requirements.txt
+```
+
+### Setting Up Your Model
+1. **Subclass the Model Class**:
+   - Navigate to `src/models/`.
+   - Define your own custom model class by subclassing the provided `Model` class in `models.py`.
+   - Ensure your class initializes the model and includes a `predict` method that returns a prediction as a string.
+
+### Running the Code
+To run the model and generate predictions, use the provided bash script in the `scripts` folder. Recreate your own bash script using the same naming template. The script requires specific arguments to function correctly.
+
+#### Required Arguments:
+- `pretrained_model_path`: The path to the pretrained model.
+- `data_path`: The path to the data file.
+- `prompt_file_path`: The path to the prompt file.
+- `q_type`: The type of questions to process (e.g., `mcq`).
+
+#### Running the Script
+Navigate to the `scripts` directory and execute the bash script with the required arguments. Example usage:
+```bash
+bash scripts/run_prediction.sh 
+```
+
+### Output
+- The predictions will be evaluated and saved to the `results` folder.
+
+
 #### License
 
 &copy; 2024. This work is licensed under a CC BY-NC-SA 4.0 license.
