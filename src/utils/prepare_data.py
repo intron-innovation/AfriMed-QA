@@ -62,7 +62,7 @@ transformation_types = {
     'consumer_queries': transform_consumer_queries
 } 
 
-def prep_data(args):
+def prep_data(args) -> pd.DataFrame:
     data = pd.read_csv(args.data_path)
     if args.q_type in transformation_types.keys():
         data = data[data['question_type']==args.q_type.strip()].copy().reset_index(drop=True)
