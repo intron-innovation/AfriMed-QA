@@ -3,8 +3,10 @@ import numpy as np
 import logging
 import torch
 import argparse
-from bert_score import score as bert_score
-from rouge import Rouge
+import builtins
+import io
+import re
+
 
 import gc
 import pynvml
@@ -33,37 +35,7 @@ def parse_arguments():
 
     return args
 
-
-def compute_score(args, data):
-    if args.q_type == "mcq":
-        data["correct"] = data["answer"] == data["preds"]
-        score = data["correct"].mean()
-        return data, score
-    elif args.q_type == "saq":
-        p, r, f1 = bert_score(data["preds"], data["answer"], lang="en", verbose=True)
-        data["BERTScore_Precision"] = p.numpy()
-        data["BERTScore_Recall"] = r.numpy()
-        data["BERTScore_F1"] = f1.numpy()
-
-        rouge = Rouge()
-        rouge_scores = data.apply(
-            lambda row: rouge.get_scores(row["pred"], row["rationale"]), axis=1
-        )
-        data["ROUGE-1"] = [score[0]["rouge-1"]["f"] for score in rouge_scores]
-        data["ROUGE-2"] = [score[0]["rouge-2"]["f"] for score in rouge_scores]
-        data["ROUGE-L"] = [score[0]["rouge-l"]["f"] for score in rouge_scores]
-
-        score = data["ROUGE-1"].mean()
-        return data, score
-    else:
-        score = ""
-        return data, score
-
-
 def patch_open():
-    import builtins
-    import io
-
     prev_open = open
 
     def new_open(*args, **kwargs):
@@ -99,10 +71,21 @@ def logging_cuda_memory_usage():
 
 def write_results(data, args, score):
     file_name = os.path.basename(args.data_path)
-    results_fname = f"results/{file_name.split('.csv')[0]}_{args.model_name.replace('/', '_')}_{args.q_type}_score-{score}_{len(data)}.csv"
+    results_fname = f"results/{file_name.split('.csv')[0]}_{args.model_name.replace('/', '_')}_{args.q_type}_score-{score:.4f}_{len(data)}.csv"
     data.to_csv(results_fname, index=False)
     logger.info(f"Results saved to: {results_fname}")
     return results_fname
+
+def post_process_output(model_output: str) -> str:
+    cleaned_output = []
+    for output in model_output:
+        matched_pieces = re.findall(r"(?i)OPTION [ABCDE] IS CORRECT", output)
+        if len(matched_pieces) == 0:  # no matched piece
+            predicted_option = ""
+        else:
+            predicted_option = matched_pieces[0].split()[1]
+        cleaned_output.append(predicted_option)
+    return cleaned_output
 
 def read_txt_file(file_path):
     with open(file_path, "r", encoding="utf-8") as file:

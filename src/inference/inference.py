@@ -2,7 +2,7 @@ import os
 import logging
 from typing import List, Tuple
 from tqdm import tqdm
-import re
+import torch
 import pandas as pd
 from src.utils.utils import logging_cuda_memory_usage, read_txt_file
 
@@ -51,7 +51,6 @@ def saq_inference(args, row, model, **kwargs):
     if args.prompt_file_path != None:
         user_msg = read_txt_file(args.prompt_file_path)
         sys_msg += "\n\n" + user_msg
-    prompt = "" if pd.isna(row["prompt"]) else  row["prompt"]
     question = row["question"]
 
     input_text = sys_msg + "\n\n"
@@ -59,8 +58,7 @@ def saq_inference(args, row, model, **kwargs):
     if args.num_few_shot > 0:
         for s in few_shot_samples[: args.num_few_shot]:
             input_text += s + "\n\n"
-    input_text += "Question: " + prompt + "\n\n"
-    input_text += question
+    input_text += "Question: " + question 
 
     pred = model.predict(input_text)
     return pred
@@ -102,21 +100,12 @@ def infer(args, row, model, **kwargs):
         return pred
 
 
-def extract_answer(model_output: str) -> str:
-    breakpoint()
-    matched_pieces = re.findall(r"(?i)OPTION [ABCDE] IS CORRECT", model_output)
-
-    if len(matched_pieces) == 0:  # no matched piece
-        predicted_option = ""
-    else:
-        predicted_option = matched_pieces[0].split()[1]
-    return predicted_option
-
-
 def run_inference(args, model, data) -> Tuple[List[str], List[str]]:
     outputs = []
     for _, row in tqdm(data.iterrows(), total=len(data), desc="Running Inference"):
         output = infer(args, row, model)
         outputs.append(output)
     logging_cuda_memory_usage()
+    torch.cuda.empty_cache()
+
     return outputs

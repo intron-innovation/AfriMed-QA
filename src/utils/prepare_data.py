@@ -41,7 +41,6 @@ def transform_saqs(data):
     for _, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
         transformed_row = {
             "sample_id": row["sample_id"],
-            'prompt': row['prompt'],
             "question": row["question"],
             "rationale": row["answer_rationale"],
         }
@@ -58,6 +57,8 @@ def transform_consumer_queries(data):
             "sample_id": row["sample_id"],
             "prompt": row["prompt"],
             "question": row["question"],
+            "rationale": row["answer_rationale"],
+
         }
         questions.append(transformed_row)
 
@@ -82,7 +83,6 @@ def prep_data(args) -> pd.DataFrame:
         )
         if args.q_type == "mcq":
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
-        data = data.iloc[:10].copy()
         data = transformation_types[args.q_type.strip()](data)
 
     else:
