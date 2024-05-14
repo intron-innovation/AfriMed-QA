@@ -37,7 +37,7 @@ def main():
     if args.q_type =="mcq":
         options_from_output = post_process_output(outputs) #edit the post_processing fxn accordingly
         data['preds']  = options_from_output
-    (data, BERTScore_Precision, BERTScore_Recall, BERTScore_F1, rg1, rg2, rl,  accuracy) = compute_score(args, data) #returns a tuple 
+    (data, BERTScore_Precision, BERTScore_Recall, BERTScore_F1, rg1, rg2, rl,  accuracy) = compute_score(args.q_type, data) #returns a tuple 
     logger.info(f"Socre is {_blue(rl)}")
     write_results(args=args, data=data, score=rl)
 

@@ -116,32 +116,45 @@ Although the dataset has gone through rigorous review to weed our low-quality re
  possible that some issues may have been missed by our review team. Please report any lingering issues found by
  raising an issue, posting on BioRAMP slack, or send an email to tobi@intron.io.
 
-### LLMs
-The following is a non-exhaustive list of open/closed or general/biomedical LLMs to be evaluated as part of this
- project along with contributor names
-- MedPalm-2 [Mercy, Fola]
-- GPT-4 turbo [Foutse, Fola]
-- Med-Gemini [Mercy]
-- Gemini Pro [Mercy]
-- Gemini Ultra [Mercy, Fola]
-- Gemma 1.2
-- Phi 3
-- Claude 3 sonnet [Mercy]
-- Cohere CommandR [Henok]
-- GPT 3.5 turbo [Henok]
-- OpenBioLLM-70B [Ify, Fola]
-- JSL-MedLlama-3-8B
-- Meditron [Charles]
-- Meta-LLaMa-3 [Charles]
-- BioMistral [Foutse]
-- Orpo-Med-v0
-- Mixtral 8x22B
-- PMC-LLama [Charles]
-- Open-bio-med-merge
-- Med42
-- Meta-LLAMA-3-8B
-- MedAlpaca [Charles]
-- etc
+## Model Performance Metrics
+## Model Performance Metrics
+
+| Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
+|-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
+| Phi-3-mini-128k-instruct| Abraham           |0.0           |0.0               |0.0            |0.0               |0.0            |0.0                            |0.0                          |
+| MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
+| GPT-4 turbo           | Foutse, Fola        |              |                  |               |                  |               |                               |                             |
+| Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
+| Gemini Pro            | Mercy               |              |                  |               |                  |               |                               |                             |
+| Gemini Ultra          | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
+| Gemma 1.2             |                     |              |                  |               |                  |               |                               |                             |
+| Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
+| Claude 3 sonnet       | Mercy               |              |                  |               |                  |               |                               |                             |
+| Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
+| GPT 3.5 turbo         | Henok               |              |                  |               |                  |               |                               |                             |
+| OpenBioLLM-70B        | Ify, Fola           |              |                  |               |                  |               |                               |                             |
+| JSL-MedLlama-3-8B     |                     |              |                  |               |                  |               |                               |                             |
+| Meditron              | Charles             |              |                  |               |                  |               |                               |                             |
+| Meta-LLaMa-3          | Charles             |              |                  |               |                  |               |                               |                             |
+| BioMistral            | Foutse              |              |                  |               |                  |               |                               |                             |
+| Orpo-Med-v0           |                     |              |                  |               |                  |               |                               |                             |
+| Mixtral 8x22B         |                     |              |                  |               |                  |               |                               |                             |
+| PMC-LLama             | Charles             |              |                  |               |                  |               |                               |                             |
+| Open-bio-med-merge    |                     |              |                  |               |                  |               |                               |                             |
+| Med42                 |                     |              |                  |               |                  |               |                               |                             |
+| Meta-LLAMA-3-8B       |                     |              |                  |               |                  |               |                               |                             |
+| MedAlpaca             | Charles             |              |                  |               |                  |               |                               |                             |
+
+
+
+### Notes:
+- **MCQ**: Multiple-Choice Questions.
+- **SAQ**: Short Answer Questions.
+- **Consumer Queries**: Queries posed by end-users, likely in a real-world application.
+- **Metrics**:
+  - **Accuracy**: Correct answers as a percentage of total answers.
+  - **BertScore F1**: F1 score as computed by BertScore.
+  - **Avg Rouge**: Average ROUGE score, likely ROUGE-L which focuses on the longest common subsequence.
 
 #### Prompting Strategies
 Prompting Strategies include: 
@@ -231,6 +244,8 @@ Navigate to the `scripts` directory and execute the bash script with the require
 ```bash
 bash scripts/run_prediction.sh 
 ```
+
+
 
 ### Output
 - The predictions will be evaluated and saved to the `results` folder.

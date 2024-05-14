@@ -57,7 +57,7 @@ def transform_consumer_queries(data):
             "sample_id": row["sample_id"],
             "prompt": row["prompt"],
             "question": row["question"],
-            "rationale": row["answer_rationale"],
+            "rationale": "" if type(row["answer_rationale"])==float else  row["answer_rationale"],
 
         }
         questions.append(transformed_row)
@@ -81,6 +81,7 @@ def prep_data(args) -> pd.DataFrame:
             .copy()
             .reset_index(drop=True)
         )
+
         if args.q_type == "mcq":
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
         data = transformation_types[args.q_type.strip()](data)

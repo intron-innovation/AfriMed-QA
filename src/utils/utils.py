@@ -77,14 +77,7 @@ def write_results(data, args, score):
     return results_fname
 
 def post_process_output(model_output: str) -> str:
-    cleaned_output = []
-    for output in model_output:
-        matched_pieces = re.findall(r"(?i)OPTION [ABCDE] IS CORRECT", output)
-        if len(matched_pieces) == 0:  # no matched piece
-            predicted_option = ""
-        else:
-            predicted_option = matched_pieces[0].split()[1]
-        cleaned_output.append(predicted_option)
+    cleaned_output = [text[0] for text in model_output]
     return cleaned_output
 
 def read_txt_file(file_path):

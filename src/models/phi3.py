@@ -33,4 +33,5 @@ class Phi3(Model):
     def predict(self, prompt) -> str:
 
         output = self.model(prompt, **self.generation_args)
-        return output[0]["generated_text"]
+        output = output[0]["generated_text"].replace("<|end|>", "").strip(" ")
+        return output
