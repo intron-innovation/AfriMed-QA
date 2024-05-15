@@ -37,9 +37,8 @@ def mcq_inference(args, row, model, **kwargs):
             input_text += s + "\n\n"
     input_text += "Question: " + question + "\n\n"
     input_text += formatted_options
-    input_text = {"role": "user", "content": input_text}
 
-    pred = model.predict([input_text])
+    pred = model.predict(input_text)
     return pred
 
 
@@ -59,10 +58,9 @@ def saq_inference(args, row, model, **kwargs):
         for s in few_shot_samples[: args.num_few_shot]:
             input_text += s + "\n\n"
     input_text += "Question: " + question 
-    input_text = {"role": "user", "content": input_text}
 
     
-    pred = model.predict([input_text])
+    pred = model.predict(input_text)
     return pred
 
 
@@ -85,9 +83,8 @@ def consumer_queries_inference(args, row, model, **kwargs):
 
     input_text += "Question: " + prompt + "\n\n"
     input_text += question
-    input_text = {"role": "user", "content": input_text}
 
-    pred = model.predict([input_text])
+    pred = model.predict(input_text)
     return pred
 
 

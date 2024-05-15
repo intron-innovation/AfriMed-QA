@@ -31,6 +31,7 @@ class Phi3(Model):
         }
 
     def predict(self, prompt) -> str:
+        prompt = [{"role": "user", "content": prompt}]
 
         output = self.model(prompt, **self.generation_args)
         output = output[0]["generated_text"].replace("<|end|>", "").strip(" ")
