@@ -121,7 +121,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
-| Phi-3-mini-128k-instruct| Abraham           |0.0           |0.0               |0.0            |0.0               |0.0            |0.0                            |0.0                          |
+| Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308            |0.0               |0.0            |0.0                            |0.0                          |
 | MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
 | GPT-4 turbo           | Foutse, Fola        |              |                  |               |                  |               |                               |                             |
 | Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
@@ -154,7 +154,8 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 - **Metrics**:
   - **Accuracy**: Correct answers as a percentage of total answers.
   - **BertScore F1**: F1 score as computed by BertScore.
-  - **Avg Rouge**: Average ROUGE score, likely ROUGE-L which focuses on the longest common subsequence.
+  - **Avg Rouge**: Avg rouge is arithmetic mean of R1, R2 and RL
+
 
 #### Prompting Strategies
 Prompting Strategies include: 
@@ -211,16 +212,15 @@ Some questions will receive single or multiple-reader ratings. Inter-rater relia
 
 # Working with the Codebase:
 
-## Requirements
-- Python 3.9 or higher
-- PyTorch
-- Any other dependencies listed in `requirements.txt`
-
 ### Installation
-Clone the repository and install the required Python packages:
+Clone the repository, create a new environment and install the required dependencies:
+
 ```bash
-git clone <repository-url>
+git clone https://github.com/intron-innovation/AfriMed-QA
 cd AfriMed-QA
+conda create -n afrimed python=3.10
+conda activate afrimed
+
 pip install -r requirements.txt
 ```
 
@@ -238,12 +238,24 @@ To run the model and generate predictions, use the provided bash script in the `
 - `data_path`: The path to the data file.
 - `prompt_file_path`: The path to the prompt file.
 - `q_type`: The type of questions to process (e.g., `mcq`).
+- `num_few_shot`: The number of few shot examples to use (e.g., 0). default is 0
 
 #### Running the Script
 Navigate to the `scripts` directory and execute the bash script with the required arguments. Example usage:
 ```bash
 bash scripts/run_prediction.sh 
 ```
+- An example bash script for Phi has been provided.
+
+#### Few-shot prompting
+- In your script, set `num_few_shot_values` = the number of shots your choose
+
+#### Instruction tuning
+- In your script, set prompt_type to either base or instruct.
+   - `base`: prompt the model without any instruction tuning
+   - `instruct`: prompt with model with a instruction e.g as an African Doctor.
+
+
 
 
 

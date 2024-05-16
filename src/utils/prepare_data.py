@@ -63,12 +63,16 @@ def transform_mcqs(args, data):
 
             if args.num_few_shot > 0:
                 try:
-                    other_indices = transformed_data[transformed_data['options_len'] ==row ['options_len']].index.difference([index]).tolist()
+                    other_indices = transformed_data[transformed_data['options_len'] ==row['options_len']].index.difference([index]).tolist()
+                    random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
+                    few_shots = transformed_data.iloc[random_indices]
+
                 except:
                     other_indices = transformed_data[transformed_data['options_len'] == 4].index.difference([index]).tolist()
+                    random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
+                    few_shots = transformed_data.iloc[random_indices]
 
-                random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
-                few_shots = transformed_data.iloc[random_indices]
+                
                 
                 sys_msg += "Here are some examples and then answer the last question:" +"\n"
                 
@@ -79,11 +83,10 @@ def transform_mcqs(args, data):
             final_prompt = sys_msg + question + "\n" + formatted_options
             row['model_prompt'] = final_prompt
 
-        data_w_prompt.append(row)
+            data_w_prompt.append(row)
 
     else:
         Exception("Prompt file not found")
-
 
     transformed_data = pd.DataFrame(data_w_prompt)
 
@@ -113,6 +116,7 @@ def transform_saqs(args, data):
             if args.num_few_shot > 0:
                 other_indices = transformed_data.index.difference([index]).tolist()
                 random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
+
                 few_shots = transformed_data.iloc[random_indices]
                 
                 sys_msg += "Here are some examples and then answer the last question:" +"\n"
@@ -125,7 +129,7 @@ def transform_saqs(args, data):
             final_prompt = sys_msg + question
             row['model_prompt'] = final_prompt
 
-        data_w_prompt.append(row)
+            data_w_prompt.append(row)
 
     else:
         Exception("Prompt file not found")
@@ -173,7 +177,7 @@ def transform_consumer_queries(args, data):
             final_prompt = question_prompt + "\n" + question
             row['model_prompt'] = final_prompt
 
-        data_w_prompt.append(row)
+            data_w_prompt.append(row)
 
     else:
         Exception("Prompt file not found")
@@ -202,9 +206,7 @@ def prep_data(args) -> pd.DataFrame:
         if args.q_type == "mcq":
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
 
-        breakpoint()
         data = transformation_types[args.q_type.strip()](args, data)
-        breakpoint()
     else:
         Exception(
             f"The question type `{args.q_type}` is invalid. Please provide a valid question type. Valid question types are {transformation_types.keys()}"

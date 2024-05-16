@@ -6,7 +6,7 @@ data_path="data/afri_med_qa_10k_v1_1_phase_1.csv"
 question_types=("mcq" "saq" "consumer_queries")
 prompt_type=base
 
-num_few_shot_values=(0 3 5)
+num_few_shot_values=(0)
 
 for q_type in "${question_types[@]}"; do
     prompt_file_path="prompts/${prompt_type}_${q_type}.txt"
