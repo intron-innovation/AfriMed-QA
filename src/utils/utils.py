@@ -18,20 +18,19 @@ def parse_arguments():
     logger.info(f"cuda is available {torch.cuda.is_available()}")
     logger.info(f"cuda device count {torch.cuda.device_count()}")
     logger.info(f"cuda device name {torch.cuda.get_device_name()}")
-
     parser = argparse.ArgumentParser()
     parser.add_argument("--pretrained_model_path", type=str, required=True)
     parser.add_argument("--data_path", type=str, required=True)
     parser.add_argument("--prompt_file_path", type=str, default=None)
-
     parser.add_argument(
         "--q_type", type=str, required=True, help="eval tasks or question group type"
     )
+    parser.add_argument("--num_few_shot", type=int, default=0)
+
 
     args = parser.parse_args()
 
     args.model_name = args.pretrained_model_path.split("/")[-1]
-    args.num_few_shot = 0
 
     return args
 
@@ -71,7 +70,9 @@ def logging_cuda_memory_usage():
 
 def write_results(data, args, score):
     file_name = os.path.basename(args.data_path)
-    results_fname = f"results/{file_name.split('.csv')[0]}_{args.model_name.replace('/', '_')}_{args.q_type}_score-{score:.4f}_{len(data)}.csv"
+    prompt_type = args.prompt_file_path.split("/")[-1].split("_")[0]
+    q_type = args.q_type.split('_')[0]
+    results_fname = f"results/{args.model_name.replace('/', '_')}_{q_type}_{prompt_type}-prompt_{args.num_few_shot}shot(s)_score-{score:.4f}_{len(data)}.csv"
     data.to_csv(results_fname, index=False)
     logger.info(f"Results saved to: {results_fname}")
     return results_fname
