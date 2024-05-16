@@ -31,7 +31,6 @@ def main():
     data = prep_data(args)
     model = Phi3(args.pretrained_model_path) # please define your own model file
     logger.info(_blue(f"Running predictions for {args.q_type} started"))
-    quit()
     outputs = run_inference(model, data) #this should result a list of predictions
     logger.info(_orange(f"Running predictions for {args.q_type} completed"))
     data['outputs'] = outputs
