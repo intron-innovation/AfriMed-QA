@@ -1,0 +1,8 @@
+bert_score==0.3.13
+numpy==1.23.5
+pandas==1.5.0
+pynvml==11.5.0
+rouge==1.0.1
+torch==2.0.0
+tqdm==4.64.1
+transformers==4.39.3
