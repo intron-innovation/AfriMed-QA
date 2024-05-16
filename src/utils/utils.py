@@ -18,20 +18,19 @@ def parse_arguments():
     logger.info(f"cuda is available {torch.cuda.is_available()}")
     logger.info(f"cuda device count {torch.cuda.device_count()}")
     logger.info(f"cuda device name {torch.cuda.get_device_name()}")
-
     parser = argparse.ArgumentParser()
     parser.add_argument("--pretrained_model_path", type=str, required=True)
     parser.add_argument("--data_path", type=str, required=True)
     parser.add_argument("--prompt_file_path", type=str, default=None)
-
     parser.add_argument(
         "--q_type", type=str, required=True, help="eval tasks or question group type"
     )
+    parser.add_argument("--num_few_shot", type=int, default=0)
+
 
     args = parser.parse_args()
 
     args.model_name = args.pretrained_model_path.split("/")[-1]
-    args.num_few_shot = 0
 
     return args
 
