@@ -39,7 +39,7 @@ def main():
     # please define your own model class
     if "gpt" in args.pretrained_model_path:
         model = OpenAIModel(args.pretrained_model_path)
-    elif "phi3" in args.pretrained_model_path:
+    elif "Phi-3" in args.pretrained_model_path:
         model = Phi3(args.pretrained_model_path)
     else:
         raise NotImplementedError(f"No model class defined for {args.pretrained_model_path}")
