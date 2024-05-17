@@ -15,12 +15,13 @@ def infer(prompt, model, **kwargs):
     return pred
 
 
-def run_inference(model, data) -> Tuple[List[str], List[str]]:
+def run_inference(model, data, use_cuda=False) -> Tuple[List[str], List[str]]:
     outputs = []
     for _, row in tqdm(data.iterrows(), total=len(data), desc="Running Inference"):
         output = infer(row['model_prompt'], model)
         outputs.append(output)
-    logging_cuda_memory_usage()
-    torch.cuda.empty_cache()
+    if use_cuda:
+        logging_cuda_memory_usage()
+        torch.cuda.empty_cache()
 
     return outputs
