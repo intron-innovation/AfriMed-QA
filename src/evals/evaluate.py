@@ -1,8 +1,11 @@
 from bert_score import score as bert_score
 from rouge import Rouge
 
+
 def compute_score(q_type, data):
     valid_data = data[data["rationale"].str.len() > 4].copy()
+    if len(valid_data) < 2:
+        return (data, 0,0,0,0,0,0,0)
 
     scores = bert_score(valid_data["outputs"].tolist(), valid_data["rationale"].tolist(), lang="en", verbose=True)
     p, r, f1 = scores[0], scores[1], scores[2]
@@ -49,3 +52,4 @@ def compute_score(q_type, data):
 def write_scores():
     pass
     
+

@@ -12,8 +12,10 @@ from src.utils.utils import  write_results, post_process_output
 from src.models.phi3 import Phi3
 from src.inference.inference import run_inference
 from src.evals.evaluate import compute_score
+from transformers import set_seed
 
 logger = logging.getLogger(__name__)
+set_seed(42)
 
 def main():
     patch_open()

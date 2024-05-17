@@ -1,0 +1,75 @@
+sample_id,question,rationale,model_prompt,outputs,ROUGE-1,ROUGE-2,ROUGE-L,BERTScore_Precision,BERTScore_Recall,BERTScore_F1
+4fab2f40e22e1f24eb3d4770aa427cbca88d1b4ad6c905cb564674fc1f1930c6,In what ways does the presentation of growth hormone deficiency vary between developing countries and developed nations?,"In developing countries, the presentation of growth hormone deficiency may be overshadowed by malnutrition and infectious diseases, leading to delayed diagnosis and treatment. Additionally, socioeconomic factors may limit access to growth hormone replacement therapy.","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: In what ways does the presentation of growth hormone deficiency vary between developing countries and developed nations?","Variation in diagnosis and treatment: Developed nations may have more resources for diagnosis and treatment, leading to earlier detection and management. Rationale: Developed countries typically have better healthcare infrastructure and access to medical technology, which facilitates early diagnosis and treatment of growth hormone deficiency.
+
+Differences in awareness and education: Developing countries may have lower awareness and understanding of growth hormone deficiency among healthcare providers and the general population. Rationale: Developed nations often have more extensive health education programs and better dissemination of medical knowledge, leading to increased awareness and understanding of various health conditions, including growth hormone deficiency.
+
+Socioeconomic factors: In developing countries, socioeconomic factors may contribute to delayed diagnosis and treatment due to limited access to healthcare services. Rationale: Lower income levels and limited healthcare infrastructure in developing countries can result in reduced access to medical care, leading to delayed diagnosis and treatment of growth hormone deficiency.
+
+Cultural beliefs and practices: Cultural beliefs and practices may influence the perception and management of growth hormone deficiency in developing countries. Rationale: Cultural factors can affect how health conditions are perceived and managed, potentially leading to differences in the presentation and treatment of growth hormone deficiency between developing and developed nations.",0.3114754062120398,0.1513513484902849,0.3114754062120398,0.8500545,0.90221685,0.87535924
+5e29a3a9994141b38b437ecc820603d04d221ccf7a79367495ea33db5d8ad4c6,Question: Discuss the pathophysiology and clinical manifestations of psoriasis. How is it diagnosed and managed?,"Answer: Psoriasis is a chronic autoimmune skin disorder characterized by hyperproliferation of keratinocytes, leading to thickened, scaly plaques. The immune system mistakenly targets healthy skin cells, triggering inflammation. Clinically, psoriasis presents as well-demarcated, erythematous plaques with silvery scales. Diagnosis involves clinical examination and, if necessary, skin biopsy for confirmation. Management includes topical corticosteroids, phototherapy, and systemic agents like methotrexate or biologics, tailored to the severity of the condition.
+
+Rationale : This question assesses the candidate's understanding of the etiology, clinical features, diagnostic approach, and treatment options for psoriasis, which are fundamental in dermatology.
+","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: Question: Discuss the pathophysiology and clinical manifestations of psoriasis. How is it diagnosed and managed?","Pathophysiology: Psoriasis is an autoimmune disease characterized by rapid skin cell turnover leading to thick, scaly plaques. It involves T cells triggering inflammation and overproduction of skin cells.
+
+Clinical manifestations: Symptoms include red patches covered with white scales, itching, and sometimes joint pain (psoriatic arthritis).
+
+Diagnosis: Based on physical examination, medical history, and sometimes skin biopsy.
+
+Management: Treatment includes topical therapies, phototherapy, systemic medications, and biologics targeting specific immune responses.",0.3034482709479192,0.08749999511250027,0.3034482709479192,0.9032626,0.87230504,0.88751394
+28bcc5c8405d8bf591ece1f42bab1dcaf2a5bdc6e08808e8f510edd4422d28ba,"In African patients, what neurological disorder is associated with neurocysticercosis infection and may present with intracranial calcifications and epilepsy?","Neurocysticercosis-related epilepsy, caused by Taenia solium infection prevalent in some African communities, can manifest with intracranial calcifications and epilepsy, necessitating appropriate antiepileptic therapy.","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: In African patients, what neurological disorder is associated with neurocysticercosis infection and may present with intracranial calcifications and epilepsy?","Seizures
+
+Rationale: Neurocysticercosis, caused by the pork tapeworm Taenia solium, is a common cause of seizures in African patients. The infection can lead to the formation of cysts in the brain, which may result in intracranial calcifications and epilepsy.",0.357142852372449,0.09999999535555577,0.357142852372449,0.89052594,0.8991784,0.89483124
+7e2050843e7793b808680af47f907326410565629c9cd98e982308006b0fad94,"Which parasitic infection, endemic in parts of Africa, is associated with the development of eosinophilia and hypereosinophilic syndrome? ","Schistosomiasis, caused by Schistosoma parasites, is endemic in parts of Africa and is associated with the development of eosinophilia and hypereosinophilic syndrome in some individuals.","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: Which parasitic infection, endemic in parts of Africa, is associated with the development of eosinophilia and hypereosinophilic syndrome? ","Helicobacter pylori
+
+Rationale: The question seems to be incorrectly associated with Helicobacter pylori, which is a bacterial infection, not a parasitic one. The correct answer should be Onchocerca volvulus, which is a parasitic infection endemic in parts of Africa and is associated with the development of eosinophilia and hypereosinophilic syndrome.",0.48275861607015463,0.43478260415879016,0.48275861607015463,0.8639443,0.9136335,0.88809437
+3e29959e5b104f2b43f16a7cfcc2446934c9a1c09fb1b1066e9721e3df8a3b56,The goal of respiration is to control the concentration of which substances dissolved in the blood?,"Oxygen, carbon dioxide and hydrogen ions 
+Respiratory activity responds to changes in the dissolved concentration of these 3 substances in blood. ","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: The goal of respiration is to control the concentration of which substances dissolved in the blood?","Oxygen and carbon dioxide
+
+Rationale: Respiration is the process of inhaling oxygen and exhaling carbon dioxide to maintain the balance of these gases in the blood, ensuring proper cellular function and homeostasis.",0.34782608199432896,0.11764705397923896,0.34782608199432896,0.86671317,0.8882233,0.8773364
+95975fffa782cd673466d673c799f5f5525a9cd78084d434b10a971814a76709,Which endemic infection in Africa is associated with the development of hemolytic anemia and musculoskeletal pain?,"Borreliosis, caused by Borrelia burgdorferi bacteria transmitted through the bite of infected ticks, is associated with the development of hemolytic anemia and musculoskeletal pain in Africa. This tick-borne disease is commonly known as Lyme disease.","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: Which endemic infection in Africa is associated with the development of hemolytic anemia and musculoskeletal pain?","- Schistosomiasis
+
+Rationale: Schistosomiasis, caused by parasitic worms of the Schistosoma species, is endemic in Africa and can lead to complications such as hemolytic anemia and musculoskeletal pain due to the immune response to the eggs deposited in tissues.",0.40624999500488285,0.1690140795159692,0.3749999950048829,0.86827874,0.87495005,0.87160164
+1b26c5acc2fcd3ac31e31c60554a4353bdd45f8308bf1ec311f12d052ad059df,Discuss the etiology and management of interstitial cystitis/bladder pain syndrome (IC/BPS).,"The etiology of IC/BPS remains incompletely understood but is believed to involve a combination of bladder epithelial dysfunction, neurogenic inflammation, and autoimmune factors. Management typically includes lifestyle modifications, oral medications (such as pentosan polysulfate sodium), bladder instillations, physical therapy, and in refractory cases, surgical interventions like bladder augmentation or urinary diversion.","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: Discuss the etiology and management of interstitial cystitis/bladder pain syndrome (IC/BPS).","Etiology: IC/BPS is a chronic condition characterized by bladder pain and urinary frequency. Its etiology is multifactorial, involving genetic predisposition, autoimmune responses, neurogenic inflammation, and dysfunctional mast cells.
+
+Rationale: The multifactorial nature of IC/BPS etiology is supported by various studies showing genetic links, immune system involvement, and evidence of neurogenic inflammation and mast cell dysfunction in affected individuals.",0.27956988747369643,0.05660376860092603,0.2580645111296104,0.87344116,0.8493694,0.86123717
+6c91155565ef81e2743be7db5e1c202ede1d9b7e3cee5d07d4aeebbdc257c8d3,"If all squares are rectangles, and all rectangles have four sides, can we logically conclude that all squares have four sides?","Yes, this follows the logical definition of a square as a special case of a rectangle with all sides equal in length.","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: If all squares are rectangles, and all rectangles have four sides, can we logically conclude that all squares have four sides?","Yes, we can logically conclude that all squares have four sides.
+
+Rationale: Since all squares are rectangles and all rectangles have four sides, it follows that all squares, being a subset of rectangles, also have four sides.",0.2666666617876544,0.0,0.2666666617876544,0.8741474,0.89086425,0.8824266
+bf3e3a2fbc4c55b783ad86ecab68f628867e2d61a46913dd3fac55e5fe15ae54,How does the etiology of laryngeal cancer differ in Africa compared to other regions?,"In Africa, laryngeal cancer is more commonly associated with tobacco and alcohol use, as well as infectious agents like human papillomavirus (HPV).","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: How does the etiology of laryngeal cancer differ in Africa compared to other regions?","Etiology in Africa: Higher prevalence of HPV, lower smoking rates, and limited access to healthcare.
+
+Rationale: The etiology of laryngeal cancer in Africa differs due to the higher prevalence of human papillomavirus (HPV), which is a significant risk factor for laryngeal cancer. Additionally, smoking rates are generally lower in Africa compared to other regions, which is another major risk factor for laryngeal cancer. Furthermore, limited access to healthcare in many African countries can lead to delayed diagnosis and treatment, potentially affecting the overall etiology and outcomes of the disease.",0.15189873027399467,0.04081632316326559,0.12658227457779214,0.85801315,0.9042716,0.88053524
+6bd2f8919189b2bcc92476eabfcc7d728585291aa1e4f5fc6def44d907a6985a,"What is the primary cause of chronic kidney disease in adults with diabetes mellitus in Africa?
+","Diabetic nephropathy, characterized by glomerular hyperfiltration, albuminuria, and progressive renal impairment, is the primary cause of chronic kidney disease in adults with diabetes mellitus in Africa. Factors such as poor glycemic control, hypertension, and genetic predisposition contribute to the development and progression of diabetic kidney disease in this population","The following are short answer questions(SAQs).
+You should directly answer the question by providing a short answer and then provide a rationale for your answer.
+
+Question: What is the primary cause of chronic kidney disease in adults with diabetes mellitus in Africa?
+","Ineffective diabetes management
+
+Rationale: Poor control of blood sugar levels in diabetes can lead to damage in the kidneys over time, causing chronic kidney disease. In Africa, access to healthcare and education about diabetes management may be limited, contributing to ineffective management of the condition.",0.2337662287873167,0.04494381523040076,0.20779220281329072,0.867584,0.8484087,0.85788924

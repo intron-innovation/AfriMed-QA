@@ -4,7 +4,7 @@ pretrained_model_path="microsoft/Phi-3-mini-128k-instruct"
 data_path="data/afri_med_qa_10k_v1_1_phase_1.csv"
 
 question_types=("mcq" "saq" "consumer_queries")
-prompt_type=base
+prompt_type=instruct
 
 num_few_shot_values=(0)
 
