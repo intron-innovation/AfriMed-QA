@@ -202,7 +202,6 @@ def prep_data(args) -> pd.DataFrame:
                 .copy()
                 .reset_index(drop=True)
         )
-        data = data.sample(10)
 
         if args.q_type == "mcq":
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
