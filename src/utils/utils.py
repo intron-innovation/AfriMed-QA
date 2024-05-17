@@ -7,17 +7,13 @@ import builtins
 import io
 import re
 
-
 import gc
 import pynvml
-pynvml.nvmlInit()
 
 logger = logging.getLogger(__name__)
 
+
 def parse_arguments():
-    logger.info(f"cuda is available {torch.cuda.is_available()}")
-    logger.info(f"cuda device count {torch.cuda.device_count()}")
-    logger.info(f"cuda device name {torch.cuda.get_device_name()}")
     parser = argparse.ArgumentParser()
     parser.add_argument("--pretrained_model_path", type=str, required=True)
     parser.add_argument("--data_path", type=str, required=True)
@@ -25,14 +21,15 @@ def parse_arguments():
     parser.add_argument(
         "--q_type", type=str, required=True, help="eval tasks or question group type"
     )
+    parser.add_argument('--use_cuda', action=argparse.BooleanOptionalAction)
     parser.add_argument("--num_few_shot", type=int, default=0)
-
 
     args = parser.parse_args()
 
     args.model_name = args.pretrained_model_path.split("/")[-1]
 
     return args
+
 
 def patch_open():
     prev_open = open
@@ -56,7 +53,13 @@ def _orange(str: str) -> str:
 def _blue(str: str) -> str:
     return f"\033[1;34m{str}\033[0m"
 
+
 def logging_cuda_memory_usage():
+    pynvml.nvmlInit()
+    logger.info(f"cuda is available {torch.cuda.is_available()}")
+    logger.info(f"cuda device count {torch.cuda.device_count()}")
+    logger.info(f"cuda device name {torch.cuda.get_device_name()}")
+
     logger.info("******** Memory usage ********")
     n_gpus = pynvml.nvmlDeviceGetCount()
     for i in range(n_gpus):
@@ -68,6 +71,7 @@ def logging_cuda_memory_usage():
             )
         )
 
+
 def write_results(data, args, score):
     file_name = os.path.basename(args.data_path)
     prompt_type = args.prompt_file_path.split("/")[-1].split("_")[0]
@@ -77,9 +81,11 @@ def write_results(data, args, score):
     logger.info(f"Results saved to: {results_fname}")
     return results_fname
 
+
 def post_process_output(model_output: str) -> str:
     cleaned_output = [text[0] for text in model_output]
     return cleaned_output
+
 
 def read_txt_file(file_path):
     with open(file_path, "r", encoding="utf-8") as file:

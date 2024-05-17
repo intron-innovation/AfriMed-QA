@@ -30,18 +30,21 @@ def main():
     gc.collect()
     torch.cuda.empty_cache()
 
+    logger.info(f"Preprocessing data at {args.data_path}")
     data = prep_data(args)
 
+    logger.info(f"Loading model from {args.pretrained_model_path}")
     # please define your own model class
-    if "openai" in args.pretrained_model_path:
+    if "gpt" in args.pretrained_model_path:
         model = OpenAIModel(args.pretrained_model_path)
     elif "phi3" in args.pretrained_model_path:
         model = Phi3(args.pretrained_model_path)
     else:
         raise NotImplementedError(f"No model class defined for {args.pretrained_model_path}")
+    logger.info("Model loaded successfully")
 
     logger.info(_blue(f"Running predictions for {args.q_type} started"))
-    outputs = run_inference(model, data)  # this should result a list of predictions
+    outputs = run_inference(model, data, args.use_cuda)  # this should result a list of predictions
     logger.info(_orange(f"Running predictions for {args.q_type} completed"))
     data['outputs'] = outputs
     if args.q_type == "mcq":
@@ -49,7 +52,7 @@ def main():
         data['preds'] = options_from_output
     (data, BERTScore_Precision, BERTScore_Recall, BERTScore_F1, rg1, rg2, rl, accuracy) = compute_score(args.q_type,
                                                                                                         data)  # returns a tuple
-    logger.info(f"Socre is {_blue(rl)}")
+    logger.info(f"Score is {_blue(rl)}")
     write_results(args=args, data=data, score=rl)
 
 

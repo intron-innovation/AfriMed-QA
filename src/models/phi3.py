@@ -1,11 +1,13 @@
 import torch
 from src.models.models import Model
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
 
 class Phi3(Model):
     def __init__(self, pretrained_model_path, **kwargs):
         super().__init__(pretrained_model_path, **kwargs)
+
+        from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+
         self.tokenizer = AutoTokenizer.from_pretrained(
             pretrained_model_path,
             use_fast=False,
