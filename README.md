@@ -154,7 +154,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 - **Metrics**:
   - **Accuracy**: Correct answers as a percentage of total answers.
   - **BertScore F1**: F1 score as computed by BertScore.
-  - **Avg Rouge**: Avg rouge is arithmetic mean of R1, R2 and RL
+  - **Avg Rouge**: Avg rouge is arithmetic mean of ROUGE-1, ROUGE-2 and ROUGE-L
 
 
 #### Prompting Strategies
@@ -215,11 +215,15 @@ Some questions will receive single or multiple-reader ratings. Inter-rater relia
 ### Installation
 Clone the repository, create a new environment and install the required dependencies:
 
+Check pytorch installation for your machine at https://pytorch.org/get-started/locally/
+
 ```bash
 git clone https://github.com/intron-innovation/AfriMed-QA
 cd AfriMed-QA
 conda create -n afrimed python=3.10
 conda activate afrimed
+
+conda install pytorch torchvision -c pytorch 
 
 pip install -r requirements.txt
 ```
@@ -231,7 +235,10 @@ pip install -r requirements.txt
    - Ensure your class initializes the model and includes a `predict` method that returns a prediction as a string.
 
 ### Running the Code
-To run the model and generate predictions, use the provided bash script in the `scripts` folder. Recreate your own bash script using the same naming template. The script requires specific arguments to function correctly.
+To run the model and generate predictions, use the provided bash script in the `scripts` folder. 
+Simply change the pretrained_model_path argument to run this script with your predefined model class.
+If your model requires more arguments, recreate your own bash script using the same naming template. The script
+ requires specific arguments to function correctly.
 
 #### Required Arguments:
 - `pretrained_model_path`: The path to the pretrained model.
@@ -243,7 +250,8 @@ To run the model and generate predictions, use the provided bash script in the `
 #### Running the Script
 Navigate to the `scripts` directory and execute the bash script with the required arguments. Example usage:
 ```bash
-bash scripts/run_prediction.sh 
+export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
+bash scripts/run.sh 
 ```
 - An example bash script for Phi has been provided.
 

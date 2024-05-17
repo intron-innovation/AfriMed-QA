@@ -1,3 +1,4 @@
+import errno
 import numpy as np
 import pandas as pd
 import json
@@ -7,16 +8,15 @@ from src.utils.utils import read_txt_file
 
 def prep_mcqs_options(row):
     row = row[
-            ~row.isna()
-        ]  # this line drops the empty options if there are just 2 valid options like true/false
+        ~row.isna()
+    ]  # this line drops the empty options if there are just 2 valid options like true/false
     question = "Question: " + row["question"]
     options = dict(row.drop(["question", "sample_id", "answer", "rationale", "options_len"]))
     formatted_options = ""
     for key, value in options.items():
         formatted_options += f"{key}.  {value}\n"
-    answer = f"""Answer: {row['answer']} \nRationale: {row['rationale']}"""  
+    answer = f"""Answer: {row['answer']} \nRationale: {row['rationale']}"""
     return question, formatted_options, answer
-
 
 
 def transform_mcqs(args, data):
@@ -24,7 +24,7 @@ def transform_mcqs(args, data):
     for index, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
         options = json.loads(row["answer_options"])
         option_keys = [
-            f"option{i+1}" for i in range(5)
+            f"option{i + 1}" for i in range(5)
         ]  # Adjust number of options if needed
         answer_labels = "ABCDE"
 
@@ -63,22 +63,22 @@ def transform_mcqs(args, data):
 
             if args.num_few_shot > 0:
                 try:
-                    other_indices = transformed_data[transformed_data['options_len'] ==row['options_len']].index.difference([index]).tolist()
+                    other_indices = transformed_data[
+                        transformed_data['options_len'] == row['options_len']].index.difference([index]).tolist()
                     random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
                     few_shots = transformed_data.iloc[random_indices]
 
                 except:
-                    other_indices = transformed_data[transformed_data['options_len'] == 4].index.difference([index]).tolist()
+                    other_indices = transformed_data[transformed_data['options_len'] == 4].index.difference(
+                        [index]).tolist()
                     random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
                     few_shots = transformed_data.iloc[random_indices]
 
-                
-                
-                sys_msg += "Here are some examples and then answer the last question:" +"\n"
-                
+                sys_msg += "Here are some examples and then answer the last question:" + "\n"
+
                 for _, s in few_shots.iterrows():
                     sq, sf, sa = prep_mcqs_options(s)
-                    sys_msg += sq + "\n" +  sf + "\n" + sa + "\n\n"
+                    sys_msg += sq + "\n" + sf + "\n" + sa + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question + "\n" + formatted_options
             row['model_prompt'] = final_prompt
@@ -118,13 +118,13 @@ def transform_saqs(args, data):
                 random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
 
                 few_shots = transformed_data.iloc[random_indices]
-                
-                sys_msg += "Here are some examples and then answer the last question:" +"\n"
-                
+
+                sys_msg += "Here are some examples and then answer the last question:" + "\n"
+
                 for _, s in few_shots.iterrows():
                     squestion = "Question: " + s["question"]
                     srationale = "Rationale: " + s['rationale']
-                    sys_msg +=  squestion + "\n" + srationale + "\n\n"
+                    sys_msg += squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question
             row['model_prompt'] = final_prompt
@@ -134,9 +134,9 @@ def transform_saqs(args, data):
     else:
         Exception("Prompt file not found")
 
-
     transformed_data = pd.DataFrame(data_w_prompt)
     return transformed_data
+
 
 def transform_consumer_queries(args, data):
     questions = []
@@ -145,7 +145,7 @@ def transform_consumer_queries(args, data):
             "sample_id": row["sample_id"],
             "prompt": row["prompt"],
             "question": row["question"],
-            "rationale": "" if type(row["answer_rationale"])==float else  row["answer_rationale"],
+            "rationale": "" if type(row["answer_rationale"]) == float else row["answer_rationale"],
 
         }
         questions.append(transformed_row)
@@ -165,14 +165,14 @@ def transform_consumer_queries(args, data):
                 other_indices = transformed_data.index.difference([index]).tolist()
                 random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
                 few_shots = transformed_data.iloc[random_indices]
-                
-                sys_msg += "Here are some examples and then answer the last question:" +"\n"
-                
+
+                sys_msg += "Here are some examples and then answer the last question:" + "\n"
+
                 for _, s in few_shots.iterrows():
                     squestion_prompt = "Prompt: " + s["prompt"]
                     squestion = "Question: " + s["question"]
                     srationale = "Rationale: " + s['rationale']
-                    sys_msg += squestion_prompt + "" +  squestion + "\n" + srationale + "\n\n"
+                    sys_msg += squestion_prompt + "" + squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = question_prompt + "\n" + question
             row['model_prompt'] = final_prompt
@@ -180,7 +180,7 @@ def transform_consumer_queries(args, data):
             data_w_prompt.append(row)
 
     else:
-        Exception("Prompt file not found")
+        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), args.prompt_file_path)
 
     transformed_data = pd.DataFrame(data_w_prompt)
     return transformed_data
@@ -199,8 +199,8 @@ def prep_data(args) -> pd.DataFrame:
     if args.q_type in transformation_types.keys():
         data = (
             data[data["question_type"] == args.q_type.strip()]
-            .copy()
-            .reset_index(drop=True)
+                .copy()
+                .reset_index(drop=True)
         )
 
         if args.q_type == "mcq":
@@ -209,6 +209,7 @@ def prep_data(args) -> pd.DataFrame:
         data = transformation_types[args.q_type.strip()](args, data)
     else:
         Exception(
-            f"The question type `{args.q_type}` is invalid. Please provide a valid question type. Valid question types are {transformation_types.keys()}"
+            f"The question type `{args.q_type}` is invalid. "
+            f"Please provide a valid question type. Valid question types are {transformation_types.keys()}"
         )
     return data

@@ -1,10 +1,13 @@
 import torch
 from src.models.models import Model
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
 
 class Phi3(Model):
-    def __init__(self, pretrained_model_path):
+    def __init__(self, pretrained_model_path, **kwargs):
+        super().__init__(pretrained_model_path, **kwargs)
+
+        from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+
         self.tokenizer = AutoTokenizer.from_pretrained(
             pretrained_model_path,
             use_fast=False,
@@ -36,3 +39,6 @@ class Phi3(Model):
         output = self.model(prompt, **self.generation_args)
         output = output[0]["generated_text"].replace("<|end|>", "").strip(" ")
         return output
+
+    def post_process(self, raw_text_output):
+        return raw_text_output
