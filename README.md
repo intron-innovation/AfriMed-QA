@@ -122,6 +122,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
 | Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308         |0.8733            |0.2328            |0.0                            |0.0                          |
+| Phi-3-mini-4k-instruct| Amina           |0.0        |0.0            |0.0        |0.0            |0.0            |0.0                            |0.0                          |
 | MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
 | GPT-4 turbo           | Foutse, Fola        |              |                  |               |                  |               |                               |                             |
 | Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
