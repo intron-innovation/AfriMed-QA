@@ -1,16 +1,24 @@
 import os
+import sys
+
+parent_folder_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(parent_folder_path)
+
 import logging
 import gc
+import torch
 from src.utils.utils import (
     parse_arguments,
     _orange, _blue, _purple,
     patch_open
 )
 from src.utils.prepare_data import prep_data
-import torch
 from src.utils.utils import write_results, post_process_output
 from src.models.phi3 import Phi3
 from src.models.openai import OpenAIModel
+from src.models.biomistral import BioMistral
+from src.models.medalpaca import MedAlpaca
+from src.models.medllama import MedLlama
 from src.inference.inference import run_inference
 from src.evals.evaluate import compute_score
 
@@ -39,6 +47,12 @@ def main():
         model = OpenAIModel(args.pretrained_model_path)
     elif "phi3" in args.pretrained_model_path:
         model = Phi3(args.pretrained_model_path)
+    elif "Mistral" in args.pretrained_model_path:
+        model = BioMistral(args.pretrained_model_path)
+    elif "Alpaca" in args.pretrained_model_path:
+        model = MedAlpaca(args.pretrained_model_path)
+    elif "Llama" in args.pretrained_model_path:
+        model = MedLlama(args.pretrained_model_path)
     else:
         raise NotImplementedError(f"No model class defined for {args.pretrained_model_path}")
     logger.info("Model loaded successfully")
