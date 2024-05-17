@@ -21,8 +21,7 @@ def compute_score(q_type, data):
     valid_data["ROUGE-L"] = [score[0]["rouge-l"]["f"] for score in rouge_scores]
 
     rg1, rg2, rl = valid_data["ROUGE-1"].mean(), valid_data["ROUGE-2"].mean(), valid_data["ROUGE-L"].mean()
-    rg_avg = (valid_data["ROUGE-1"] + valid_data["ROUGE-2"] + valid_data["ROUGE-L"])/3
-    
+    average_rouge = (rg1 + rg2 + rl) / 3    
 
     if q_type == "mcq":
         data["correct"] = data["answer"] == data["preds"]
@@ -37,7 +36,7 @@ def compute_score(q_type, data):
     print("Average ROUGE-1 Score:", rg1)
     print("Average ROUGE-2 Score:", rg2)
     print("Average ROUGE-L Score:", rl)
-    print("Average ROUGE:", rg_avg)
+    print("Average ROUGE:", average_rouge)
 
 
 
