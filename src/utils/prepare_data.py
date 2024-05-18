@@ -82,8 +82,8 @@ def transform_mcqs(args, data):
                     sys_msg += sq + "\n" + sf + "\n" + sa + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question + "\n" + formatted_options
+            final_prompt += '\n' + "Answer:"
             row['model_prompt'] = final_prompt
-
             data_w_prompt.append(row)
 
     else:
@@ -128,6 +128,7 @@ def transform_saqs(args, data):
                     sys_msg += squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question
+            final_prompt += '\n' + "Answer:"
             row['model_prompt'] = final_prompt
 
             data_w_prompt.append(row)
@@ -176,6 +177,7 @@ def transform_consumer_queries(args, data):
                     sys_msg += squestion_prompt + "" + squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = question_prompt + "\n" + question
+            final_prompt += '\n' + "Answer:"
             row['model_prompt'] = final_prompt
 
             data_w_prompt.append(row)
