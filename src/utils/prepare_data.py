@@ -11,12 +11,12 @@ def prep_mcqs_options(row):
     row = row[
         ~row.isna()
     ]  # this line drops the empty options if there are just 2 valid options like true/false
-    question = "Question: " + row["question"]
+    question = "###Question: " + row["question"]
     options = dict(row.drop(["question", "sample_id", "answer", "rationale", "options_len"]))
     formatted_options = ""
     for key, value in options.items():
         formatted_options += f"{key}.  {value}\n"
-    answer = f"""Answer: {row['answer']} \nRationale: {row['rationale']}"""
+    answer = f"""###Answer: {row['answer']} \n###Rationale: {row['rationale']}"""
     return question, formatted_options, answer
 
 
@@ -81,8 +81,10 @@ def transform_mcqs(args, data):
                     sq, sf, sa = prep_mcqs_options(s)
                     sys_msg += sq + "\n" + sf + "\n" + sa + "\n\n"
                 sys_msg += sys_msg + "\n\n"
-            final_prompt = sys_msg + question + "\n" + formatted_options
-            final_prompt += '\n' + "Answer:"
+            final_prompt = sys_msg + question + "\n" 
+            final_prompt = "###Options:" + "\n" + formatted_options
+
+            final_prompt += '\n' + "###Answer:"
             row['model_prompt'] = final_prompt
             data_w_prompt.append(row)
 
