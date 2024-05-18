@@ -82,7 +82,7 @@ def transform_mcqs(args, data):
                     sys_msg += sq + "\n" + sf + "\n" + sa + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question + "\n" 
-            final_prompt = "###Options:" + "\n" + formatted_options
+            final_prompt = final_prompt + "###Options:" + "\n" + formatted_options
 
             final_prompt += '\n' + "###Answer:"
             row['model_prompt'] = final_prompt
