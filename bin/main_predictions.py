@@ -50,7 +50,7 @@ def main():
     elif "Mistral" in args.pretrained_model_path:
         model = BioMistral(args.pretrained_model_path)
     elif "alpaca" in args.pretrained_model_path:
-        model = MedAlpaca(args.pretrained_model_path)
+        model = MedLlama(args.pretrained_model_path) #MedAlpaca
     elif "Llama" in args.pretrained_model_path:
         model = MedLlama(args.pretrained_model_path)
     else:
