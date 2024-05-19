@@ -131,7 +131,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
 | Claude 3 sonnet       | Mercy               |              |                  |               |                  |               |                               |                             |
 | Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
-| GPT 3.5 turbo         | Henok               |              |                  |               |                  |               |                               |                             |
+| GPT 3.5 turbo         | Mardhiyah           |     |        |           |               |                  | 0.8313        |0.0761                              |
 | OpenBioLLM-70B        | Ify, Fola           |              |                  |               |                  |               |                               |                             |
 | JSL-MedLlama-3-8B     |                     |              |                  |               |                  |               |                               |                             |
 | Meditron              | Charles             |              |                  |               |                  |               |                               |                             |
