@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pretrained_model_path="medalpaca/medalpaca-lora-7b-8bit"
+pretrained_model_path="BioMistral/BioMistral-7B-AWQ-QGS128-W4-GEMV"
 data_path="data/afri_med_qa_10k_v1_1_phase_1.csv"
 
 question_types=("mcq" "saq" "consumer_queries")
