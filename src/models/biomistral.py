@@ -9,9 +9,7 @@ class BioMistral(Model):
 
         self.tokenizer = AutoTokenizer.from_pretrained(pretrained_model_path)
         self.model = AutoModel.from_pretrained(pretrained_model_path)
-        self.model = pipeline(
-            "text-generation", model=self.model, tokenizer=self.tokenizer
-        )
+        self.model = pipeline("text-generation", model=self.model, tokenizer=self.tokenizer)
 
     def predict(self, prompt) -> str:
         prompt = [{"role": "user", "content": prompt}]
