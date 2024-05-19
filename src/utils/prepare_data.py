@@ -11,12 +11,12 @@ def prep_mcqs_options(row):
     row = row[
         ~row.isna()
     ]  # this line drops the empty options if there are just 2 valid options like true/false
-    question = "Question: " + row["question"]
+    question = "###Question: " + row["question"]
     options = dict(row.drop(["question", "sample_id", "answer", "rationale", "options_len"]))
     formatted_options = ""
     for key, value in options.items():
         formatted_options += f"{key}.  {value}\n"
-    answer = f"""Answer: {row['answer']} \nRationale: {row['rationale']}"""
+    answer = f"""###Answer: {row['answer']} \n###Rationale: {row['rationale']}"""
     return question, formatted_options, answer
 
 
@@ -49,7 +49,6 @@ def transform_mcqs(args, data):
             "options_len": options_len,
             "answer": correct_answer_label,
             **formatted_options,
-
         }
         questions.append(transformed_row)
 
@@ -81,9 +80,11 @@ def transform_mcqs(args, data):
                     sq, sf, sa = prep_mcqs_options(s)
                     sys_msg += sq + "\n" + sf + "\n" + sa + "\n\n"
                 sys_msg += sys_msg + "\n\n"
-            final_prompt = sys_msg + question + "\n" + formatted_options
-            row['model_prompt'] = final_prompt
+            final_prompt = sys_msg + question + "\n" 
+            final_prompt += "###Options:" + "\n" + formatted_options
 
+            final_prompt += '\n' + "###Answer:"
+            row['model_prompt'] = final_prompt
             data_w_prompt.append(row)
 
     else:
@@ -128,6 +129,7 @@ def transform_saqs(args, data):
                     sys_msg += squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question
+            final_prompt += '\n' + "Answer:"
             row['model_prompt'] = final_prompt
 
             data_w_prompt.append(row)
@@ -176,6 +178,7 @@ def transform_consumer_queries(args, data):
                     sys_msg += squestion_prompt + "" + squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = question_prompt + "\n" + question
+            final_prompt += '\n' + "Answer:"
             row['model_prompt'] = final_prompt
 
             data_w_prompt.append(row)
@@ -203,7 +206,6 @@ def prep_data(args) -> pd.DataFrame:
                 .copy()
                 .reset_index(drop=True)
         )
-
         if args.q_type == "mcq":
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
 
