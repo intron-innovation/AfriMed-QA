@@ -24,7 +24,7 @@ def main():
 
     logging.basicConfig(
         format="[%(asctime)s] [%(filename)s:%(lineno)d] %(message)s",
-        level=logging.DEBUG,
+        level=logging.INFO,
     )
 
     args = parse_arguments()
@@ -51,7 +51,6 @@ def main():
     data['outputs'] = outputs
     if args.q_type == "mcq":
         options_from_output = model.extract_mcq_answer(outputs)  # edit the post_processing fxn accordingly
-        print(options_from_output)
         data['preds'] = options_from_output
     (data, BERTScore_Precision, BERTScore_Recall, BERTScore_F1, rg1, rg2, rl, accuracy) = compute_score(args.q_type,
                                                                                                         data)  # returns a tuple
