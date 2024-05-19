@@ -21,7 +21,6 @@ class BioMistral(Model):
         generated_ids = self.model.generate(model_inputs, max_new_tokens=100, do_sample=True)
         output = self.tokenizer.batch_decode(generated_ids)[0]
         output = output.replace("[INST] ", "").replace("[/INST] ", "").replace("<s>", "").replace("</s>", "").strip(" ")
-        if output[0]==" ": output = output[1:]
         print(output)
         return output
 
