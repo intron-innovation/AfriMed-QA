@@ -20,9 +20,8 @@ class Phi3(Model):
             pretrained_model_path,
             device_map="auto",
             use_safetensors=True,
-            torch_dtype=torch.bfloat16
-            if torch.cuda.is_bf16_supported()
-            else torch.float16,
+            torch_dtype=torch.bfloat16 if (torch.cuda.is_available() and torch.cuda.is_bf16_supported()) else
+            torch.float16,
             trust_remote_code=True,
         )
         self.model = pipeline(

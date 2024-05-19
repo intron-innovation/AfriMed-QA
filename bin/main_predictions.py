@@ -24,7 +24,7 @@ def main():
 
     logging.basicConfig(
         format="[%(asctime)s] [%(filename)s:%(lineno)d] %(message)s",
-        level=logging.INFO,
+        level=logging.DEBUG,
     )
 
     args = parse_arguments()

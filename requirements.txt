@@ -1,9 +1,13 @@
+accelerate==0.30.1
 bert_score==0.3.13
 chardet==5.2.0
 numpy==1.23.5
 pandas==1.5.0
+protobuf==5.26.1
+psutil==5.9.8
 pynvml==11.5.0
 rouge==1.0.1
+sentencepiece==0.2.0
 torch==2.0.0
 tqdm==4.66.4
 transformers==4.39.3
