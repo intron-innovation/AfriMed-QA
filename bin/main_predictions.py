@@ -1,4 +1,9 @@
 import os
+import sys
+
+parent_folder_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(parent_folder_path)
+
 import logging
 import gc
 import torch
