@@ -6,10 +6,12 @@ from transformers import AutoTokenizer, AutoModel, pipeline
 class MedLlama(Model):
     def __init__(self, pretrained_model_path):
         super().__init__(pretrained_model_path)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+        	pretrained_model_path, add_bos_token=False, add_eos_token=False
+        )
+        self.model = AutoModel.from_pretrained(pretrained_model_path, device_map="auto")
+        self.model = pipeline("text-generation", model=self.model, tokenizer=self.tokenizer)
 
-        self.tokenizer = AutoTokenizer.from_pretrained(pretrained_model_path)
-        self.model = AutoModel.from_pretrained(pretrained_model_path)
-        self.model = pipeline("text-generation", model=model, torch_dtype=torch.float16, device_map="auto")
 
     def predict(self, prompt) -> str:
         prompt = [{"role": "user", "content": prompt}]
