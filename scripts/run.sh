@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pretrained_model_path="johnsnowlabs/JSL-MedLlama-3-8B-v2.0"
+pretrained_model_path="bartowski/JSL-MedLlama-3-8B-v2.0-GGUF"
 data_path="data/afri_med_qa_10k_v1_1_phase_1.csv"
 
 question_types=("mcq" "saq" "consumer_queries")
