@@ -10,7 +10,9 @@ class BioMistral(Model):
         self.tokenizer = AutoTokenizer.from_pretrained(
         	pretrained_model_path, add_bos_token=False, add_eos_token=False
         )
-        self.model = AutoModelForCausalLM.from_pretrained(pretrained_model_path, device_map="auto")
+        self.model = AutoModelForCausalLM.from_pretrained(
+        	pretrained_model_path, device_map="auto", torch_dtype=torch.bfloat16
+        )
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
