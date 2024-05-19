@@ -13,7 +13,8 @@ class OpenAIModel(Model):
         self.model_name = model_name
         self.client = OpenAI(api_key=os.environ['OPENAI_KEY'])
         self.system_prompt = 'You are a skillful expert medical assistant'
-        self.pattern = re.compile(r"([\w\d\s]+)?\n?([#\w\s\*\:]+)?\s{0,2}([A-E])\.\s(.+)")
+        self.pattern1 = re.compile(r"([\w\d\s]+)?\n?([#\w\s\*\:]+)?\s{0,2}\(?([A-E])\)?\.?\s(.+)")
+        self.pattern2 = re.compile(r"([\w\d\s]+)?\n?Option?\s{0,2}\(?([A-E])\)?\.?\:?\s(.+)")
 
     def predict(self, prompt) -> str:
         completion = self.client.chat.completions.create(
@@ -31,6 +32,8 @@ class OpenAIModel(Model):
 
     def pattern_match(self, text, n=40):
         try:
-            return self.pattern.match(text[:n]).groups()[2]
-        except Exception as e:
+            return self.pattern1.match(text[:n]).groups()[2]
+        except Exception:
+            return self.pattern2.match(text[:n]).groups()[2]
+        except Exception:
             return text[:n]
