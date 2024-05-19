@@ -1,6 +1,6 @@
 import torch
 from src.models.models import Model
-from transformers import AutoTokenizer, AutoModel, pipeline
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
 
 class BioMistral(Model):
@@ -10,15 +10,15 @@ class BioMistral(Model):
         self.tokenizer = AutoTokenizer.from_pretrained(
         	pretrained_model_path, add_bos_token=False, add_eos_token=False
         )
-        self.model = AutoModel.from_pretrained(pretrained_model_path, device_map="auto")
-        self.model = pipeline("text-generation", model=self.model, tokenizer=self.tokenizer)
-
+        self.model = AutoModelForCausalLM.from_pretrained(pretrained_model_path, device_map="auto")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     def predict(self, prompt) -> str:
-        prompt = [{"role": "user", "content": prompt}]
+        messages = [{"role": "user", "content": prompt}]
 
-        output = self.model(prompt)
-        output = output[0]["generated_text"]
+        model_inputs = self.tokenizer.apply_chat_template(messages, return_tensors="pt").to(self.device)
+        generated_ids = self.model.generate(model_inputs, max_new_tokens=100, do_sample=True)
+        output = self.tokenizer.batch_decode(generated_ids)[0]
         print(output)
         return output
 
