@@ -13,7 +13,7 @@ class MedLlama(Model):
 
     def predict(self, prompt) -> str:
         prompt = [{"role": "user", "content": prompt}]
-	prompt = self.tokenizer.apply_chat_template(prompt, tokenize=False, add_generation_prompt=True)
+        prompt = self.tokenizer.apply_chat_template(prompt, tokenize=False, add_generation_prompt=True)
 
         output = self.model(prompt, max_new_tokens=256, do_sample=True, temperature=0.7, top_k=50, top_p=0.95)
         output = output[0]["generated_text"]
