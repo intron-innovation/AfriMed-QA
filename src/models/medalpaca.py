@@ -13,8 +13,11 @@ class MedAlpaca(Model):
         	device_map="auto"
         )
 
+
     def predict(self, prompt) -> str:
-        prompt = f"Context: \n\nQuestion: {prompt}\n\nAnswer: "
+        context = ""
+        question = prompt
+        prompt = f"Context: {context}\n\nQuestion: {prompt}\n\nAnswer: "
 
         output = self.model(prompt)
         output = output[0]["generated_text"]
