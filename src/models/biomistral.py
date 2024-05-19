@@ -18,7 +18,8 @@ class BioMistral(Model):
 
         model_inputs = self.tokenizer.apply_chat_template(messages, return_tensors="pt").to(self.device)
         generated_ids = self.model.generate(model_inputs, max_new_tokens=100, do_sample=True)
-        output = self.tokenizer.batch_decode(generated_ids)[0].replace("[/INST] ", "").replace("<s>", "").strip(" ")
+        output = self.tokenizer.batch_decode(generated_ids)[0]
+        output = output.replace("[INST] ", "").replace("[/INST] ", "").replace("<s>", "").replace("</s>", "").strip(" ")
         print(output)
         return output
 
