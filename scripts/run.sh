@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pretrained_model_path="BioMistral/BioMistral-7B-AWQ-QGS128-W4-GEMV"
+pretrained_model_path="johnsnowlabs/JSL-MedLlama-3-8B-v2.0"
 data_path="data/afri_med_qa_10k_v1_1_phase_1.csv"
 
 question_types=("mcq" "saq" "consumer_queries")

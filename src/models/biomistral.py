@@ -11,7 +11,8 @@ class BioMistral(Model):
         	pretrained_model_path, add_bos_token=False, add_eos_token=False
         )
         self.model = AutoModelForCausalLM.from_pretrained(
-        	pretrained_model_path, device_map="auto", torch_dtype=torch.bfloat16
+        	pretrained_model_path, device_map="auto",
+		torch_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
         )
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
