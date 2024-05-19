@@ -28,6 +28,9 @@ def compute_score(q_type, data):
 
     if q_type == "mcq":
         data["correct"] = data["answer"] == data["preds"]
+        print(data["answer"].to_list())
+        print(data["preds"].to_list())
+        print(data["correct"].to_list())
         accuracy = data["correct"].mean()
         print("Accuracy:", accuracy)
     else:

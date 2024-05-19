@@ -1,4 +1,5 @@
 import os
+import re
 from openai import OpenAI
 
 from src.models.models import Model
@@ -12,6 +13,7 @@ class OpenAIModel(Model):
         self.model_name = model_name
         self.client = OpenAI(api_key=os.environ['OPENAI_KEY'])
         self.system_prompt = 'You are a skillful expert medical assistant'
+        self.pattern = re.compile(r"([\w\d\s]+)?\n?([#\w\s\*\:]+)?\s{0,2}([A-E])\.\s(.+)")
 
     def predict(self, prompt) -> str:
         completion = self.client.chat.completions.create(
@@ -23,11 +25,12 @@ class OpenAIModel(Model):
         )
         return completion.choices[0].message.content
 
-    def post_process(self, raw_text_output):
-        # The correct option is B.
-        # Answer: B.
-        # is option E.
-        # Correct option: C.
-        # The most likely diagnosis in this scenario is D.
+    def extract_mcq_answer(self, raw_text_model_output_list):
+        cleaned_output = [self.pattern_match(text) for text in raw_text_model_output_list]
+        return cleaned_output
 
-        return raw_text_output
+    def pattern_match(self, text, n=40):
+        try:
+            return self.pattern.match(text[:n]).groups()[2]
+        except Exception as e:
+            return text[:n]

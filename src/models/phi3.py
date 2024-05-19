@@ -40,5 +40,6 @@ class Phi3(Model):
         output = output[0]["generated_text"].replace("<|end|>", "").strip(" ")
         return output
 
-    def post_process(self, raw_text_output):
-        return raw_text_output
+    def extract_mcq_answer(self, raw_text_model_output_list):
+        cleaned_output = [text[0] for text in raw_text_model_output_list]
+        return cleaned_output

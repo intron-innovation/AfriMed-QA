@@ -49,7 +49,6 @@ def transform_mcqs(args, data):
             "options_len": options_len,
             "answer": correct_answer_label,
             **formatted_options,
-
         }
         questions.append(transformed_row)
 
@@ -82,7 +81,7 @@ def transform_mcqs(args, data):
                     sys_msg += sq + "\n" + sf + "\n" + sa + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question + "\n" 
-            final_prompt = "###Options:" + "\n" + formatted_options
+            final_prompt += "###Options:" + "\n" + formatted_options
 
             final_prompt += '\n' + "###Answer:"
             row['model_prompt'] = final_prompt
@@ -207,7 +206,7 @@ def prep_data(args) -> pd.DataFrame:
                 .copy()
                 .reset_index(drop=True)
         )
-
+        data = data.sample(11)
         if args.q_type == "mcq":
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
 
