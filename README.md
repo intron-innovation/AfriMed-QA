@@ -123,7 +123,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
 | Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308         |0.8733            |0.2328            |0.0                            |0.0                          |
 | MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
-| GPT-4 turbo           | Foutse, Fola        |              |                  |               |                  |               |                               |                             |
+| GPT-4 turbo           | Mardhiyah       |  0.2687            |  0.8580                |  0.2032             |  0.8654                |  0.2055             |                               |                             |
 | Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
 | Gemini Pro            | Mercy               |              |                  |               |                  |               |                               |                             |
 | Gemini Ultra          | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
