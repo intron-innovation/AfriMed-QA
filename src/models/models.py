@@ -8,5 +8,5 @@ class Model:
     def predict(self, data) -> str:
         pass
 
-    def post_process(self, raw_text_output) -> str:
+    def extract_mcq_answer(self, raw_text_model_output_list) -> list:
         pass

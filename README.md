@@ -121,9 +121,10 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
-| Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308         |0.8733            |0.2328            |0.0                            |0.0                          |
+| Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308         |0.8733            |0.2328         |0.0                            |0.0                          |
 | MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
-| GPT-4 turbo           | Mardhiyah       |  0.2687            |  0.8580                |  0.2032             |  0.8654                |  0.2055             |                               |                             |
+| GPT-4 turbo          | Mardhiyah            |        |            |         |0.8654            |0.2055         |   0.8252                            | 0.0625                            |
+| GPT-4o                | Tobi                |0.8276        |0.8614            |0.2293         |0.8776            |0.2426         |                               |                             |
 | Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
 | Gemini Pro            | Mercy               |              |                  |               |                  |               |                               |                             |
 | Gemini Ultra          | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
