@@ -6,6 +6,7 @@ pretrained_model_path="gpt-4-turbo"
 data_path="data/afri_med_qa_10k_v1_1_phase_1.csv"
 
 # question_types=("mcq" "saq" "consumer_queries")
+question_types=("mcq")
 prompt_type=base
 
 num_few_shot_values=(0)
