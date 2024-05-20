@@ -113,7 +113,7 @@ def transform_saqs(args, data):
 
         data_w_prompt = []
         for index, row in tqdm(transformed_data.iterrows(), total=len(transformed_data), desc="creating prompts"):
-            question = "Question: " + row["question"]
+            question = "###Question: " + row["question"]
             sys_msg = user_msg + "\n\n"
 
             if args.num_few_shot > 0:
@@ -125,12 +125,12 @@ def transform_saqs(args, data):
                 sys_msg += "Here are some examples and then answer the last question:" + "\n"
 
                 for _, s in few_shots.iterrows():
-                    squestion = "Question: " + s["question"]
-                    srationale = "Rationale: " + s['rationale']
+                    squestion = "###Question: " + s["question"]
+                    srationale = "###Rationale: " + s['rationale']
                     sys_msg += squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question
-            final_prompt += '\n' + "Answer:"
+            final_prompt += '\n' + "###Answer:"
             row['model_prompt'] = final_prompt
 
             data_w_prompt.append(row)
@@ -161,8 +161,8 @@ def transform_consumer_queries(args, data):
 
         data_w_prompt = []
         for index, row in tqdm(transformed_data.iterrows(), total=len(transformed_data), desc="creating prompts"):
-            question_prompt = "Prompt: " + row["prompt"]
-            question = "Question: " + row["question"]
+            question_prompt = "###Prompt: " + row["prompt"]
+            question = "###Question: " + row["question"]
             sys_msg = user_msg + "\n\n"
 
             if args.num_few_shot > 0:
@@ -173,13 +173,13 @@ def transform_consumer_queries(args, data):
                 sys_msg += "Here are some examples and then answer the last question:" + "\n"
 
                 for _, s in few_shots.iterrows():
-                    squestion_prompt = "Prompt: " + s["prompt"]
-                    squestion = "Question: " + s["question"]
-                    srationale = "Rationale: " + s['rationale']
+                    squestion_prompt = "###Prompt: " + s["prompt"]
+                    squestion = "###Question: " + s["question"]
+                    srationale = "###Rationale: " + s['rationale']
                     sys_msg += squestion_prompt + "" + squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = question_prompt + "\n" + question
-            final_prompt += '\n' + "Answer:"
+            final_prompt += '\n' + "###Answer:"
             row['model_prompt'] = final_prompt
 
             data_w_prompt.append(row)

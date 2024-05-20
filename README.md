@@ -144,7 +144,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | Med42                 |                     |              |                  |               |                  |               |                               |                             |
 | Meta-LLAMA-3-8B       |                     |              |                  |               |                  |               |                               |                             |
 | MedAlpaca             | Charles             |              |                  |               |                  |               |                               |                             |
-
+More results are [here](https://docs.google.com/spreadsheets/d/1c7U1JDLS7xh8YKkkHsuiFQb8LhW0oTbHyQATIcbk0g4/edit?usp=sharing)
 
 
 ### Notes:

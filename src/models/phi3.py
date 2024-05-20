@@ -38,6 +38,11 @@ class Phi3(Model):
 
         output = self.model(prompt, **self.generation_args)
         output = output[0]["generated_text"].replace("<|end|>", "").strip(" ")
+        if "Prompt:" in output:
+            output = output.split("Prompt:")[0]
+        if "Question:" in output:
+            output = output.split("Question:")[0]
+        output = output.replace("###", "")
         return output
 
     def post_process(self, raw_text_output):
