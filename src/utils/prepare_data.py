@@ -49,7 +49,6 @@ def transform_mcqs(args, data):
             "options_len": options_len,
             "answer": correct_answer_label,
             **formatted_options,
-
         }
         questions.append(transformed_row)
 
@@ -207,7 +206,6 @@ def prep_data(args) -> pd.DataFrame:
                 .copy()
                 .reset_index(drop=True)
         )
-
         if args.q_type == "mcq":
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
 

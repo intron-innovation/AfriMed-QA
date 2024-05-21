@@ -41,10 +41,7 @@ def compute_score(q_type, data):
     print("Average ROUGE-L Score:", rl)
     print("Average ROUGE:", average_rouge)
 
-
-
     data = data.merge(valid_data[["sample_id", "ROUGE-1", "ROUGE-2", "ROUGE-L", "BERTScore_Precision", "BERTScore_Recall", "BERTScore_F1"]], on="sample_id", how="left")
-
 
     return data, BERTScore_Precision, BERTScore_Recall, BERTScore_F1, rg1, rg2, rl, accuracy
 

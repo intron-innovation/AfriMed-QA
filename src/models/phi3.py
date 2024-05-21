@@ -20,9 +20,8 @@ class Phi3(Model):
             pretrained_model_path,
             device_map="auto",
             use_safetensors=True,
-            torch_dtype=torch.bfloat16
-            if torch.cuda.is_bf16_supported()
-            else torch.float16,
+            torch_dtype=torch.bfloat16 if (torch.cuda.is_available() and torch.cuda.is_bf16_supported()) else
+            torch.float16,
             trust_remote_code=True,
         )
         self.model = pipeline(
@@ -45,5 +44,6 @@ class Phi3(Model):
         output = output.replace("###", "")
         return output
 
-    def post_process(self, raw_text_output):
-        return raw_text_output
+    def extract_mcq_answer(self, raw_text_model_output_list):
+        cleaned_output = [text[0] for text in raw_text_model_output_list]
+        return cleaned_output

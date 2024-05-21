@@ -73,10 +73,11 @@ def logging_cuda_memory_usage():
 
 
 def write_results(data, args, score):
-    file_name = os.path.basename(args.data_path)
     prompt_type = args.prompt_file_path.split("/")[-1].split("_")[0]
     q_type = args.q_type.split('_')[0]
-    results_fname = f"results/{args.model_name.replace('/', '_')}_{q_type}_{prompt_type}-prompt_{args.num_few_shot}shot(s)_score-{score:.4f}_{len(data)}.csv"
+    model_dir = args.model_name.replace('/', '_')
+    os.makedirs(f"results/{model_dir}", exist_ok=True)
+    results_fname = f"results/{model_dir}/{model_dir}_{q_type}_{prompt_type}-prompt_{args.num_few_shot}shot_score-{score:.4f}_{len(data)}.csv"
     data.to_csv(results_fname, index=False)
     logger.info(f"Results saved to: {results_fname}")
     return results_fname
