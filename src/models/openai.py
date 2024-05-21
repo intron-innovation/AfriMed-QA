@@ -30,10 +30,30 @@ class OpenAIModel(Model):
         cleaned_output = [self.pattern_match(text) for text in raw_text_model_output_list]
         return cleaned_output
 
+#     def pattern_match(self, text, n=40):
+#         try:
+#             return self.pattern1.match(text[:n]).groups()[2]
+#         except Exception:
+#             return self.pattern2.match(text[:n]).groups()[2]
+#         except Exception:
+#             return text[:n]
+        
+    
     def pattern_match(self, text, n=40):
         try:
-            return self.pattern1.match(text[:n]).groups()[2]
+            match = self.pattern1.match(text[:n])
+            if match is not None:
+                return match.groups()[2]
         except Exception:
-            return self.pattern2.match(text[:n]).groups()[2]
+            pass
+
+        try:
+            match = self.pattern2.match(text[:n])
+            if match is not None:
+                return match.groups()[2]
         except Exception:
-            return text[:n]
+            pass
+
+        return text[:n]
+
+

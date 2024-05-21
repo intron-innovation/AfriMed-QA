@@ -123,14 +123,14 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
 | Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308         |0.8733            |0.2328         |0.0                            |0.0                          |
 | MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
-| GPT-4 turbo          | Mardhiyah            |        |            |         |0.8654            |0.2055         |   0.8252        | 0.0625            |
+| GPT-4 turbo          | Mardhiyah            |0.8243        |0.8559            |0.1999         |0.8654            |0.2055         |   0.8252        | 0.0625            |
 | GPT-4o                | Tobi                |0.8276        |0.8614            |0.2293         |0.8776            |0.2426         | 0.8254                        | 0.0674                      |
 | Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
 | Gemini Pro            | Mercy               |              |                  |               |                  |               |                               |                             |
 | Gemini Ultra          | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
 | Gemma 1.2             |                     |              |                  |               |                  |               |                               |                             |
 | Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
-| Claude 3 sonnet       | Mercy               |              |                  |               |                  |               |                               |                             |
+| Claude 3 sonnet       | Mardhiyah           |              |                  |               |0.8681            |0.2234         |0.8141                          |0.0540                             |
 | Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
 | GPT 3.5 turbo         | Mardhiyah           |0.683        | 0.8667           |0.2536        |0.8765            |0.2542         | 0.8313        |0.0761                              |
 | OpenBioLLM-70B        | Ify, Fola           |              |                  |               |                  |               |                               |                             |
