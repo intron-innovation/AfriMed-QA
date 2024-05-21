@@ -121,7 +121,11 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
-| Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308         |0.8733            |0.2328            |0.0                            |0.0                          |
+| Phi-3-mini-128k-instruct     |Abraham     |0.6676     |0.866     |0.2308     |0.8718     |0.227     |0.8266     |0.0672 |
+| Llama3 8B     |Abraham     |0.635     |0.8592     |0.2286     |0.8624     |0.2094     |0.8344     |0.0909 |
+| Phi-3-mini-4k-instruct     |Amina     |0.6606     |0.866     |0.2432     |0.8681     |0.2214     |0.8186     |0.0595 |
+| Mistral-7B-Instruct-v0.2     |Amina     |0.551     |0.8613     |0.2296     |0.8505     |0.1763     |0.8259     |0.0706 |
+| JSL-MedLlama-3-8B-v2.0     |Amina     |0.6606     |0.8577     |0.2248     |0.8721     |0.2273     |0.8303     |0.0793 |
 | MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
 | GPT-4 turbo           | Foutse, Fola        |              |                  |               |                  |               |                               |                             |
 | Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
@@ -144,7 +148,6 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | Med42                 |                     |              |                  |               |                  |               |                               |                             |
 | Meta-LLAMA-3-8B       |                     |              |                  |               |                  |               |                               |                             |
 | MedAlpaca             | Charles             |              |                  |               |                  |               |                               |                             |
-More results are [here](https://docs.google.com/spreadsheets/d/1c7U1JDLS7xh8YKkkHsuiFQb8LhW0oTbHyQATIcbk0g4/edit?usp=sharing)
 
 
 ### Notes:
