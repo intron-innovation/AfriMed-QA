@@ -1,6 +1,7 @@
 import os
 import re
 from openai import OpenAI
+import traceback
 
 from src.models.models import Model
 
@@ -34,6 +35,11 @@ class OpenAIModel(Model):
         try:
             return self.pattern1.match(text[:n]).groups()[2]
         except Exception:
+            print(text[:n])
+            print(traceback.format_exc())
+        try:
             return self.pattern2.match(text[:n]).groups()[2]
         except Exception:
+            print(text[:n])
+            print(traceback.format_exc())
             return text[:n]
