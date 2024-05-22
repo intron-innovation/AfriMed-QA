@@ -125,6 +125,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
 | GPT-4 turbo          | Mardhiyah            |0.8243        |0.8559            |0.1999         |0.8654            |0.2055         |   0.8252        | 0.0625            |
 | GPT-4o                | Tobi                |0.8276        |0.8614            |0.2293         |0.8776            |0.2426         | 0.8254                        | 0.0674                      |
+| GPT-4                 | Tobi                |0.8253        |0.8617            |0.2225         |0.8732            |0.2199         | 0.8385                        | 0.0808                      |
 | Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
 | Gemini Pro            | Mercy               |              |                  |               |                  |               |                               |                             |
 | Gemini Ultra          | Mercy, Fola         |              |                  |               |                  |               |                               |                             |

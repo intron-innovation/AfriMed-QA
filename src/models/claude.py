@@ -1,6 +1,7 @@
 import os
 import re
 import anthropic
+import traceback
 
 from src.models.models import Model
 
@@ -31,17 +32,13 @@ class ClaudeModel(Model):
 
     def pattern_match(self, text, n=40):
         try:
-            match = self.pattern1.match(text[:n])
-            if match is not None:
-                return match.groups()[2]
+            return self.pattern1.match(text[:n]).groups()[2]
         except Exception:
-            pass
-
+            print(text[:n])
+            print(traceback.format_exc())
         try:
-            match = self.pattern2.match(text[:n])
-            if match is not None:
-                return match.groups()[2]
+            return self.pattern2.match(text[:n]).groups()[2]
         except Exception:
-            pass
-
-        return text[:n]
+            print(text[:n])
+            print(traceback.format_exc())
+            return text[:n]
