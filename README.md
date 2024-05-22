@@ -140,8 +140,8 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |Mistral-7B-Instruct-v0.2    |Amina           |0.551        |0.8613        |0.2296        |0.8505        |0.1763        |0.8259        |0.0706        |
 |JSL-MedLlama-3-8B-v2.0 |Amina                |0.6606        |0.8577        |0.2248        |0.8721        |0.2273        |0.8303        |0.0793        |
 |Gemini Ultra           |Mercy                |0.8003        |0.8716        |0.2642        |0.8754        |0.2356        |0.8362        |0.079        |
-|MedPalm 2              |Mery                 |0.7456        |0.8735        |0.2451        |0.8716        |0.2234        |0.8379        |0.0774        |
-|Gemini pro             |Mery                 |0.631        |0.8677        |0.2413        |0.8601        |0.2025        |0.8213        |0.0579        |
+|MedPalm 2              |Mercy                |0.7456        |0.8735        |0.2451        |0.8716        |0.2234        |0.8379        |0.0774        |
+|Gemini pro             |Mercy                |0.631        |0.8677        |0.2413        |0.8601        |0.2025        |0.8213        |0.0579        |
 | Meditron              | Charles             |              |                  |               |                  |               |                               |                             |
 | Meta-LLaMa-3          | Charles             |              |                  |               |                  |               |                               |                             |
 | BioMistral            | Foutse              |              |                  |               |                  |               |                               |                             |
