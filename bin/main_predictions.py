@@ -10,6 +10,7 @@ from src.utils.prepare_data import prep_data
 import torch
 from src.utils.utils import write_results, post_process_output
 from src.models.phi3 import Phi3
+from src.models.llama import Llama
 from src.models.openai import OpenAIModel
 from src.inference.inference import run_inference
 from src.evals.evaluate import compute_score
@@ -41,6 +42,8 @@ def main():
         model = OpenAIModel(args.pretrained_model_path)
     elif "Phi-3" in args.pretrained_model_path:
         model = Phi3(args.pretrained_model_path)
+    elif "llama" in args.pretrained_model_path:
+        model = Llama(args.pretrained_model_path)
     else:
         raise NotImplementedError(f"No model class defined for {args.pretrained_model_path}")
     logger.info("Model loaded successfully")
