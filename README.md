@@ -121,15 +121,10 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
-| MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
 | GPT-4 turbo           | Foutse, Fola        |              |                  |               |                  |               |                               |                             |
 | GPT-4o                | Tobi                |0.8276        |0.8614            |0.2293         |0.8776            |0.2426         | 0.8254                        | 0.0674                      |
 | GPT-4                 | Tobi                |0.8253        |0.8617            |0.2225         |0.8732            |0.2199         | 0.8385                        | 0.0808                      |
-| Med-Gemini            | Mercy               |              |                  |               |                  |               |                               |                             |
-| Gemini Pro            | Mercy               |              |                  |               |                  |               |                               |                             |
-| Gemini Ultra          | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
 | Gemma 1.2             |                     |              |                  |               |                  |               |                               |                             |
-| Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
 | Claude 3 sonnet       | Mercy               |              |                  |               |                  |               |                               |                             |
 | Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
 | GPT 3.5 turbo         | Mardhiyah           |0.683        | 0.8667           |0.2536        |0.8765            |0.2542         | 0.8313        |0.0761                              |
