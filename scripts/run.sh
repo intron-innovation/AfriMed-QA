@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#pretrained_model_path="microsoft/Phi-3-mini-128k-instruct"
-pretrained_model_path="gpt-4"
+# pretrained_model_path="microsoft/Phi-3-mini-128k-instruct"
+pretrained_model_path="gpt-4-turbo"
+
 data_path="data/afri_med_qa_10k_v1_1_phase_1.csv"
 
 question_types=("mcq" "saq" )

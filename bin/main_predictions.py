@@ -12,9 +12,11 @@ from src.utils.utils import write_results, post_process_output
 from src.models.phi3 import Phi3
 from src.models.llama import Llama
 from src.models.openai import OpenAIModel
+from src.models.claude import ClaudeModel
 from src.inference.inference import run_inference
 from src.evals.evaluate import compute_score
 from transformers import set_seed
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 set_seed(42)
@@ -40,6 +42,8 @@ def main():
     # please define your own model class
     if "gpt" in args.pretrained_model_path:
         model = OpenAIModel(args.pretrained_model_path)
+    elif "claude" in args.pretrained_model_path:
+        model = ClaudeModel(args.pretrained_model_path)
     elif "Phi-3" in args.pretrained_model_path:
         model = Phi3(args.pretrained_model_path)
     elif "llama" in args.pretrained_model_path:
@@ -47,11 +51,14 @@ def main():
     else:
         raise NotImplementedError(f"No model class defined for {args.pretrained_model_path}")
     logger.info("Model loaded successfully")
-
+    
+    
     logger.info(_blue(f"Running predictions for {args.q_type} started"))
     outputs = run_inference(model, data, args.use_cuda)  # this should result a list of predictions
     logger.info(_orange(f"Running predictions for {args.q_type} completed"))
     data['outputs'] = outputs
+    #save data to a dataframe in case pattern_matching breaks
+    data.to_csv(f'pre_result_computation_{args.pretrained_model_path}_{args.q_type}.csv', index=False)
     if args.q_type == "mcq":
         options_from_output = model.extract_mcq_answer(outputs)  # edit the post_processing fxn accordingly
         data['preds'] = options_from_output
