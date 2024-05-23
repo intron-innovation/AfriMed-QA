@@ -146,10 +146,10 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | Meditron              | Charles             |0.5653              |                  |               |                  |               |                               |                             |
 | Meta-LLaMa-3          | Charles             |              |                  |               |                  |               |                               |                             |
 | BioMistral            | Foutse              |              |                  |               |                  |               |                               |                             |
-| BioMistral-7B-Instruct | Charles              |              |                  |               |                  |               |                               |                             |
+| BioMistral-7B | Charles              |              |                  |               |                  |               |                               |                             |
 | Orpo-Med-v0           |                     |              |                  |               |                  |               |                               |                             |
 | Mixtral 8x22B         | Charles                     |              |                  |               |                  |               |                               |                             |
-| PMC-LLama             | Charles             | 0.5197             |                  |               |                  |               |                               |                             |
+| PMC-LLama-7B             | Charles             | 0.5197             |                  |               |                  |               |                               |                             |
 | Open-bio-med-merge    |                     |              |                  |               |                  |               |                               |                             |
 | Med42                 |                     |              |                  |               |                  |               |                               |                             |
 | Meta-LLAMA-3-8B       |   Charles                  |              |                  |               |                  |               |                               |                             |
