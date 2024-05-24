@@ -129,7 +129,8 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | GPT-4                 | Tobi                |0.8253        |0.8617            |0.2225         |0.8732            |0.2199         | 0.8385                        | 0.0808                      |
 | Gemma 1.2             |                     |              |                  |               |                  |               |                               |                             |
 | Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
-| Claude 3 sonnet       | Mardhiyah           |              |                  |               |0.8681            |0.2234         |0.8141                          |0.0540                             |
+| Claude 3 sonnet       | Mardhiyah           |0.6893        |0.8564            |0.2178         |0.8681            |0.2234         |0.8141                          |0.0540                             |
+| Claude 3 Opus       | Mardhiyah             |0.7907        |0.8590            |0.2232         |0.8661            |0.2138         |0.8172                           |0.0544                             |
 | Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
 | GPT 3.5 turbo         | Mardhiyah           |0.683        | 0.8667           |0.2536        |0.8765            |0.2542         | 0.8313        |0.0761                              |
 | OpenBioLLM-8B        | Charles           | 0.612             |                  |               |                  |               |                               |                             |
