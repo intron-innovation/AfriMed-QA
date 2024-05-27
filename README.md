@@ -6,6 +6,7 @@ Supported by:
 [SisonkeBiotik](https://www.sisonkebiotik.africa/),
 [BioRAMP](https://www.bioramp.org),
 [Google Research](https://www.research.google.com),
+[Georgia Institute of Technology](https://www.gatech.edu/),
 [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/),
 [PATH](https://www.path.org),
 [MasakhaneNLP](https://www.masakhane.io/)
@@ -121,13 +122,19 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
-| GPT-4 turbo           | Foutse, Fola        |              |                  |               |                  |               |                               |                             |
+| Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308         |0.8733            |0.2328         |0.0                            |0.0                          |
+| MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
+| GPT-4 turbo          | Mardhiyah            |0.8243        |0.8559            |0.1999         |0.8654            |0.2055         |   0.8252        | 0.0625            |
 | GPT-4o                | Tobi                |0.8276        |0.8614            |0.2293         |0.8776            |0.2426         | 0.8254                        | 0.0674                      |
 | GPT-4                 | Tobi                |0.8253        |0.8617            |0.2225         |0.8732            |0.2199         | 0.8385                        | 0.0808                      |
 | Gemma 1.2             |                     |              |                  |               |                  |               |                               |                             |
-| Claude 3 sonnet       | Mercy               |              |                  |               |                  |               |                               |                             |
+| Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
+| Claude 3 sonnet       | Mardhiyah           |0.6893        |0.8564            |0.2178         |0.8681            |0.2234         |0.8141                          |0.0540                             |
+| Claude 3 Opus       | Mardhiyah             |0.7907        |0.8590            |0.2232         |0.8661            |0.2138         |0.8172                           |0.0544                             |
 | Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
 | GPT 3.5 turbo         | Mardhiyah           |0.683        | 0.8667           |0.2536        |0.8765            |0.2542         | 0.8313        |0.0761                              |
+| OpenBioLLM-8B        | Charles           | 0.612             |                  |               |                  |               |                               |                             |
+| OpenBioLLM-70B        | Charles          |              |                  |               |                  |               |                               |                             |
 | OpenBioLLM-70B        | Ify, Fola           |              |                  |               |                  |               |                               |                             |
 |Phi-3-mini-128k-instruct        |Abraham     |0.6676        |0.866        |0.2308        |0.8718        |0.227        |0.8266        |0.0672        |
 |Llama3 8B              |Abraham              |0.635        |0.8592        |0.2286        |0.8624        |0.2094        |0.8344        |0.0909        |
@@ -137,15 +144,18 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |Gemini Ultra           |Mercy                |0.8003        |0.8716        |0.2642        |0.8754        |0.2356        |0.8362        |0.079        |
 |MedPalm 2              |Mercy                |0.7456        |0.8735        |0.2451        |0.8716        |0.2234        |0.8379        |0.0774        |
 |Gemini pro             |Mercy                |0.631        |0.8677        |0.2413        |0.8601        |0.2025        |0.8213        |0.0579        |
-| Meditron              | Charles             |              |                  |               |                  |               |                               |                             |
+| Meditron              | Charles             |0.5653              |                  |               |                  |               |                               |                             |
 | Meta-LLaMa-3          | Charles             |              |                  |               |                  |               |                               |                             |
 | BioMistral            | Foutse              |              |                  |               |                  |               |                               |                             |
+| BioMistral-7B | Charles              |              |                  |               |                  |               |                               |                             |
 | Orpo-Med-v0           |                     |              |                  |               |                  |               |                               |                             |
-| Mixtral 8x22B         |                     |              |                  |               |                  |               |                               |                             |
-| PMC-LLama             | Charles             |              |                  |               |                  |               |                               |                             |
+| Mixtral 8x22B         | Charles                     |              |                  |               |                  |               |                               |                             |
+| PMC-LLama-7B             | Charles             | 0.5197             |                  |               |                  |               |                               |                             |
 | Open-bio-med-merge    |                     |              |                  |               |                  |               |                               |                             |
 | Med42                 |                     |              |                  |               |                  |               |                               |                             |
-| Meta-LLAMA-3-8B       |                     |              |                  |               |                  |               |                               |                             |
+| Meta-LLAMA-3-8B       |   Charles                  |              |                  |               |                  |               |                               |                             |
+| Meta-LLAMA-3-70B       |   Charles                  |              |                  |               |                  |               |                               |                             |
+|Mistral-7B-Instruct-v0.2| Charles           |0.6757        |                  |               |                  |               |                               |     
 | MedAlpaca             | Charles             |              |                  |               |                  |               |                               |                             |
 
 
