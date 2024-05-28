@@ -7,3 +7,6 @@ notebooks/.ipynb_checkpoints/
 results/gemin*
 results/medpalm2*
 results/afrimed*
+results/medlm*
+notebooks/*
+    
