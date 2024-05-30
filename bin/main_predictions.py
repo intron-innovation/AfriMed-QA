@@ -58,7 +58,6 @@ def main():
     logger.info(_orange(f"Running predictions for {args.q_type} completed"))
     data['outputs'] = outputs
     #save data to a dataframe in case pattern_matching breaks
-    data.to_csv(f'pre_result_computation_{args.pretrained_model_path}_{args.q_type}.csv', index=False)
     if args.q_type == "mcq":
         options_from_output = model.extract_mcq_answer(outputs)  # edit the post_processing fxn accordingly
         data['preds'] = options_from_output
