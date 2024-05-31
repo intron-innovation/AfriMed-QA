@@ -4,6 +4,7 @@ import pandas as pd
 import json
 import os
 from tqdm import tqdm
+import ast
 from src.utils.utils import read_txt_file
 
 
@@ -20,37 +21,56 @@ def prep_mcqs_options(row):
     return question, formatted_options, answer
 
 
-def transform_mcqs(args, data):
+def transform_medqa(data):
     questions = []
     for index, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
-        options = json.loads(row["answer_options"])
-        option_keys = [
-            f"option{i + 1}" for i in range(5)
-        ]  # Adjust number of options if needed
-        answer_labels = "ABCDE"
-
-        # Extract and label options
-        formatted_options = {
-            label: options.get(key, "")
-            for label, key in zip(answer_labels, option_keys)
-            if key in options
-        }
-        keys = list(formatted_options.keys())
-        for key in keys:
-            if formatted_options[key].upper() == "N/A":
-                formatted_options.pop(key)
-        # Determine the correct answer label
-        options_len = len(formatted_options)
-        correct_answer_label = answer_labels[option_keys.index(row["correct_answer"])]
+        formatted_options = ast.literal_eval(row["options"])
         transformed_row = {
             "sample_id": row["sample_id"],
             "question": row["question"],
-            "rationale": row["answer_rationale"],
-            "options_len": options_len,
-            "answer": correct_answer_label,
+            "rationale": row["question"],
+            "options_len": len(formatted_options),
+            "answer": row["correct_answer"],
             **formatted_options,
         }
         questions.append(transformed_row)
+    return questions
+ 
+
+def transform_mcqs(args, data):
+    if 'MedQA' in args.data_path:
+        questions = transform_medqa(data)
+    else:
+        questions = []
+        for index, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
+            options = json.loads(row["answer_options"])
+            option_keys = [
+                f"option{i + 1}" for i in range(5)
+            ]  # Adjust number of options if needed
+            answer_labels = "ABCDE"
+
+            # Extract and label options
+            formatted_options = {
+                label: options.get(key, "")
+                for label, key in zip(answer_labels, option_keys)
+                if key in options
+            }
+            keys = list(formatted_options.keys())
+            for key in keys:
+                if formatted_options[key].upper() == "N/A":
+                    formatted_options.pop(key)
+            # Determine the correct answer label
+            options_len = len(formatted_options)
+            correct_answer_label = answer_labels[option_keys.index(row["correct_answer"])]
+            transformed_row = {
+                "sample_id": row["sample_id"],
+                "question": row["question"],
+                "rationale": row["answer_rationale"],
+                "options_len": options_len,
+                "answer": correct_answer_label,
+                **formatted_options,
+            }
+            questions.append(transformed_row)
 
     transformed_data = pd.DataFrame(questions)
     if args.prompt_file_path != None:
@@ -208,11 +228,12 @@ def prep_data(args) -> pd.DataFrame:
         )
         if args.q_type == "mcq":
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
-
+        if 'MedQA' in args.data_path and args.q_type != 'mcq':
+            raise Exception("Please provide a valid question type for this dataset.")
         data = transformation_types[args.q_type.strip()](args, data)
     else:
         Exception(
-            f"The question type `{args.q_type}` is invalid. "
-            f"Please provide a valid question type. Valid question types are {transformation_types.keys()}"
+            f"The question type `{args.q_type}` is invalid for this dataset. "
+            f"Please provide a valid question type for this dataset. Valid question types are {transformation_types.keys()} for AfriMed-QA and mcq for MedQA."
         )
     return data
