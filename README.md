@@ -145,7 +145,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |Gemini Ultra           |Mercy                |0.8003        |0.8716        |0.2642        |0.8754        |0.2356        |0.8362        |0.079        |
 |MedPalm 2              |Mercy                |0.7456        |0.8735        |0.2451        |0.8716        |0.2234        |0.8379        |0.0774        |
 |Gemini pro             |Mercy                |0.631         |0.8677        |0.2413        |0.8601        |0.2025        |0.8213        |0.0579        |
-|MedLM                  |Mercy                |0.6866        |0.866         |0.2461        |0.8629        |0.2108        |0.8305        |0.0797        |
+|MedLM                  |Mercy                |0.7043        |0.8666        |0.247         |0.8633        |0.2083        |0.8303        |0.0785        |
 | Meditron              | Charles             |0.5653              |                  |               |                  |               |                               |                             |
 | Meta-LLaMa-3          | Charles             |              |                  |               |                  |               |                               |                             |
 | BioMistral            | Foutse              |              |                  |               |                  |               |                               |                             |
