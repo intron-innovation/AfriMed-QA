@@ -127,16 +127,15 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | GPT-4 turbo          | Mardhiyah            |0.8243        |0.8559            |0.1999         |0.8654            |0.2055         |   0.8252                      | 0.0625            |
 | GPT-4o                | Tobi                |0.8276        |0.8614            |0.2293         |0.8776            |0.2426         | 0.8254                        | 0.0674                      |
 | GPT-4                 | Tobi                |0.8253        |0.8617            |0.2225         |0.8732            |0.2199         | 0.8385                        | 0.0808                      |
-| Gemma 1.2             |                     |              |                  |               |                  |               |                               |                             |
+| Gemma-7B-Instruct          |   Charles                  |              |                  |               |                  |               |                               |                             |
 | Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
 | Claude 3 sonnet       | Mardhiyah           |0.6893        |0.8564            |0.2178         |0.8681            |0.2234         |0.8141                          |0.0540                             |
 | Claude 3 Opus       | Mardhiyah             |0.7907        |0.8590            |0.2232         |0.8661            |0.2138         |0.8172                           |0.0544                             |
 | Claude 3 Haiku       | Timothy             |0.712        |0.8558            |0.2276         |0.8620            |0.2140         |0.8163                           |0.0505                             |
 | Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
 | GPT 3.5 turbo         | Mardhiyah           |0.683        | 0.8667           |0.2536        |0.8765            |0.2542         | 0.8313        |0.0761                              |
-| OpenBioLLM-8B        | Charles           | 0.612             |                  |               |                  |               |                               |                             |
-| OpenBioLLM-70B        | Charles          |              |                  |               |                  |               |                               |                             |
-| OpenBioLLM-70B        | Ify, Fola           |              |                  |               |                  |               |                               |                             |
+| OpenBioLLM-8B        | Charles           | 0.5193             |                  |               |                  |               |                               |                             |
+| OpenBioLLM-70B        | Charles          |  0.7280            |                  |               |                  |               |                               |                             |
 |Phi-3-mini-128k-instruct        |Abraham     |0.6676        |0.866        |0.2308        |0.8718        |0.227        |0.8266        |0.0672        |
 |Llama3 8B              |Abraham              |0.635        |0.8592        |0.2286        |0.8624        |0.2094        |0.8344        |0.0909        |
 |Phi-3-mini-4k-instruct |Amina                |0.6606        |0.866        |0.2432        |0.8681        |0.2214        |0.8186        |0.0595        |
@@ -147,18 +146,47 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |Gemini pro             |Mercy                |0.631         |0.8677        |0.2413        |0.8601        |0.2025        |0.8213        |0.0579        |
 |MedLM                  |Mercy                |0.7043        |0.8666        |0.247         |0.8633        |0.2083        |0.8303        |0.0785        |
 | Meditron              | Charles             |0.5653              |                  |               |                  |               |                               |                             |
-| Meta-LLaMa-3          | Charles             |              |                  |               |                  |               |                               |                             |
-| BioMistral            | Foutse              |              |                  |               |                  |               |                               |                             |
 | BioMistral-7B | Charles              |              |                  |               |                  |               |                               |                             |
 | Orpo-Med-v0           |                     |              |                  |               |                  |               |                               |                             |
-| Mixtral 8x22B         | Charles                     |              |                  |               |                  |               |                               |                             |
+| Mixtral-8x7B-Instruct-v0.1        | Charles                     | 0.7203             |                  |               |                  |               |                               |                             |
 | PMC-LLama-7B             | Charles             | 0.5197             |                  |               |                  |               |                               |                             |
 | Open-bio-med-merge    |                     |              |                  |               |                  |               |                               |                             |
 | Med42                 |                     |              |                  |               |                  |               |                               |                             |
-| Meta-LLAMA-3-8B       |   Charles                  |              |                  |               |                  |               |                               |                             |
-| Meta-LLAMA-3-70B       |   Charles                  |              |                  |               |                  |               |                               |                             |
+| Meta-LLAMA-3-8B       |   Charles                  | 0.6676              |                  |               |                  |               |                               |                             |
+| Meta-LLAMA-3-70B       |   Charles                  |  0.8036             |                  |               |                  |               |                               |                             |
 |Mistral-7B-Instruct-v0.2| Charles           |0.6757        |                  |               |                  |               |                               |     
 | MedAlpaca             | Charles             |              |                  |               |                  |               |                               |                             |
+
+
+
+
+
+### Base vs Instruct Prompts
+
+##### Zero-Shot Evals with Base Prompt
+
+| Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
+|-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
+| OpenBioLLM-8B-Instruct| Charles           |0.5193        |0.8503           |0.1414        |N/A          |N/A      |N/A                           |N/A                          |
+| OpenBioLLM-70B-Instruct |    Charles       | 0.7211   | 0.8594             |0.1829               | 0.8533              | 0.1668                 |    N/A           |   N/A                            |                             |
+| Meta-Llama-3-8B-Instruct        | Charles           |0.6676        |0.8625            |0.2400         | N/A            |N/A       |   N/A                    | N/A            |
+| Meta-Llama-3-70B-Instruct      | Charles              |0.7963        |0.8683            |0.2513         | N/A           | N/A        | N/A                      | N/A                      |
+| Mixtral-8x7B-Instruct-v0.1            | Charles      | 0.7203        | 0.8644           | 0.2492         | 0.8691           | 0.2309        | N/A                       | N/A               |
+| Gemma-7B-Instruct    |         Charles               |              |                  |               |                  |               |                               |                             |
+| BioMistral-7B        |        Charles             |              |                  |               |                  |               |                               |                             |
+
+
+##### Zero-Shot Evals with Instruct Prompt
+
+| Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
+|-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
+| OpenBioLLM-8B-Instruct| Charles           |0.5100       |0.8454         |0.1148         |N/A        |N/A        |N/A                           |N/A                          |
+| OpenBioLLM-70B-Instruct |    Charles       |  0.7280     |  0.8542            |  0.1460                 |    0.8548           |      0.1695            | N/A               |    N/A    |                             |
+| Meta-Llama-3-8B-Instruct  | Charles           |0.6583        |0.8533            |0.2105         | N/A            | N/A         |   n/A                     | N/A          | N/A
+| Meta-Llama-3-70B-Instruct    | Charles              |0.8036       |0.8644           |0.2376        | N/A           |N/A        | N/A                        |N/A                     |
+| Mixtral-8x7B-Instruct-v0.1            | Charles      | 0.7046        | 0.8626          | 0.2365       | 0.8639            | 0.2090        | N/A                       | N/A                     |
+| Gemma-7B-Instruct    |         Charles               |              |                  |               |                  |               |                               |                             |
+| BioMistral-7B        |        Charles             |              |                  |               |                  |               |                               |                             |
 
 
 ### Notes:
