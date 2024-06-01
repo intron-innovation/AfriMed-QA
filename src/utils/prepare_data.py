@@ -94,7 +94,7 @@ def transform_mcqs(args, data):
                     random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
                     few_shots = transformed_data.iloc[random_indices]
 
-                sys_msg += "Here are some examples and then answer the last question:" + "\n"
+                sys_msg += "Here are some examples and then answer the last question:" + "\n\n"
 
                 for _, s in few_shots.iterrows():
                     sq, sf, sa = prep_mcqs_options(s)
@@ -141,7 +141,7 @@ def transform_saqs(args, data):
 
                 few_shots = transformed_data.iloc[random_indices]
 
-                sys_msg += "Here are some examples and then answer the last question:" + "\n"
+                sys_msg += "Here are some examples and then answer the last question:" + "\n\n"
 
                 for _, s in few_shots.iterrows():
                     squestion = "###Question: " + s["question"]
@@ -189,7 +189,7 @@ def transform_consumer_queries(args, data):
                 random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
                 few_shots = transformed_data.iloc[random_indices]
 
-                sys_msg += "Here are some examples and then answer the last question:" + "\n"
+                sys_msg += "Here are some examples and then answer the last question:" + "\n\n"
 
                 for _, s in few_shots.iterrows():
                     squestion_prompt = "###Prompt: " + s["prompt"]
