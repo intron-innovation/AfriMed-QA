@@ -2,14 +2,22 @@
 
 pretrained_model_path="gpt-4o"
 
+<<<<<<< HEAD
 data_path="data/MedQA-USMLE-4-options-test.csv" #medqa
 # data_path="data/afri_med_qa_10k_v1_1_phase_1.csv" #afrimed-qa
 
 # question_types=("mcq" "saq" "consumer_queries" )
 question_types=("mcq" )
 prompt_type=base
+=======
+#data_path="data/MedQA-USMLE-4-options-test.csv" #medqa
+data_path="data/afri_med_qa_10k_v1_1_phase_1.csv" #afrimed-qa
 
-num_few_shot_values=(0)
+question_types=("mcq")
+prompt_type=instruct
+>>>>>>> origin/master
+
+num_few_shot_values=(3)
 
 for q_type in "${question_types[@]}"; do
     prompt_file_path="prompts/${prompt_type}_${q_type}.txt"
