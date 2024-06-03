@@ -13,9 +13,9 @@ class OpenAIModel(Model):
 
         self.model_name = model_name
         self.client = OpenAI(api_key=os.environ['OPENAI_KEY'])
-        self.system_prompt = 'You are a skillful expert medical assistant'
-        self.pattern1 = re.compile(r"([\w\d\s]+)?\n?([#\w\s\*\:]+)?\s{0,2}\(?([A-E])\)?\.?\s(.+)")
-        self.pattern2 = re.compile(r"([\w\d\s]+)?\n?Option?\s{0,2}\(?([A-E])\)?\.?\:?\s(.+)")
+        self.system_prompt = 'You are a skillful expert medical assistant'        
+        self.pattern1 = re.compile(r"([\w\d\s]+)?\n?([#\w\s\*\:]+)?\s{0,2}\(?([A-E])\)?\.?\s*\n?\s*(.+)")
+        self.pattern2 = re.compile(r"([\w\d\s]+)?\n?Option?\s{0,2}\(?([A-E])\)?\.?\s*\n?\s*:\s*(.+)")
 
     def predict(self, prompt) -> str:
         completion = self.client.chat.completions.create(
