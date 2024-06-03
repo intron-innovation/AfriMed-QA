@@ -187,7 +187,23 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | Mixtral-8x7B-Instruct-v0.1            | Charles      | 0.7046        | 0.8626          | 0.2365       | 0.8639            | 0.2090        | N/A                       | N/A                     |
 | Gemma-7B-Instruct    |         Charles               |              |                  |               |                  |               |                               |                             |
 | BioMistral-7B        |        Charles             |              |                  |               |                  |               |                               |                             |
+| GPT-4o        |        Mardhiyah             | 0.8067             |  0.8520                |  0.2016             |                  |               |                               |                             |
+| Claude 3 Opus        |        Mardhiyah             | 0.6100             |  0.8561                |  0.2138             |                  |               |                               |                             |
 
+##### 3-Shot Evals with Instruct Prompt
+| Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
+|-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
+| GPT-4o       |        Mardhiyah             | 0.3893             |  0.8609                |  0.2254             |                  |               |                               |                             |
+| Claude 3 Opus       |        Mardhiyah             | 0.6667             |  0.8572                |  0.2181             |                  |               |                               |                             |
+
+
+### USMLE Prompts
+
+##### Zero-Shot Evals with Base Prompt
+| Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
+|-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
+| GPT-4o       |        Mardhiyah             | 0.8539             |  0.8329                |  0.1975             |                  |               |                               |                             |
+| Claude 3 Opus       |        Mardhiyah             | 0.7321             |  0.8288               |  0.1934             |                  |               |                               |                             |
 
 ### Notes:
 - **MCQ**: Multiple-Choice Questions.
