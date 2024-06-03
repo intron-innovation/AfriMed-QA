@@ -197,14 +197,19 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | Claude 3 Opus       |        Mardhiyah             | 0.763             |  0.8572                |  0.2181             |                  |               |                               |                             |
 
 
-### USMLE Prompts
+### MedQA (USMLE) Prompts
 
 ##### Zero-Shot Evals with Base Prompt
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
 | GPT-4o                |        Mardhiyah             | 0.8539             |  0.8329                |  0.1975             |                  |               |                               |                             |
 | Claude 3 Opus         |        Mardhiyah             | 0.7321             |  0.8288               |  0.1934             |                  |               |                               |                             |
-|Gemini Ultra           |Mercy        |0.794        |0.8316        |0.1691        |         |         |         |         |
+|MedLM        |Mery        |0.60015        |0.8318        |0.1901        |         |         |         |         |
+|MedPalm2        |Mercy        |0.7038        |0.8265        |0.1451        |         |         |         |         |
+|Gemini Ultra        |Mercy        |0.794        |0.8316        |0.1691        |         |         |         |         |
+|Gemini pro        |Mercy        |0.5915        |0.83614        |0.2074        |         |         |         |         |
+
+
 ### Notes:
 - **MCQ**: Multiple-Choice Questions.
 - **SAQ**: Short Answer Questions.
