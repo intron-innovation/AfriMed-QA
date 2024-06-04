@@ -198,8 +198,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |Gemini Ultra        |Mercy        |0.808 (0.8063)        |0.875 (0.8752)        |0.2519 (0.2535)        |         |         |         |         |
 |Gemini pro        |Mercy        |. (0.7013)        |. (0.8725)        |. (0.2548)        |         |         |         |         |
 |MedLM        |Mercy        |0.7013 (0.6993)        |0.8725 (0.8732)        |0.2548 . (0.2585)        |         |         |         |         |
-|MedPalm 2        |. (0.751)        | . (0.8708)        |. (0.2474)        |         |         |         |         |
-
+|MedPalm 2        |Mercy        |. (0.751)        | . (0.8708)        |. (0.2474)        |         |         |         |         |
 
 
 ### MedQA (USMLE) Prompts
