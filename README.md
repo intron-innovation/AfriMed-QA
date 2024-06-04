@@ -190,7 +190,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | GPT-4o        |        Mardhiyah             | 0.848             |  0.8528                |  0.2019             |                  |               |                               |                             |
 | Claude 3 Opus        |        Mardhiyah             | 0.677             |  0.8561                |  0.2138             |                  |               |                               |                             |
 
-##### 3-Shot Evals with Instruct Prompt
+##### 3-Shot (5-Shot) Evals with Instruct Prompt
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
 | GPT-4o       |        Mardhiyah             | 0.7427             |  0.8610                |  0.2256             |                  |               |                               |                             |
