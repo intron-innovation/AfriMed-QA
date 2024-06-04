@@ -1,0 +1,334 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "column": "ml:column",
+    "data": {
+      "@id": "ml:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "ml:dataType",
+      "@type": "@vocab"
+    },
+    "extract": "ml:extract",
+    "field": "ml:field",
+    "fileProperty": "ml:fileProperty",
+    "format": "ml:format",
+    "includes": "ml:includes",
+    "isEnumeration": "ml:isEnumeration",
+    "jsonPath": "ml:jsonPath",
+    "ml": "http://mlcommons.org/schema/",
+    "parentField": "ml:parentField",
+    "path": "ml:path",
+    "recordSet": "ml:recordSet",
+    "references": "ml:references",
+    "regex": "ml:regex",
+    "repeated": "ml:repeated",
+    "replace": "ml:replace",
+    "sc": "https://schema.org/",
+    "separator": "ml:separator",
+    "source": "ml:source",
+    "subField": "ml:subField",
+    "transform": "ml:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "AfriMed-QA",
+  "description": "The first large-scale multi-speciality Pan-African medical Question Anserr dataset designed to evaluate and develop equitable and effective LLMs for healthcare sector in Africa",
+  "citation": "TBD",
+  "license": "cc-by-4.0",
+  "url": "https://raw.githubusercontent.com/intron-innovation/AfriMed-QA/master/data/afri_med_qa_10k_v1.2_phase_1.csv?token=GHSAT0AAAAAACIVL2NTESLQ23NE5CAA2PEAZS7ULOA",
+  "version": "1.0.0",
+  "distribution": [
+    {
+      "@type": "sc:FileObject",
+      "name": "afri_med_qa_10k_v1.2_phase_1",
+      "contentUrl": "https://raw.githubusercontent.com/intron-innovation/AfriMed-QA/master/data/afri_med_qa_10k_v1.2_phase_1.csv?token=GHSAT0AAAAAACIVL2NTESLQ23NE5CAA2PEAZS7ULOA",
+      "encodingFormat": "text/csv",
+      "sha256": "5560c867c1c7b7bab8d12dabbff58f96dc5deb0f5e15b4e783b20da0af66e3da"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "ml:RecordSet",
+      "name": "default",
+      "field": [
+        {
+          "@type": "ml:Field",
+          "name": "sample_id",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "sample_id"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "split",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "split"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "age_group",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "age_group"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "gender",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "gender"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "discipline",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "discipline"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "clinical_experience",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "clinical_experience"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "country",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "country"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "question_type",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "question_type"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "prompt",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "prompt"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "question",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "question"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "answer_options",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "answer_options"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "correct_answer",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "correct_answer"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "answer_rationale",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "answer_rationale"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "question_source",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "question_source"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "specialty",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "specialty"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "region_specific",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "region_specific"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "neg_percent",
+          "dataType": "sc:Float",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "neg_percent"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "quality",
+          "dataType": "sc:Text",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "quality"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "rated_african",
+          "dataType": "sc:Float",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "rated_african"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "rated_correct",
+          "dataType": "sc:Float",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "rated_correct"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "rated_omission",
+          "dataType": "sc:Float",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "rated_omission"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "rated_hallucination",
+          "dataType": "sc:Float",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "rated_hallucination"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "rated_reasonable",
+          "dataType": "sc:Float",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "rated_reasonable"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "rated_harmful",
+          "dataType": "sc:Float",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "rated_harmful"
+            }
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "rated_bias",
+          "dataType": "sc:Float",
+          "source": {
+            "distribution": "afri_med_qa_10k_v1.2_phase_1",
+            "extract": {
+              "column": "rated_bias"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
