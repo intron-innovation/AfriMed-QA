@@ -208,6 +208,10 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |MedPalm2        |Mercy        |0.7038        |0.8265        |0.1451        |         |         |         |         |
 |Gemini Ultra        |Mercy        |0.794        |0.8316        |0.1691        |         |         |         |         |
 |Gemini pro        |Mercy        |0.5915        |0.83614        |0.2074        |         |         |         |         |
+|Meta-Llama-3-70B-Instruct       |Charles        |0.7669        |       |      |         |         |         |         |
+|Meta-Llama-3-70B-Instruct       |Charles        |0.7669        |       |      |         |         |         |         |
+|OpenBioLLM-70B       |Charles        |0.7714        |       |      |         |         |         |         |
+
 
 
 ### Notes:
