@@ -189,6 +189,12 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | BioMistral-7B        |        Charles             |              |                  |               |                  |               |                               |                             |
 | GPT-4o        |        Mardhiyah             | 0.848             |  0.8528                |  0.2019             |                  |               |                               |                             |
 | Claude 3 Opus        |        Mardhiyah             | 0.677             |  0.8561                |  0.2138             |                  |               |                               |                             |
+|Gemini Ultra        |Mercy        |0.808 (0.8063)        |0.875 (0.8752)        |0.2519 (0.2535)        |         |         |         |         |
+|Gemini pro        |Mercy        |. (0.7013)        |. (0.8725)        |. (0.2548)        |         |         |         |         |
+|MedLM        |Mercy        |0.7013 (0.6993)        |0.8725 (0.8732)        |0.2548 (0.2585)        |         |         |         |         |
+|MedPalm 2        |Mercy        |. (0.751)        | . (0.8708)        |. (0.2474)        |         |         |         |         |
+
+
 
 ##### 3-Shot (5-Shot) Evals with Instruct Prompt
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
