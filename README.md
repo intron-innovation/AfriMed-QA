@@ -189,10 +189,10 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | BioMistral-7B        |        Charles             |              |                  |               |                  |               |                               |                             |
 | GPT-4o        |        Mardhiyah             | 0.848             |  0.8528                |  0.2019             |                  |               |                               |                             |
 | Claude 3 Opus        |        Mardhiyah             | 0.677             |  0.8561                |  0.2138             |                  |               |                               |                             |
-|Gemini Ultra        |Mercy        |0.808 (0.8063)        |0.875 (0.8752)        |0.2519 (0.2535)        |         |         |         |         |
-|Gemini pro        |Mercy        |. (0.7013)        |. (0.8725)        |. (0.2548)        |         |         |         |         |
-|MedLM        |Mercy        |0.7013 (0.6993)        |0.8725 (0.8732)        |0.2548 (0.2585)        |         |         |         |         |
-|MedPalm 2        |Mercy        |. (0.751)        | . (0.8708)        |. (0.2474)        |         |         |         |         |
+|Gemini Ultra        |Mercy        |0.7973        |0.875        |0.2662        |         |         |         |         |
+|Gemini pro        |Mercy        |0.684        |0.869        |0.2547        |         |         |         |         |
+|MedLM        |Mercy        |0.702        |0.8678        |0.2495        |         |         |         |         |
+|MedPalm 2        |Mercy        |0.742        |0.873        |0.2428        |         |         |         |         |
 
 
 
@@ -218,9 +218,6 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |MedPalm2        |Mercy        |0.7038        |0.8265        |0.1451        |         |         |         |         |
 |Gemini Ultra        |Mercy        |0.794        |0.8316        |0.1691        |         |         |         |         |
 |Gemini pro        |Mercy        |0.5915        |0.83614        |0.2074        |         |         |         |         |
-|Meta-Llama-3-70B-Instruct       |Charles        |0.7669        |       |      |         |         |         |         |
-|OpenBioLLM-70B       |Charles        |0.7714        |       |      |         |         |         |         |
-
 
 
 ### Notes:
