@@ -190,11 +190,15 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | GPT-4o        |        Mardhiyah             | 0.848             |  0.8528                |  0.2019             |                  |               |                               |                             |
 | Claude 3 Opus        |        Mardhiyah             | 0.677             |  0.8561                |  0.2138             |                  |               |                               |                             |
 
-##### 3-Shot Evals with Instruct Prompt
+##### 3-Shot (5-Shot) Evals with Instruct Prompt
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
 | GPT-4o       |        Mardhiyah             | 0.7427             |  0.8610                |  0.2256             |                  |               |                               |                             |
 | Claude 3 Opus       |        Mardhiyah             | 0.763             |  0.8572                |  0.2181             |                  |               |                               |                             |
+|Gemini Ultra        |Mercy        |0.808 (0.8063)        |0.875 (0.8752)        |0.2519 (0.2535)        |         |         |         |         |
+|Gemini pro        |Mercy        |. (0.7013)        |. (0.8725)        |. (0.2548)        |         |         |         |         |
+|MedLM        |Mercy        |0.7013 (0.6993)        |0.8725 (0.8732)        |0.2548 (0.2585)        |         |         |         |         |
+|MedPalm 2        |Mercy        |. (0.751)        | . (0.8708)        |. (0.2474)        |         |         |         |         |
 
 
 ### MedQA (USMLE) Prompts
@@ -204,7 +208,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
 | GPT-4o                |        Mardhiyah             | 0.8539             |  0.8329                |  0.1975             |                  |               |                               |                             |
 | Claude 3 Opus         |        Mardhiyah             | 0.7321             |  0.8288               |  0.1934             |                  |               |                               |                             |
-|MedLM        |Mery        |0.60015        |0.8318        |0.1901        |         |         |         |         |
+|MedLM        |Mercy        |0.60015        |0.8318        |0.1901        |         |         |         |         |
 |MedPalm2        |Mercy        |0.7038        |0.8265        |0.1451        |         |         |         |         |
 |Gemini Ultra        |Mercy        |0.794        |0.8316        |0.1691        |         |         |         |         |
 |Gemini pro        |Mercy        |0.5915        |0.83614        |0.2074        |         |         |         |         |
