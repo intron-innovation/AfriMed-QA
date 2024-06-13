@@ -1,5 +1,7 @@
 # AfriMed-QA: A pan-African Medical QA Dataset
 
+[![DOI](https://zenodo.org/badge/792690879.svg)](https://zenodo.org/doi/10.5281/zenodo.11630146)
+
 Supported by:
 
 [Intron Health](https://www.intron.io),
