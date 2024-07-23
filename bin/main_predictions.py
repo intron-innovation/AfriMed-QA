@@ -61,7 +61,7 @@ def main():
     if args.q_type == "mcq":
         options_from_output = model.extract_mcq_answer(outputs)  # edit the post_processing fxn accordingly
         data['preds'] = options_from_output
-    (data, BERTScore_Precision, BERTScore_Recall, BERTScore_F1, rg1, rg2, rl, accuracy) = compute_score(args.q_type,
+    (data, BERTScore_Precision, BERTScore_Recall, BERTScore_F1, rg1, rg2, rl, accuracy) = compute_score(args.q_type, args.explanation,
                                                                                                         data)  # returns a tuple
     logger.info(f"Score is {_blue(rl)}")
     write_results(args=args, data=data, score=accuracy if args.q_type == "mcq" else BERTScore_F1)

@@ -7,6 +7,6 @@ notebooks/.ipynb_checkpoints/
 results/afrimed*
 results/medqa*
 results/medlm_old*
-notebooks/*
+notebooks/
 results/Phi-3-mini-128k-instruct/*
 bin/compute_score.py
