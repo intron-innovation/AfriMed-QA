@@ -2,10 +2,19 @@ from bert_score import score as bert_score
 from rouge import Rouge
 
 
-def compute_score(q_type, data):
+def compute_score(q_type, explanation, data):
     valid_data = data[data["rationale"].str.len() > 4].copy()
     if len(valid_data) < 2:
         return (data, 0,0,0,0,0,0,0)
+    
+    if q_type == "mcq":
+        data["correct"] = data["answer"] == data["preds"]
+        accuracy = data["correct"].mean()
+        print("Accuracy:", accuracy)
+        if explanation == "_no_exp":
+            return (data, 0,0,0,0,0,0,accuracy)
+    else:
+        accuracy = ""
 
     scores = bert_score(valid_data["outputs"].tolist(), valid_data["rationale"].tolist(), lang="en", verbose=True)
     p, r, f1 = scores[0], scores[1], scores[2]
@@ -25,13 +34,6 @@ def compute_score(q_type, data):
 
     rg1, rg2, rl = valid_data["ROUGE-1"].mean(), valid_data["ROUGE-2"].mean(), valid_data["ROUGE-L"].mean()
     average_rouge = (rg1 + rg2 + rl) / 3    
-
-    if q_type == "mcq":
-        data["correct"] = data["answer"] == data["preds"]
-        accuracy = data["correct"].mean()
-        print("Accuracy:", accuracy)
-    else:
-        accuracy = ""
 
     print("BERTScore Precision (mean):", BERTScore_Precision)
     print("BERTScore Recall (mean):", BERTScore_Recall)
