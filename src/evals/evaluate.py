@@ -11,7 +11,7 @@ def compute_score(q_type, explanation, data):
         data["correct"] = data["answer"] == data["preds"]
         accuracy = data["correct"].mean()
         print("Accuracy:", accuracy)
-        if explanation == "_no_exp":
+        if not explanation:
             return (data, 0,0,0,0,0,0,accuracy)
     else:
         accuracy = ""
