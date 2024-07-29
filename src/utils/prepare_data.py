@@ -231,6 +231,8 @@ def prep_data(args) -> pd.DataFrame:
         if 'MedQA' in args.data_path and args.q_type != 'mcq':
             raise Exception("Please provide a valid question type for this dataset.")
         data = transformation_types[args.q_type.strip()](args, data)
+        data = data.iloc[:10].copy()
+
     else:
         Exception(
             f"The question type `{args.q_type}` is invalid for this dataset. "
