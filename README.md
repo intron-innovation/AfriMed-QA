@@ -132,12 +132,9 @@ Although the dataset has gone through rigorous review to weed our low-quality re
  raising an issue, posting on BioRAMP slack, or send an email to tobi@intron.io.
 
 ## Model Performance Metrics
-## Model Performance Metrics
 
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
-| Phi-3-mini-128k-instruct| Abraham           |0.6690        |0.8660            |0.2308         |0.8733            |0.2328         |0.0                            |0.0                          |
-| MedPalm-2             | Mercy, Fola         |              |                  |               |                  |               |                               |                             |
 | GPT-4 turbo          | Mardhiyah            |0.8243        |0.8559            |0.1999         |0.8654            |0.2055         |   0.8252                      | 0.0625            |
 | GPT-4o                | Tobi                |0.8276        |0.8614            |0.2293         |0.8776            |0.2426         | 0.8254                        | 0.0674                      |
 | GPT-4                 | Tobi                |0.8253        |0.8617            |0.2225         |0.8732            |0.2199         | 0.8385                        | 0.0808                      |
@@ -235,6 +232,14 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |Gemini pro        |Mercy        |0.5915        |0.83614        |0.2074        |         |         |         |         |
 |Meta-Llama-3-70B-Instruct       |Charles        |0.7669        |       |      |         |         |         |         |
 |OpenBioLLM-70B       |Charles        |0.7714        |       |      |         |         |         |         |
+
+
+## No Explanation (All - Accuracy)
+
+| Model Name            | Owner/Contributor   | Afrimed-QA | USMLE | 
+|-----------------------|---------------------|--------------|------------------|
+| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |
+| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |
 
 
 ### Notes:
