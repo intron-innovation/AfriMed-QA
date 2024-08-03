@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pretrained_model_path="microsoft/Phi-3-mini-128k-instruct"
+pretrained_model_path="microsoft/Phi-3-medium-128k-instruct"
 
 #data_path="data/MedQA-USMLE-4-options-test.csv" #medqa
 data_path="data/afri_med_qa_10k_v1_1_phase_1.csv" #afrimed-qa
