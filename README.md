@@ -239,8 +239,13 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | Model Name            | Owner/Contributor   | Afrimed-QA | USMLE | 
 |-----------------------|---------------------|--------------|------------------|
 | Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |
-| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |
+| Phi-3-mini-4k-instruct   | Amina            |0.6803        |            |
 | Phi-3-medium-128k-instruct| Abraham          |0.7520        |          |
+| JSL-MedLlama-3-8B-v2.0 | Amina          |0.6723        |            |
+| Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |            |
+| Mistral-7B-Instruct-v0.2 | Amina          |0.5837        |            |
+| Mistral-7B-Instruct-v0.2 | Amina          |0.6100        |            |
+
 
 
 
