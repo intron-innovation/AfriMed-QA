@@ -240,6 +240,8 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |-----------------------|---------------------|--------------|------------------|
 | Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |
 | Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |
+| Phi-3-medium-128k-instruct| Abraham          |0.7520        |          |
+
 
 
 ### Notes:
