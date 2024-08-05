@@ -30,7 +30,7 @@ class Llama(Model):
             "text-generation", model=self.model, tokenizer=self.tokenizer,
         )
         self.generation_args = {
-            "max_new_tokens": 300,
+            "max_new_tokens": 100,
             "return_full_text": False,
         }
 
@@ -38,13 +38,13 @@ class Llama(Model):
 
         output = self.model(prompt, **self.generation_args)
         output = output[0]["generated_text"].strip().strip("\n\n")
-        breakpoint()
         if "Prompt:" in output:
             output = output.split("Prompt:")[0]
         if "Question:" in output:
             output = output.split("Question:")[0]
         output = output.replace("###", "")
-        return output
+        return output[0]
 
-    def post_process(self, raw_text_output):
-        return raw_text_output
+    def extract_mcq_answer(self, raw_text_model_output_list):
+        cleaned_output = [text[0] for text in raw_text_model_output_list]
+        return cleaned_output

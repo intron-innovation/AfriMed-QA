@@ -1,9 +1,10 @@
 #!/bin/bash
 
 pretrained_model_path="microsoft/Phi-3-medium-128k-instruct"
+#pretrained_model_path="meta-llama/Meta-Llama-3-8B"
 
-#data_path="data/MedQA-USMLE-4-options-test.csv" #medqa
-data_path="data/afri_med_qa_10k_v1_1_phase_1.csv" #afrimed-qa
+data_path="data/MedQA-USMLE-4-options-test.csv" #medqa
+#data_path="data/afri_med_qa_10k_v1_1_phase_1.csv" #afrimed-qa
 
 question_types=("mcq")
 prompt_type=base
