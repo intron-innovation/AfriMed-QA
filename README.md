@@ -240,7 +240,7 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 |-----------------------|---------------------|--------------|------------------|
 | Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |
 | Phi-3-mini-4k-instruct   | Amina            |0.6803        |0.5766            |
-| Phi-3-medium-128k-instruct| Abraham          |0.7520        |          |
+| Phi-3-medium-128k-instruct| Abraham          |0.7520        |0.6842          |
 | Meta-Llama-3-8B          | Abraham            |0.6003        |0.4973            |
 | JSL-MedLlama-3-8B-v2.0 | Amina          |0.6723        |0.6072            |
 | Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |0.6269            |
