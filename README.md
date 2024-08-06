@@ -141,13 +141,18 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | GPT-4 turbo          | Mardhiyah            |0.8243        |0.8559            |0.1999         |0.8654            |0.2055         |   0.8252                      | 0.0625            |
 | GPT-4o                | Tobi                |0.8276        |0.8614            |0.2293         |0.8776            |0.2426         | 0.8254                        | 0.0674                      |
 | GPT-4                 | Tobi                |0.8253        |0.8617            |0.2225         |0.8732            |0.2199         | 0.8385                        | 0.0808                      |
-| Gemma-7B-Instruct          |   Charles                  |              |                  |               |                  |               |                               |                             |
-| Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
-| Claude 3 sonnet       | Mardhiyah           |0.6893        |0.8564            |0.2178         |0.8681            |0.2234         |0.8141                          |0.0540                             |
-| Claude 3 Opus       | Mardhiyah             |0.7907        |0.8590            |0.2232         |0.8661            |0.2138         |0.8172                           |0.0544                             |
-| Claude 3 Haiku       | Timothy             |0.712        |0.8558            |0.2276         |0.8620            |0.2140         |0.8163                           |0.0505                             |
-| Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
+| GPT-4o mini         |                 |        |           |         |            |         |                        |                       |
 | GPT 3.5 turbo         | Mardhiyah           |0.683        | 0.8667           |0.2536        |0.8765            |0.2542         | 0.8313        |0.0761                              |
+| Gemma-7B-Instruct          |   Charles                  |              |                  |               |                  |               |                               |                     |
+| Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
+| Claude 3.5 sonnet       |            |       |            |        |            |         |                         |                       |
+| Claude 3 sonnet       | Mardhiyah           |0.6893        |0.8564            |0.2178         |0.8681            |0.2234         |0.8141                          |0.0540                       |
+| Claude 3 Opus       | Mardhiyah             |0.7907        |0.8590            |0.2232         |0.8661            |0.2138         |0.8172                           |0.0544                   |
+| Claude 3 Haiku       | Timothy             |0.712        |0.8558            |0.2276         |0.8620            |0.2140         |0.8163                           |0.0505                    |
+| Meta-LLAMA-3.1-8B       |                     |               |                  |               |                  |               |                               |                 |
+| Meta-LLAMA-3.1-70B       |                     |               |                  |               |                  |               |                               |              |
+| Meta-LLAMA-3.1-405B       |                     |              |                  |               |                  |               |                               |              |
+| Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
 | OpenBioLLM-8B        | Charles           | 0.5193             |                  |               |                  |               |                               |                             |
 | OpenBioLLM-70B        | Charles          |  0.7280            |                  |               |                  |               |                               |                             |
 |Phi-3-mini-128k-instruct        |Abraham     |0.6676        |0.866        |0.2308        |0.8718        |0.227        |0.8266        |0.0672        |
@@ -166,8 +171,8 @@ Although the dataset has gone through rigorous review to weed our low-quality re
 | PMC-LLama-7B             | Charles             | 0.5197             |                  |               |                  |               |                               |                             |
 | Open-bio-med-merge    |                     |              |                  |               |                  |               |                               |                             |
 | Med42                 |                     |              |                  |               |                  |               |                               |                             |
-| Meta-LLAMA-3-8B       |   Charles                  | 0.6676              |                  |               |                  |               |                               |                             |
-| Meta-LLAMA-3-70B       |   Charles                  |  0.8036             |                  |               |                  |               |                               |                             |
+| Meta-LLAMA-3-8B       |   Charles                  | 0.6676              |                  |               |                  |               |                               |                   |
+| Meta-LLAMA-3-70B       |   Charles                  |  0.8036             |                  |               |                  |               |                               |                  |
 |Mistral-7B-Instruct-v0.2| Charles           |0.6757        |                  |               |                  |               |                               |     
 | MedAlpaca             | Charles             |              |                  |               |                  |               |                               |                             |
 
