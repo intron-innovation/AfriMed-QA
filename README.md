@@ -14,21 +14,24 @@ This work is licensed under a
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
 
-Supported by:
+Collaborating Organizations:
 
 [Intron Health](https://www.intron.io),
 [SisonkeBiotik](https://www.sisonkebiotik.africa/),
 [BioRAMP](https://www.bioramp.org),
-[Google Research](https://www.research.google.com),
 [Georgia Institute of Technology](https://www.gatech.edu/),
+[MasakhaneNLP](https://www.masakhane.io/)
+
+Funded by:
+[Google Research](https://www.research.google.com),
 [Bill & Melinda Gates Foundation](https://www.gatesfoundation.org/),
 [PATH](https://www.path.org),
-[MasakhaneNLP](https://www.masakhane.io/)
+
 
 
 #### Summary
 
-AfriMed-QA creates a novel large foundational open-source dataset of 20,000 pan-African clinically diverse questions and
+AfriMed-QA creates a novel large foundational open-source dataset of 24,000 pan-African clinically diverse questions and
  answers to rigorously evaluate LLMs for accuracy, factuality, hallucination, demographic bias, potential for harm, comprehension, and recall.
  The dataset’s geographical and clinical diversity facilitates robust contextual evaluation of LLMs in African healthcare and provides a sufficiently large corpus to finetune LLMs to mitigate biases discovered.
 
@@ -42,24 +45,29 @@ This is the first and largest effort to create a pan-African multi-region multi-
 The project will be a timely and invaluable resource guiding the African academic, clinical, biomedical, and research communities on the utility of LLMs in African healthcare at a scale that not only enables robust and rigorous LLM evaluation but provides a sufficiently large dataset to mitigate biases discovered– by finetuning these LLMs, adequately exposing model weights to African healthcare data in context. Such a rigorous evaluation could also uncover desirable and highly valuable but unexplored applications of LLMs in African healthcare, enabling African healthcare professionals to use LLMs in novel and relevant ways that improve patient outcomes.
 
 
-### Dataset Stats [Phase 1 release]
+### Dataset Stats [Phase 2 release]
 
-- Number of Questions: 10,000
-- Number of Human Answers with explanations: 4,601
-- Total Number of Unique Contributors: 746
-- Countries: 15 ['NG', 'TZ', 'KE', 'GH', 'UG', 'BW', 'PH', 'ZA', 'ZW', 'LS', 'ZM',
-       'MZ', 'AU', 'SZ', 'US']
+- Number of Questions: 24,348
+- Number of Human Answers with explanations: 14,517
+- Total Number of Unique Contributors: 621
+- Countries: 18 ['NG', 'TZ', 'KE', 'GH', 'UG', 'BW', 'PH', 'ZA', 'ZW', 'LS', 'ZM',
+       'MZ', 'AU', 'SZ', 'US', 'FR', 'MW', 'ET']
 - Medical Specialties: 32
 - Medical Schools: 60+
-- Gender: Female 49.49% / Male 50.21% / Other 0.3%
+- Gender: Female 48.35% / Male 51.35% / Other 0.3%
 
 #### Question Type
 
-|  | num questions  | 
-| -------- | ------- | 
-| AfriMed-QA-Consumer-Queries  |   5500  | 
-| AfriMed-QA-MCQ          |         3000 | 
-| AfriMed-QA-SAQ        |           1500 | 
+|  | tier  |  num questions  | 
+| -------- | -------- | ------- | 
+| AfriMed-QA-Consumer-Queries  | Crowdsourced |  10,000  | 
+| AfriMed-QA-MCQ          |  Crowdsourced  |     6,066 | 
+ AfriMed-QA-SAQ        |   Crowdsourced  |      4,013 | 
+| AfriMed-QA-Expert-MCQ          |  Experts  |     3,910 | 
+| AfriMed-QA-Expert-SAQ        |   Experts  |      359 | 
+
+- Crowdsourced = 20,079
+- Expert = 4,269
 
 ### Repo Structure
 
@@ -88,28 +96,32 @@ AfriMed-QA-Consumer-Queries: These represent questions provided by contributors 
    along with the rationale. Data columns Required
  : `prompt`, `question`, `answer_rationale`. You will need to concatenate the prompt with the question for full context.
 
+
 #### Data Description
 
 The dataset (csv) contains a few important columns:
+- sample id: unique record identifier
 - question_type: Multiple Choice (MCQ), Short Answer (SAQ), or Consumer Queries
 - prompt: the clinical scenario on which the contributor will base their question. This field is valid only for
  consumer queries
 - question: the human-generated question
+- question_clean: post-processed question text to fix issues with new lines and spacing around numbers, units, and
+ punctuations
 - answer_options: 2 to 5 possible answers for MCQs. Only valid for MCQs
 - correct_answer: the correct answer(s)
 - answer_rationale: explanation or rationale for selected correct answer
-- question_source: indicates the medical school or online question bank from which the question was selected
+- specialty: indicates question (sub)specialty
+- tier: crowdsourced or expert-generated
 
 Other fields provide more context on the contributor's (self-reported) background:
-- age_group: indicates age bracket, e.g. 18-25
 - gender: Female/Male/Other
-- country: 2-letter country code
+- country: 2-letter contributor country code
 - discipline: healthcare related or not, e.g. Nursing, Pharmacist, etc.
 - clinical_experience: for contributors with healthcare backgrounds, this indicates if they are a student/trainee
 , resident, attending, etc. 
 
 Other fields report reviewer ratings of contributor questions/answers:
-- quality: boolean thumbs up or down
+- quality: boolean thumbs up or down indicating reviwer opinion of question or answer quality or formatting issues
 - neg_percent: a measure of how much we can rely on responses provided by the contributor. It is the percentage of
  thumbs down ratings the contributor has received out of all responses reviewed for the contributor on the project.
 
@@ -122,6 +134,12 @@ The following are 5-point scale ratings by reviewers on the following criteria:
 - rated_bias: Indication of demographic bias
 - rated_harmful: Possibility of harm 
 
+Columns for Bias Detection or Counterfactual Analysis, Boolean
+- region_specific: contributor indicates if question requires local African medical expertise
+- mentions_Africa: question mentions an African country
+- mentions_age: question refers to patient age
+- mentions_age: question mentions patient gender
+
 The `split` column indicates samples assigned to train/test split. 
 LLM responses to questions in the test split will be sent for human evaluation.
 
@@ -129,9 +147,23 @@ LLM responses to questions in the test split will be sent for human evaluation.
 This dataset was crowdsourced from clinician experts and non-clinicians across Africa.
 Although the dataset has gone through rigorous review to weed our low-quality responses before release, it is
  possible that some issues may have been missed by our review team. Please report any lingering issues found by
- raising an issue, posting on BioRAMP slack, or send an email to tobi@intron.io.
+ raising an issue, or send an email to tobi@intron.io.
 
-## Model Performance Metrics
+Due to a bug in the web application for collecting questions, when saving the entry, new lines were ignored for a 
+subset of questions. This predominantly impacts questions that list lab results. This was eventually found and fixed.
+Text for questions impacted were fixed by adding a space to separate concatenated text. 
+
+For example, in the following text where new lines are missing between each lab result:
+```
+Laboratory studies show:Hematocrit 42%Leukocyte count 16,000/mm3Segmented neutrophils 85%Lymphocytes 15% Platelet count 200,000/mm3Arterial blood gas analysis on an FIO2 of 1.0 shows:pH 7.35PCO2 42 mm HgPO2 55 mm HgChest x-ray shows diffuse alveolar infiltrates bilaterally and no cardiomegaly.
+```
+was transformed to
+```
+Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neutrophils 85% Lymphocytes 15% Platelet
+ count 200,000/mm3 Arterial blood gas analysis on an FIO2 of 1.0 shows: pH 7.35 PCO2 42 mmHg PO2 55 mmHg Chest x-ray
+ shows diffuse alveolar infiltrates bilaterally and no cardiomegaly.
+```
+
 ## Model Performance Metrics
 
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
@@ -304,6 +336,8 @@ Raters will be blinded to response source. Raters will randomly evaluate model a
 Some questions will receive single or multiple-reader ratings. Inter-rater reliability or agreement will be
  computed for answers with multiple ratings
 
+Human evaluation files were too large to push to github. They were stored on google drive.
+Access them via this link: https://drive.google.com/drive/folders/1feRZ524FajVGsBvt13u-QYk_OvKgea8X?usp=sharing
 
 # Working with the Codebase:
 
