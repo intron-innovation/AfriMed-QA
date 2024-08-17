@@ -175,13 +175,13 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 | GPT-4                 | Tobi                |0.8253        |0.8617            |0.2225         |0.8732            |0.2199         | 0.8385                        | 0.0808                      |
 | GPT-4o mini         |                 |        |           |         |            |         |                        |                       |
 | GPT 3.5 turbo         | Mardhiyah           |0.683        | 0.8667           |0.2536        |0.8765            |0.2542         | 0.8313        |0.0761                              |
-| Gemma-7B-Instruct          |   Charles                  |              |                  |               |                  |               |                               |                     |
+| Gemma-7B-Instruct     |                     |              |                  |               |                  |               |                               |                     |
 | Phi 3                 |                     |              |                  |               |                  |               |                               |                             |
-| Claude 3.5 sonnet       |            |       |            |        |            |         |                         |                       |
+| Claude 3.5 sonnet     |            |       |            |        |            |         |                         |                       |
 | Claude 3 sonnet       | Mardhiyah           |0.6893        |0.8564            |0.2178         |0.8681            |0.2234         |0.8141                          |0.0540                       |
 | Claude 3 Opus       | Mardhiyah             |0.7907        |0.8590            |0.2232         |0.8661            |0.2138         |0.8172                           |0.0544                   |
 | Claude 3 Haiku       | Timothy             |0.712        |0.8558            |0.2276         |0.8620            |0.2140         |0.8163                           |0.0505                    |
-| Meta-LLAMA-3.1-8B       |                     |               |                  |               |                  |               |                               |                 |
+| Meta-LLAMA-3.1-8B       |   Amina         |               |                  |               |                  |               |                               |                 |
 | Meta-LLAMA-3.1-70B       |                     |               |                  |               |                  |               |                               |              |
 | Meta-LLAMA-3.1-405B       |                     |              |                  |               |                  |               |                               |              |
 | Cohere CommandR       | Henok               |              |                  |               |                  |               |                               |                             |
@@ -191,6 +191,7 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 |Llama3 8B              |Abraham              |0.635        |0.8592        |0.2286        |0.8624        |0.2094        |0.8344        |0.0909        |
 |Phi-3-mini-4k-instruct |Amina                |0.6606        |0.866        |0.2432        |0.8681        |0.2214        |0.8186        |0.0595        |
 |Mistral-7B-Instruct-v0.2    |Amina           |0.551        |0.8613        |0.2296        |0.8505        |0.1763        |0.8259        |0.0706        |
+|Mistral-7B-Instruct-v0.3    |Amina           |       |        |        |        |        |       |       |
 |JSL-MedLlama-3-8B-v2.0 |Amina                |0.6606        |0.8577        |0.2248        |0.8721        |0.2273        |0.8303        |0.0793        |
 |Gemini Ultra           |Mercy                |0.8003        |0.8716        |0.2642        |0.8754        |0.2356        |0.8362        |0.079        |
 |MedPalm 2              |Mercy                |0.7456        |0.8735        |0.2451        |0.8716        |0.2234        |0.8379        |0.0774        |
