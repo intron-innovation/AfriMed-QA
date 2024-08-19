@@ -166,6 +166,22 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 
 ## Model Performance Metrics
 
+
+## No Explanation (MCQ - Accuracy)
+
+| Model Name            | Owner/Contributor   | Afrimed-QA v1 | USMLE | AfriMed-QA Experts | 
+|-----------------------|---------------------|--------------|------------------|------------------|
+| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |  |
+| Phi-3-mini-4k-instruct   | Amina            |0.6803        |0.5766            |   |
+| Phi-3-medium-128k-instruct| Abraham          |0.7520        |0.6842          |   |
+| Meta-Llama-3-8B          | Abraham            |0.6003        |0.4973            |    |
+| JSL-MedLlama-3-8B-v2.0 | Amina          |0.6723        |0.6072            |    |
+| Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |0.6269            |   |
+| Mistral-7B-Instruct-v0.2 | Amina          |0.5837        |0.5003            |   |
+| Mistral-7B-Instruct-v0.2 | Amina          |0.6100        |0.5130            |   |
+
+
+
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
 |-----------------------|---------------------|--------------|------------------|---------------|------------------|---------------|-------------------------------|-----------------------------|
 | GPT-4 turbo          | Mardhiyah            |0.8243        |0.8559            |0.1999         |0.8654            |0.2055         |   0.8252                      | 0.0625            |
@@ -271,22 +287,6 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 |Gemini pro        |Mercy        |0.5915        |0.83614        |0.2074        |         |         |         |         |
 |Meta-Llama-3-70B-Instruct       |Charles        |0.7669        |       |      |         |         |         |         |
 |OpenBioLLM-70B       |Charles        |0.7714        |       |      |         |         |         |         |
-
-
-## No Explanation (All - Accuracy)
-
-| Model Name            | Owner/Contributor   | Afrimed-QA | USMLE | 
-|-----------------------|---------------------|--------------|------------------|
-| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |
-| Phi-3-mini-4k-instruct   | Amina            |0.6803        |0.5766            |
-| Phi-3-medium-128k-instruct| Abraham          |0.7520        |0.6842          |
-| Meta-Llama-3-8B          | Abraham            |0.6003        |0.4973            |
-| JSL-MedLlama-3-8B-v2.0 | Amina          |0.6723        |0.6072            |
-| Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |0.6269            |
-| Mistral-7B-Instruct-v0.2 | Amina          |0.5837        |0.5003            |
-| Mistral-7B-Instruct-v0.2 | Amina          |0.6100        |0.5130            |
-
-
 
 
 ### Notes:
