@@ -171,7 +171,7 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 
 | Model Name            | Owner/Contributor   | Afrimed-QA v1 | USMLE | AfriMed-QA Experts | 
 |-----------------------|---------------------|--------------|------------------|------------------|
-| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |  |
+| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            |0.5903  |
 | Phi-3-mini-4k-instruct   | Amina            |0.6803        |0.5766            |   |
 | Phi-3-medium-128k-instruct| Abraham          |0.7520        |0.6842          |   |
 | Meta-Llama-3-8B          | Abraham            |0.6003        |0.4973            |    |

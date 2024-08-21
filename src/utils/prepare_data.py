@@ -65,7 +65,7 @@ def transform_mcqs(args, data):
             transformed_row = {
                 "sample_id": row["sample_id"],
                 "question": row["question"],
-                "rationale": row["answer_rationale"],
+                "rationale": row["answer_rationale"] if len(str(row["answer_rationale"])) > 7 else "no rationale",
                 "options_len": options_len,
                 "answer": correct_answer_label,
                 **formatted_options,
@@ -75,9 +75,9 @@ def transform_mcqs(args, data):
     transformed_data = pd.DataFrame(questions)
     if args.prompt_file_path != None:
         user_msg = read_txt_file(args.prompt_file_path)
-
         data_w_prompt = []
         for index, row in tqdm(transformed_data.iterrows(), total=len(transformed_data), desc="creating prompts"):
+            
             question, formatted_options, _ = prep_mcqs_options(row)
             sys_msg = user_msg + "\n\n"
 
@@ -227,6 +227,8 @@ def prep_data(args) -> pd.DataFrame:
                 .reset_index(drop=True)
         )
         if args.q_type == "mcq":
+            if "expert" in args.data_path:
+                data = data[data['tier'] =='expert'].copy()
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
         if 'MedQA' in args.data_path and args.q_type != 'mcq':
             raise Exception("Please provide a valid question type for this dataset.")
