@@ -6,7 +6,8 @@ data_paths["afrimed-qa-v1"]="data/afri_med_qa_10k_v1_1_phase_1.csv"
 data_paths["afrimed-qa-v2"]="data/afri_med_qa_24k_v2.3_phase_2_24348_expert.csv"
 
 declare -A model_paths
-model_paths["microsoft-phi"]="microsoft/Phi-3-medium-128k-instruct"
+model_paths["microsoft-phi-med128"]="microsoft/Phi-3-medium-128k-instruct"
+model_paths["microsoft-phi-mini128"]="microsoft/Phi-3-mini-128k-instruct"
 model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
 model_paths["meta-llama-405b"]="meta/llama3-405b-instruct-maas"
 
