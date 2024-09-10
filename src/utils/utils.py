@@ -22,7 +22,13 @@ def parse_arguments():
     parser.add_argument(
         "--q_type", type=str, required=True, help="eval tasks or question group type"
     )
-    parser.add_argument('--use_cuda', action=argparse.BooleanOptionalAction)
+    parser.add_argument(
+        "--source",
+        type=str,
+        required=True,
+        help="The source of the data to be evaluated",
+    )
+    parser.add_argument("--use_cuda", action=argparse.BooleanOptionalAction)
     parser.add_argument("--num_few_shot", type=int, default=0)
 
     args = parser.parse_args()
@@ -69,16 +75,16 @@ def logging_cuda_memory_usage():
         meminfo = pynvml.nvmlDeviceGetMemoryInfo(handle)
         logger.info(
             "GPU {}: {:.2f} GB / {:.2f} GB".format(
-                i, meminfo.used / 1024 ** 3, meminfo.total / 1024 ** 3
+                i, meminfo.used / 1024**3, meminfo.total / 1024**3
             )
         )
 
 
 def write_results(data, args, score):
     prompt_type = args.prompt_file_path.split("/")[-1].split("_")[0]
-    q_type = args.q_type.split('_')[0]
-    explanation = explanation = '_no_exp' if not args.explanation else ""
-    model_dir = args.model_name.replace('/', '_')
+    q_type = args.q_type.split("_")[0]
+    explanation = explanation = "_no_exp" if not args.explanation else ""
+    model_dir = args.model_name.replace("/", "_")
     os.makedirs(f"results/{model_dir}", exist_ok=True)
     results_fname = f"results/{model_dir}/{model_dir}_{q_type}_{prompt_type}-prompt_{explanation}_{args.num_few_shot}-shot_score_{score:.4f}_{len(data)}.csv"
     data.to_csv(results_fname, index=False)

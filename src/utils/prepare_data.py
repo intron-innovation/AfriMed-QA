@@ -13,7 +13,9 @@ def prep_mcqs_options(row):
         ~row.isna()
     ]  # this line drops the empty options if there are just 2 valid options like true/false
     question = "###Question: " + row["question"]
-    options = dict(row.drop(["question", "sample_id", "answer", "rationale", "options_len"]))
+    options = dict(
+        row.drop(["question", "sample_id", "answer", "rationale", "options_len"])
+    )
     formatted_options = ""
     for key, value in options.items():
         formatted_options += f"{key}.  {value}\n"
@@ -23,7 +25,9 @@ def prep_mcqs_options(row):
 
 def transform_medqa(data):
     questions = []
-    for index, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
+    for index, row in tqdm(
+        data.iterrows(), total=len(data), desc="Preprocessing the data"
+    ):
         formatted_options = ast.literal_eval(row["options"])
         transformed_row = {
             "sample_id": row["sample_id"],
@@ -35,14 +39,16 @@ def transform_medqa(data):
         }
         questions.append(transformed_row)
     return questions
- 
 
-def transform_mcqs(args, data):
-    if 'MedQA' in args.data_path:
+
+def transform_mcqs(args, data) -> pd.DataFrame:
+    if "MedQA" in args.data_path:
         questions = transform_medqa(data)
     else:
         questions = []
-        for index, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
+        for index, row in tqdm(
+            data.iterrows(), total=len(data), desc="Preprocessing the data"
+        ):
             options = json.loads(row["answer_options"])
             option_keys = [
                 f"option{i + 1}" for i in range(5)
@@ -61,11 +67,15 @@ def transform_mcqs(args, data):
                     formatted_options.pop(key)
             # Determine the correct answer label
             options_len = len(formatted_options)
-            correct_answer_label = answer_labels[option_keys.index(row["correct_answer"])]
+            correct_answer_label = answer_labels[
+                option_keys.index(row["correct_answer"])
+            ]
             transformed_row = {
                 "sample_id": row["sample_id"],
                 "question": row["question"],
-                "rationale": row["answer_rationale"],
+                "rationale": row["answer_rationale"]
+                if len(str(row["answer_rationale"])) > 7
+                else "no rationale",
                 "options_len": options_len,
                 "answer": correct_answer_label,
                 **formatted_options,
@@ -75,36 +85,53 @@ def transform_mcqs(args, data):
     transformed_data = pd.DataFrame(questions)
     if args.prompt_file_path != None:
         user_msg = read_txt_file(args.prompt_file_path)
-
         data_w_prompt = []
-        for index, row in tqdm(transformed_data.iterrows(), total=len(transformed_data), desc="creating prompts"):
+        for index, row in tqdm(
+            transformed_data.iterrows(),
+            total=len(transformed_data),
+            desc="creating prompts",
+        ):
             question, formatted_options, _ = prep_mcqs_options(row)
             sys_msg = user_msg + "\n\n"
 
             if args.num_few_shot > 0:
                 try:
-                    other_indices = transformed_data[
-                        transformed_data['options_len'] == row['options_len']].index.difference([index]).tolist()
-                    random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
+                    other_indices = (
+                        transformed_data[
+                            transformed_data["options_len"] == row["options_len"]
+                        ]
+                        .index.difference([index])
+                        .tolist()
+                    )
+                    random_indices = np.random.choice(
+                        other_indices, size=args.num_few_shot, replace=False
+                    )
                     few_shots = transformed_data.iloc[random_indices]
 
                 except:
-                    other_indices = transformed_data[transformed_data['options_len'] == 4].index.difference(
-                        [index]).tolist()
-                    random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
+                    other_indices = (
+                        transformed_data[transformed_data["options_len"] == 4]
+                        .index.difference([index])
+                        .tolist()
+                    )
+                    random_indices = np.random.choice(
+                        other_indices, size=args.num_few_shot, replace=False
+                    )
                     few_shots = transformed_data.iloc[random_indices]
 
-                sys_msg += "Here are some examples and then answer the last question:" + "\n\n"
+                sys_msg += (
+                    "Here are some examples and then answer the last question:" + "\n\n"
+                )
 
                 for _, s in few_shots.iterrows():
                     sq, sf, sa = prep_mcqs_options(s)
                     sys_msg += sq + "\n" + sf + "\n" + sa + "\n\n"
                 sys_msg += sys_msg + "\n\n"
-            final_prompt = sys_msg + question + "\n" 
+            final_prompt = sys_msg + question + "\n"
             final_prompt = final_prompt + "###Options:" + "\n" + formatted_options
 
-            final_prompt += '\n' + "###Answer:"
-            row['model_prompt'] = final_prompt
+            final_prompt += "\n" + "###Answer:"
+            row["model_prompt"] = final_prompt
             data_w_prompt.append(row)
 
     else:
@@ -115,7 +142,7 @@ def transform_mcqs(args, data):
     return transformed_data
 
 
-def transform_saqs(args, data):
+def transform_saqs(args, data) -> pd.DataFrame:
     questions = []
     for _, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
         transformed_row = {
@@ -131,26 +158,34 @@ def transform_saqs(args, data):
         user_msg = read_txt_file(args.prompt_file_path)
 
         data_w_prompt = []
-        for index, row in tqdm(transformed_data.iterrows(), total=len(transformed_data), desc="creating prompts"):
+        for index, row in tqdm(
+            transformed_data.iterrows(),
+            total=len(transformed_data),
+            desc="creating prompts",
+        ):
             question = "###Question: " + row["question"]
             sys_msg = user_msg + "\n\n"
 
             if args.num_few_shot > 0:
                 other_indices = transformed_data.index.difference([index]).tolist()
-                random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
+                random_indices = np.random.choice(
+                    other_indices, size=args.num_few_shot, replace=False
+                )
 
                 few_shots = transformed_data.iloc[random_indices]
 
-                sys_msg += "Here are some examples and then answer the last question:" + "\n\n"
+                sys_msg += (
+                    "Here are some examples and then answer the last question:" + "\n\n"
+                )
 
                 for _, s in few_shots.iterrows():
                     squestion = "###Question: " + s["question"]
-                    srationale = "###Rationale: " + s['rationale']
+                    srationale = "###Rationale: " + s["rationale"]
                     sys_msg += squestion + "\n" + srationale + "\n\n"
                 sys_msg += sys_msg + "\n\n"
             final_prompt = sys_msg + question
-            final_prompt += '\n' + "###Answer:"
-            row['model_prompt'] = final_prompt
+            final_prompt += "\n" + "###Answer:"
+            row["model_prompt"] = final_prompt
 
             data_w_prompt.append(row)
 
@@ -161,15 +196,16 @@ def transform_saqs(args, data):
     return transformed_data
 
 
-def transform_consumer_queries(args, data):
+def transform_consumer_queries(args, data) -> pd.DataFrame:
     questions = []
     for _, row in tqdm(data.iterrows(), total=len(data), desc="Preprocessing the data"):
         transformed_row = {
             "sample_id": row["sample_id"],
             "prompt": row["prompt"],
             "question": row["question"],
-            "rationale": "" if type(row["answer_rationale"]) == float else row["answer_rationale"],
-
+            "rationale": ""
+            if type(row["answer_rationale"]) == float
+            else row["answer_rationale"],
         }
         questions.append(transformed_row)
 
@@ -179,32 +215,44 @@ def transform_consumer_queries(args, data):
         user_msg = read_txt_file(args.prompt_file_path)
 
         data_w_prompt = []
-        for index, row in tqdm(transformed_data.iterrows(), total=len(transformed_data), desc="creating prompts"):
+        for index, row in tqdm(
+            transformed_data.iterrows(),
+            total=len(transformed_data),
+            desc="creating prompts",
+        ):
             question_prompt = "###Prompt: " + row["prompt"]
             question = "###Question: " + row["question"]
             sys_msg = user_msg + "\n\n"
 
             if args.num_few_shot > 0:
                 other_indices = transformed_data.index.difference([index]).tolist()
-                random_indices = np.random.choice(other_indices, size=args.num_few_shot, replace=False)
+                random_indices = np.random.choice(
+                    other_indices, size=args.num_few_shot, replace=False
+                )
                 few_shots = transformed_data.iloc[random_indices]
 
-                sys_msg += "Here are some examples and then answer the last question:" + "\n\n"
+                sys_msg += (
+                    "Here are some examples and then answer the last question:" + "\n\n"
+                )
 
                 for _, s in few_shots.iterrows():
                     squestion_prompt = "###Prompt: " + s["prompt"]
                     squestion = "###Question: " + s["question"]
-                    srationale = "###Rationale: " + s['rationale']
-                    sys_msg += squestion_prompt + "" + squestion + "\n" + srationale + "\n\n"
+                    srationale = "###Rationale: " + s["rationale"]
+                    sys_msg += (
+                        squestion_prompt + "" + squestion + "\n" + srationale + "\n\n"
+                    )
                 sys_msg += sys_msg + "\n\n"
             final_prompt = question_prompt + "\n" + question
-            final_prompt += '\n' + "###Answer:"
-            row['model_prompt'] = final_prompt
+            final_prompt += "\n" + "###Answer:"
+            row["model_prompt"] = final_prompt
 
             data_w_prompt.append(row)
 
     else:
-        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), args.prompt_file_path)
+        raise FileNotFoundError(
+            errno.ENOENT, os.strerror(errno.ENOENT), args.prompt_file_path
+        )
 
     transformed_data = pd.DataFrame(data_w_prompt)
     return transformed_data
@@ -223,12 +271,14 @@ def prep_data(args) -> pd.DataFrame:
     if args.q_type in transformation_types.keys():
         data = (
             data[data["question_type"] == args.q_type.strip()]
-                .copy()
-                .reset_index(drop=True)
+            .copy()
+            .reset_index(drop=True)
         )
         if args.q_type == "mcq":
+            if args.source == "afrimed-qa-v2":
+                data = data[data["tier"] == "expert"].copy()
             data["correct_answer"] = data["correct_answer"].str.split(",").str[0]
-        if 'MedQA' in args.data_path and args.q_type != 'mcq':
+        if "MedQA" in args.data_path and args.q_type != "mcq":
             raise Exception("Please provide a valid question type for this dataset.")
         data = transformation_types[args.q_type.strip()](args, data)
     else:
