@@ -21,7 +21,7 @@ def run_inference(model, data, use_cuda=False) -> Tuple[List[str], List[str]]:
     outputs = []
     for _, row in tqdm(data.iterrows(), total=len(data), desc="Running Inference"):
         try:
-            output = infer(row['model_prompt'], model)
+            output = infer(row["model_prompt"], model)
         except Exception:
             print(traceback.format_exc())
             output = ""
