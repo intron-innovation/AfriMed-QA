@@ -27,7 +27,9 @@ class Llama(Model):
             trust_remote_code=True,
         )
         self.model = pipeline(
-            "text-generation", model=self.model, tokenizer=self.tokenizer,
+            "text-generation",
+            model=self.model,
+            tokenizer=self.tokenizer,
         )
         self.generation_args = {
             "max_new_tokens": 100,
@@ -35,7 +37,6 @@ class Llama(Model):
         }
 
     def predict(self, prompt) -> str:
-
         output = self.model(prompt, **self.generation_args)
         output = output[0]["generated_text"].strip().strip("\n\n")
         if "Prompt:" in output:
