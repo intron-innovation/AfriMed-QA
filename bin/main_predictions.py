@@ -59,7 +59,6 @@ def main():
     )  # this should result a list of predictions
     logger.info(_orange(f"Running predictions for {args.q_type} completed"))
     data["outputs"] = outputs
-    data.to_csv("intermiiate_run.csv", index=False)
     # save data to a dataframe in case pattern_matching breaks
     if args.q_type == "mcq":
         options_from_output = model.extract_mcq_answer(
