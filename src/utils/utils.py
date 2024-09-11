@@ -86,7 +86,7 @@ def write_results(data, args, score):
     explanation = explanation = "_no_exp" if not args.explanation else ""
     model_dir = args.model_name.replace("/", "_")
     os.makedirs(f"results/{model_dir}", exist_ok=True)
-    results_fname = f"results/{model_dir}/{model_dir}_{q_type}_{prompt_type}-prompt_{explanation}_{args.num_few_shot}-shot_score_{score:.4f}_{len(data)}.csv"
+    results_fname = f"results/{model_dir}/{args.source}_{model_dir}_{q_type}_{prompt_type}-prompt_{explanation}_{args.num_few_shot}-shot_score_{score:.4f}_{len(data)}.csv"
     data.to_csv(results_fname, index=False)
     logger.info(f"Results saved to: {results_fname}")
     return results_fname
