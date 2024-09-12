@@ -7,7 +7,7 @@ from src.models.models import Model
 
 
 class OpenAIModel(Model):
-    def __init__(self, model_name, explanation **kwargs):
+    def __init__(self, model_name, explanation, **kwargs):
         super().__init__(model_name, **kwargs)
         from src.models.models import Model
 
@@ -31,7 +31,7 @@ class OpenAIModel(Model):
             ],
         )
         output = completion.choices[0].message.content
-        if self.explantion == False:
+        if self.explanation == False:
             if "Prompt:" in output:
                 output = output.split("Prompt:")[0]
             if "Question:" in output:

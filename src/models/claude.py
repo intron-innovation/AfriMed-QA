@@ -7,8 +7,8 @@ from src.models.models import Model
 
 
 class ClaudeModel(Model):
-    def __init__(self, model_name, **kwargs):
-        super().__init__(model_name, explanation, **kwargs)
+    def __init__(self, model_name, explanation, **kwargs):
+        super().__init__(model_name, **kwargs)
         from src.models.models import Model
 
         self.model_name = model_name
@@ -31,7 +31,7 @@ class ClaudeModel(Model):
             messages=[{"role": "user", "content": [{"type": "text", "text": prompt}]}],
         )
         output = message.content[0].text
-        if self.explantion == False:
+        if self.explanation == False:
             if "Prompt:" in output:
                 output = output.split("Prompt:")[0]
             if "Question:" in output:
