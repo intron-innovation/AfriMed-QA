@@ -7,11 +7,12 @@ from src.models.models import Model
 
 
 class OpenAIModel(Model):
-    def __init__(self, model_name, **kwargs):
+    def __init__(self, model_name, explanation **kwargs):
         super().__init__(model_name, **kwargs)
         from src.models.models import Model
 
         self.model_name = model_name
+        self.explanation = explanation
         self.client = OpenAI(api_key=os.environ["OPENAI_KEY"])
         self.system_prompt = "You are a skillful expert medical assistant"
         self.pattern1 = re.compile(
@@ -29,12 +30,25 @@ class OpenAIModel(Model):
                 {"role": "user", "content": prompt},
             ],
         )
-        return completion.choices[0].message.content
+        output = completion.choices[0].message.content
+        if self.explantion == False:
+            if "Prompt:" in output:
+                output = output.split("Prompt:")[0]
+            if "Question:" in output:
+                output = output.split("Question:")[0]
+            output = output.replace("###", "")
+        return output
+    
+        
 
     def extract_mcq_answer(self, raw_text_model_output_list):
-        cleaned_output = [
-            self.pattern_match(text) for text in raw_text_model_output_list
-        ]
+        if self.explanation:
+            cleaned_output = [
+                self.pattern_match(text) for text in raw_text_model_output_list
+            ]
+        else:
+            cleaned_output = [text[0] for text in raw_text_model_output_list]
+        
         return cleaned_output
 
     def pattern_match(self, text, n=40):

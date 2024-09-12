@@ -38,9 +38,9 @@ def main():
     logger.info(f"Loading model from {args.pretrained_model_path}")
     # please define your own model class
     if "gpt" in args.pretrained_model_path:
-        model = OpenAIModel(args.pretrained_model_path)
+        model = OpenAIModel(args.pretrained_model_path, args.explanation)
     elif "claude" in args.pretrained_model_path:
-        model = ClaudeModel(args.pretrained_model_path)
+        model = ClaudeModel(args.pretrained_model_path, args.explanation)
     elif "Phi-3" in args.pretrained_model_path:
         model = Phi3(args.pretrained_model_path)
     elif "405b" in args.pretrained_model_path:
