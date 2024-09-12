@@ -180,6 +180,13 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 | Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |0.6269            |0.6189   |
 | Mistral-7B-Instruct-v0.2 | Amina          |0.5837        |0.5003            |0.4847   |
 | Mistral-7B-Instruct-v0.3 | Amina          |0.6100        |0.5130            |0.5084   |
+| Claude 3.5 sonnet | Mardhiyah          |0.8423       |0.8327       |0.7770 |
+| Claude 3 sonnet | Mardhiyah          | 0.7330      |0.6489       |0.6504 |
+| Claude 3 Opus | Mardhiyah          |0.8110       | 0.7800      | |
+| Claude 3 Haiku | Mardhiyah          |0.7433       |0.6709       | 0.6639|
+| Gpt 4 | Mardhiyah          |0.8247       |0.7989       |0.7568 |
+| Gpt 4o | Mardhiyah          |0.8500       |0.8814       |0.7928 |
+| Gpt 4o mini | Mardhiyah          |0.7880       |0.7400       |0.7176 |
 
 
 
