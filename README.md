@@ -188,6 +188,12 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 | Gpt 4o | Mardhiyah          |0.8500       |0.8814       |0.7928 |
 | Gpt 4o mini | Mardhiyah          |0.7880       |0.7400       |0.7176 |
 | Gpt 3.5 Turbo 1106| Mardhiyah          |0.6890       |0.5750       |0.5629 |
+| PMC-Llama-7B | Charles          |0.5433       |0.5090       |0.4629 |
+| Meditron-7B | Charles          |0.5807       |0.5334       |0.5102 |
+| Meta-Llama-3-70B | Charles          |0.8043       |0.7808       |0.7379 |
+| OpenBioLLM-70B | Charles          |0.6863       |0.5862       |0.6661 |
+| OpenBioLLM-8B | Charles          |0.5327       |0.4674       |0.4499 |
+| BioMistral-70B | Charles          |0.5353       |0.4564       |0.4402 |
 
 
 
