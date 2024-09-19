@@ -194,6 +194,7 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 | OpenBioLLM-70B | Charles          |0.6863       |0.5862       |0.6661 |
 | OpenBioLLM-8B | Charles          |0.5327       |0.4674       |0.4499 |
 | BioMistral-70B | Charles          |0.5353       |0.4564       |0.4402 |
+| Mixtral-8x7B-Instruct-v0.1 | Charles          |0.7023       |0.6002       |0.6033 |
 
 
 
