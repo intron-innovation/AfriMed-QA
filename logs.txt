@@ -1,0 +1,3 @@
+Running model: meta-llama
+Using data: data/afri_med_qa_15k_v2.5_phase_2_15275.csv
+Prompt file: prompts/base_mcq_no_exp.txt
