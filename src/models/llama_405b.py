@@ -25,7 +25,7 @@ class Llama405B:
         payload = {
             "model": self.model_name,
             "stream": False,
-            "max_tokens": 5,
+            "max_tokens": 300,
             "top_p": 1,
             "top_k": 1,
             "num_return_sequences": 1,
@@ -49,6 +49,7 @@ class Llama405B:
             if counter == 5:
                 break
             counter += 1
+            breakpoint()
 
         return output
 
