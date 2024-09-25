@@ -271,6 +271,8 @@ def prep_data(args) -> pd.DataFrame:
     attend_to = old[~old['preds'].isin(["A", "B", "C", "D", "E"])]['sample_id']
     data = data[data['sample_id'].isin(attend_to)].copy()
     data = data.replace("N/A", np.nan)
+    data = data[(data["requires_african_expertise"]==1)].copy()
+
     if args.q_type in transformation_types.keys():
         data = (
             data[data["question_type"] == args.q_type.strip()]

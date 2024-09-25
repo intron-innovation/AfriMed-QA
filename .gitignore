@@ -10,3 +10,4 @@ results/medlm_old*
 notebooks/
 results/Phi-3-mini-128k-instruct/*
 bin/compute_score.py
+results/human_evals/

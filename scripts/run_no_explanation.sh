@@ -9,8 +9,15 @@ declare -A model_paths
 # model_paths["microsoft-phi-med128"]="microsoft/Phi-3-medium-128k-instruct"
 # model_paths["microsoft-phi-mini128"]="microsoft/Phi-3-mini-128k-instruct"
 # model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
+# model_paths["meta-llama-405b"]="meta/llama3-405b-instruct-maas"
+model_paths["claude-opus"]="claude-3-opus-20240229"
+# model_paths["microsoft-phi-med128"]="microsoft/Phi-3-medium-128k-instruct"
+# model_paths["microsoft-phi-mini128"]="microsoft/Phi-3-mini-128k-instruct"
+# model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
 model_paths["meta-llama-405b"]="meta/llama3-405b-instruct-maas"
 
+source="afrimed-qa-v2"
+pretrained_model_choice="claude-opus"
 source="afrimed-qa-v1"
 pretrained_model_choice="meta-llama-405b"
 

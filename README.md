@@ -166,22 +166,37 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 
 ## Model Performance Metrics
 
+## No Explanation (MCQ - Accuracy, SAQ BertScore)
 
-## No Explanation (MCQ - Accuracy)
+| Model Name            | Owner/Contributor   | Afrimed-QA v1 | USMLE | AfriMed-QA Experts | AFR-MCQ | AFR-SAQ BertScore | 
+|-----------------------|---------------------|--------------|------------------|------------------|------------------|------------------|
+| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            | 0.5903  |0.6505         |0.8309         | 
+| Phi-3-mini-4k-instruct   | Amina            |0.6803        |0.5766            |0.6036   |0.6298|0.8740|
+| Phi-3-medium-128k-instruct| Abraham          |0.7520        |0.6842          |0.6708   |0.7474         |         | 
+| Meta-Llama-3-8B          | Abraham            |0.6003        |0.4973            |0.4724    |0.5709         |         | 
+| Meta-Llama-3.1-405B          | Abraham            |0.7593        |0.8068           |0.5990    |         |         | 
+| JSL-MedLlama-3-8B-v2.0 | Amina          |0.6723        |0.6072            |0.5726    | 0.6713|0.8901|
+| Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |0.6269            |0.6189   |0.7509|0.8677|
+| Mistral-7B-Instruct-v0.2 | Amina          |0.5837        |0.5003            |0.4847   |0.6159|0.8709|
+| Mistral-7B-Instruct-v0.3 | Amina          |0.6100        |0.5130            |0.5084   |0.6263|0.8744| 
+| Claude 3.5 sonnet | Mardhiyah          |0.8423       |0.8327       |0.7770 |         |         | 
+| Claude 3 sonnet | Mardhiyah          | 0.7330      |0.6489       |0.6504 |         |         | 
+| Claude 3 Opus | Mardhiyah          |0.8110       | 0.7800      |0.7455 |         |         | 
+| Claude 3 Haiku | Mardhiyah          |0.7433       |0.6709       | 0.6639|         |         | 
+| Gpt 4 | Mardhiyah          |0.8247       |0.7989       |0.7568 |         |         | 
+| Gpt 4o | Mardhiyah          |0.8500       |0.8814       |0.7928 |         |         | 
+| Gpt 4o mini | Mardhiyah          |0.7880       |0.7400       |0.7176 |         |         | 
+| Gpt 3.5 Turbo 1106| Mardhiyah          |0.6890       |0.5750       |0.5629 |         |         | 
+| PMC-Llama-7B | Charles          |0.5433       |0.5090       |0.4629 |         |         | 
+| Meditron-7B | Charles          |0.5807       |0.5334       |0.5102 |         |         | 
+| Meta-Llama-3-70B | Charles          |0.8043       |0.7808       |0.7379 |         |         | 
+| OpenBioLLM-70B | Charles          |0.6863       |0.5862       |0.6661 |         |         | 
+| OpenBioLLM-8B | Charles          |0.5327       |0.4674       |0.4499 |         |         | 
+| BioMistral-70B | Charles          |0.5353       |0.4564       |0.4402 |         |         | 
+| Mixtral-8x7B-Instruct-v0.1 | Charles          |0.7023       |0.6002       |0.6033 |         |         | 
 
-| Model Name            | Owner/Contributor   | Afrimed-QA v1 | USMLE | AfriMed-QA Experts | 
-|-----------------------|---------------------|--------------|------------------|------------------|
-| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            | 0.5903  |
-| Phi-3-mini-4k-instruct   | Amina            |0.6803        |0.5766            |0.6036   |
-| Phi-3-medium-128k-instruct| Abraham          |0.7520        |0.6842          |0.6708   |
-| Meta-Llama-3-8B          | Abraham            |0.6003        |0.4973            |0.4724    |
-| Meta-Llama-3.1-405B          | Abraham            |0.7593        |0.8068           |0.7627    |
-| JSL-MedLlama-3-8B-v2.0 | Amina          |0.6723        |0.6072            |0.5726    |
-| Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |0.6269            |0.6189   |
-| Mistral-7B-Instruct-v0.2 | Amina          |0.5837        |0.5003            |0.4847   |
-| Mistral-7B-Instruct-v0.3 | Amina          |0.6100        |0.5130            |0.5084   |
 
-
+## With Explanations
 
 
 | Model Name            | Owner/Contributor   | MCQ Accuracy | MCQ BertScore F1 | MCQ Avg Rouge | SAQ BertScore F1 | SAQ Avg Rouge | Consumer Queries BertScore F1 | Consumer Queries Avg Rouge |
