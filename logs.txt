@@ -1,3 +1,15 @@
 Running model: meta-llama
 Using data: data/afri_med_qa_15k_v2.5_phase_2_15275.csv
 Prompt file: prompts/base_mcq_no_exp.txt
+Traceback (most recent call last):
+  File "/home/abraham-owos/experiments/AfriMed-QA/src/inference/inference.py", line 24, in run_inference
+    output = infer(row["model_prompt"], model)
+  File "/home/abraham-owos/experiments/AfriMed-QA/src/inference/inference.py", line 16, in infer
+    pred = model.predict(prompt)
+  File "/home/abraham-owos/experiments/AfriMed-QA/src/models/llama.py", line 47, in predict
+    return output[0]
+IndexError: string index out of range
+
+Running model: microsoft-phi-med128
+Using data: data/afri_med_qa_15k_v2.5_phase_2_15275.csv
+Prompt file: prompts/base_mcq_no_exp.txt

@@ -174,7 +174,7 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 | Phi-3-mini-4k-instruct   | Amina            |0.6803        |0.5766            |0.6036   |0.6298|0.8740|
 | Phi-3-medium-128k-instruct| Abraham          |0.7520        |0.6842          |0.6708   |0.7474         |         | 
 | Meta-Llama-3-8B          | Abraham            |0.6003        |0.4973            |0.4724    |0.5709         |         | 
-| Meta-Llama-3.1-405B          | Abraham            |0.7593        |0.8068           |0.5990    |         |         | 
+| Meta-Llama-3.1-405B          | Abraham            |0.8210        |0.8068           |0.7627    |0.7958         |0.7964         | 
 | JSL-MedLlama-3-8B-v2.0 | Amina          |0.6723        |0.6072            |0.5726    | 0.6713|0.8901|
 | Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |0.6269            |0.6189   |0.7509|0.8677|
 | Mistral-7B-Instruct-v0.2 | Amina          |0.5837        |0.5003            |0.4847   |0.6159|0.8709|
