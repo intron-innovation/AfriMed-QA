@@ -267,9 +267,6 @@ transformation_types = {
 
 def prep_data(args) -> pd.DataFrame:
     data = pd.read_csv(args.data_path)
-    old =pd.read_csv("/home/abraham-owos/Documents/py/AfriMed-QA/results/llama3-405b-instruct-maas/afrimed-qa-v1_llama3-405b-instruct-maas_mcq_base-prompt__no_exp_0-shot_score_0.7593_3000.csv")
-    attend_to = old[~old['preds'].isin(["A", "B", "C", "D", "E"])]['sample_id']
-    data = data[data['sample_id'].isin(attend_to)].copy()
     data = data.replace("N/A", np.nan)
     data = data[(data["requires_african_expertise"]==1)].copy()
 
