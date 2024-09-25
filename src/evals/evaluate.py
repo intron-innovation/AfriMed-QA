@@ -3,7 +3,6 @@ from rouge import Rouge
 
 
 def compute_score(q_type, explanation, data):
-    return (data, 0, 0, 0, 0, 0, 0, 0)
     valid_data = data[data["rationale"].str.len() > 4].copy()
     if len(valid_data) < 2:
         return (data, 0, 0, 0, 0, 0, 0, 0)

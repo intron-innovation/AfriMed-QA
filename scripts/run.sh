@@ -8,9 +8,9 @@ data_paths["afrimed-qa-v2.5"]="data/afri_med_qa_15k_v2.5_phase_2_15275.csv"
 
 
 declare -A model_paths
-model_paths["microsoft-phi-med128"]="microsoft/Phi-3-medium-128k-instruct"
-model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
-# model_paths["meta-llama-405b"]="meta/llama3-405b-instruct-maas"
+# model_paths["microsoft-phi-med128"]="microsoft/Phi-3-medium-128k-instruct"
+# model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
+model_paths["meta-llama-405b"]="meta/llama3-405b-instruct-maas"
 # model_paths["claude-opus"]="claude-3-opus-20240229"
 
 source="afrimed-qa-v2.5"
@@ -33,7 +33,7 @@ for model_key in "${!model_paths[@]}"; do
     
     # Loop through question types and few-shot values
     for q_type in "${question_types[@]}"; do
-        prompt_file_path="prompts/${prompt_type}_mcq_no_exp.txt"
+        prompt_file_path="prompts/${prompt_type}_${q_type}.txt"
         echo "Prompt file: $prompt_file_path"
         
         for num_few_shot in "${num_few_shot_values[@]}"; do
