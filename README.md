@@ -179,14 +179,14 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 | Meta-Llama-3.1-8B-Instruct | Amina          |0.6933        |0.6269            |0.6189   |0.7509|0.8677|
 | Mistral-7B-Instruct-v0.2 | Amina          |0.5837        |0.5003            |0.4847   |0.6159|0.8709|
 | Mistral-7B-Instruct-v0.3 | Amina          |0.6100        |0.5130            |0.5084   |0.6263|0.8744| 
-| Claude 3.5 sonnet | Mardhiyah          |0.8423       |0.8327       |0.7770 |  0.7820       |         | 
-| Claude 3 sonnet | Mardhiyah          | 0.7330      |0.6489       |0.6504 | 0.6817        |         | 
-| Claude 3 Opus | Mardhiyah          |0.8110       | 0.7800      |0.7455 | 0.7820        |         | 
-| Claude 3 Haiku | Mardhiyah          |0.7433       |0.6709       | 0.6639| 0.7439        |         | 
-| Gpt 4 | Mardhiyah          |0.8247       |0.7989       |0.7568 | 0.7993        |         | 
-| Gpt 4o | Mardhiyah          |0.8500       |0.8814       |0.7928 | 0.7924        |         | 
-| Gpt 4o mini | Mardhiyah          |0.7880       |0.7400       |0.7176 | 0.7405        |         | 
-| Gpt 3.5 Turbo 1106| Mardhiyah          |0.6890       |0.5750       |0.5629 |   0.6332      |         | 
+| Claude 3.5 sonnet | Mardhiyah          |0.8423       |0.8327       |0.7770 |  0.7820       |0.8574         | 
+| Claude 3 sonnet | Mardhiyah          | 0.7330      |0.6489       |0.6504 | 0.6817        |0.8719         | 
+| Claude 3 Opus | Mardhiyah          |0.8110       | 0.7800      |0.7455 | 0.7820        |  0.8696       | 
+| Claude 3 Haiku | Mardhiyah          |0.7433       |0.6709       | 0.6639| 0.7439        |  0.8656       | 
+| Gpt 4 | Mardhiyah          |0.8247       |0.7989       |0.7568 | 0.7993        |0.8727         | 
+| Gpt 4o | Mardhiyah          |0.8500       |0.8814       |0.7928 | 0.7924        | 0.8825        | 
+| Gpt 4o mini | Mardhiyah          |0.7880       |0.7400       |0.7176 | 0.7405        |0.8808         | 
+| Gpt 3.5 Turbo 1106| Mardhiyah          |0.6890       |0.5750       |0.5629 |   0.6332      | 0.8813        | 
 | PMC-Llama-7B | Charles          |0.5433       |0.5090       |0.4629 |         |         | 
 | Meditron-7B | Charles          |0.5807       |0.5334       |0.5102 |         |         | 
 | Meta-Llama-3-70B | Charles          |0.8043       |0.7808       |0.7379 |         |         | 
