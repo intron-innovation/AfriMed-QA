@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export PYTHONPATH=.
 declare -A data_paths
 data_paths["medqa"]="data/MedQA-USMLE-4-options-test.csv"
 data_paths["afrimed-qa-v1"]="data/afri_med_qa_10k_v1_1_phase_1.csv"
