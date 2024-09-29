@@ -20,7 +20,7 @@ pretrained_model_choice="claude-opus"
 # Retrieve paths 
 data_path=${data_paths[$source]}
 pretrained_model_path=${model_paths[$pretrained_model_choice]}
-question_types=( "mcq")
+question_types=( "saq")
 prompt_type="base"
 explanation=True
 num_few_shot_values=(0)
