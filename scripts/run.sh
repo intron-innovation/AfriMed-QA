@@ -9,10 +9,10 @@ data_paths["afrimed-qa-v2.5"]="data/afri_med_qa_15k_v2.5_phase_2_15275.csv"
 
 declare -A model_paths
 model_paths["microsoft-phi-med128"]="microsoft/Phi-3-medium-128k-instruct"
-# model_paths["microsoft-phi-mini128"]="microsoft/Phi-3-mini-128k-instruct"
-# model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
-# model_paths["meta-llama-405b"]="meta/llama3-405b-instruct-maas"
-# model_paths["claude-opus"]="claude-3-opus-20240229"
+model_paths["microsoft-phi-mini128"]="microsoft/Phi-3-mini-128k-instruct"
+model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
+model_paths["meta-llama-405b"]="meta/llama3-405b-instruct-maas"
+model_paths["claude-opus"]="claude-3-opus-20240229"
 
 source="afrimed-qa-v2.5"
 pretrained_model_choice="claude-opus"
@@ -20,7 +20,7 @@ pretrained_model_choice="claude-opus"
 # Retrieve paths 
 data_path=${data_paths[$source]}
 pretrained_model_path=${model_paths[$pretrained_model_choice]}
-question_types=( "saq")
+question_types=("mcq" "saq")
 prompt_type="base"
 explanation=True
 num_few_shot_values=(0)
