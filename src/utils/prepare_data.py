@@ -268,6 +268,8 @@ transformation_types = {
 def prep_data(args) -> pd.DataFrame:
     data = pd.read_csv(args.data_path)
     data = data.replace("N/A", np.nan)
+    data = data[(data["requires_african_expertise"]==1)].copy()
+
     if args.q_type in transformation_types.keys():
         data = (
             data[data["question_type"] == args.q_type.strip()]
