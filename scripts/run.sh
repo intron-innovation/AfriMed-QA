@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export PYTHONPATH=.
 declare -A data_paths
 data_paths["medqa"]="data/MedQA-USMLE-4-options-test.csv"
 data_paths["afrimed-qa-v1"]="data/afri_med_qa_10k_v1_1_phase_1.csv"
@@ -10,7 +10,7 @@ data_paths["afrimed-qa-v2.5"]="data/afri_med_qa_15k_v2.5_phase_2_15275.csv"
 declare -A model_paths
 model_paths["microsoft-phi-med128"]="microsoft/Phi-3-medium-128k-instruct"
 # model_paths["microsoft-phi-mini128"]="microsoft/Phi-3-mini-128k-instruct"
-model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
+# model_paths["meta-llama"]="meta-llama/Meta-Llama-3-8B"
 # model_paths["meta-llama-405b"]="meta/llama3-405b-instruct-maas"
 # model_paths["claude-opus"]="claude-3-opus-20240229"
 

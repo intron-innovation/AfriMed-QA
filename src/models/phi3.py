@@ -22,7 +22,7 @@ class Phi3(Model):
             device_map="auto",
             use_safetensors=True,
             torch_dtype=self.torch_dtype, 
-            attn_implementation="flash_attention_2" if self.torch_dtype == torch.float16 else "sdpa",
+            # attn_implementation="flash_attention_2" if self.torch_dtype == torch.float16 else "sdpa",
             trust_remote_code=True,
         )
         self.model = pipeline(
