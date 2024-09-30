@@ -170,7 +170,7 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 
 | Model Name            | Owner/Contributor   | Afrimed-QA v1 | USMLE | AfriMed-QA Experts | AFR-MCQ | AFR-SAQ BertScore | 
 |-----------------------|---------------------|--------------|------------------|------------------|------------------|------------------|
-| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            | 0.5903  |0.6298         |0.8804         | 
+| Phi-3-mini-128k-instruct | Abraham          |0.6813        |0.5750            | 0.5903  |0.5688         |0.8804         | 
 | Phi-3-mini-4k-instruct   | Amina            |0.6803        |0.5766            |0.6036   |0.6298|0.8740|
 | Phi-3-medium-128k-instruct| Abraham          |0.7520        |0.6842          |0.6708   |0.7405         |0.8661         | 
 | Meta-Llama-3-8B          | Abraham            |0.6003        |0.4973            |0.7889    |0.6194         |0.8661         | 
@@ -194,6 +194,9 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 | OpenBioLLM-8B | Charles          |0.5327       |0.4674       |0.4499 |         |         | 
 | BioMistral-70B | Charles          |0.5353       |0.4564       |0.4402 |         |         | 
 | Mixtral-8x7B-Instruct-v0.1 | Charles          |0.7023       |0.6002       |0.6033 |         |         | 
+| Gemini Pro  | Mercy         |         |0.5962         |0.7455        |0.6678         |         |
+| Gemini Ultra  | Mercy        |         |0.7879         |0.7390         |0.7578         |         |         
+|MedLM medium        | Mercy         |         |0.5962         |0.6036         |0.6678         |         |         
 
 
 ## With Explanations
