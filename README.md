@@ -187,13 +187,13 @@ Laboratory studies show: Hematocrit 42% Leukocyte count 16,000/mm3 Segmented neu
 | Gpt 4o | Mardhiyah          |0.8500       |0.8814       |0.7928 | 0.7924        | 0.8825        | 
 | Gpt 4o mini | Mardhiyah          |0.7880       |0.7400       |0.7176 | 0.7405        |0.8808         | 
 | Gpt 3.5 Turbo 1106| Mardhiyah          |0.6890       |0.5750       |0.5629 |   0.6332      | 0.8813        | 
-| PMC-Llama-7B | Charles          |0.5433       |0.5090       |0.4629 |         |         | 
-| Meditron-7B | Charles          |0.5807       |0.5334       |0.5102 |         |         | 
-| Meta-Llama-3-70B | Charles          |0.8043       |0.7808       |0.7379 |         |         | 
-| OpenBioLLM-70B | Charles          |0.6863       |0.5862       |0.6661 |         |         | 
-| OpenBioLLM-8B | Charles          |0.5327       |0.4674       |0.4499 |         |         | 
-| BioMistral-70B | Charles          |0.5353       |0.4564       |0.4402 |         |         | 
-| Mixtral-8x7B-Instruct-v0.1 | Charles          |0.7023       |0.6002       |0.6033 |         |         | 
+| PMC-Llama-7B | Charles          |0.5433       |0.5090       |0.4629 |  0.3599       |    0.8650     | 
+| Meditron-7B | Charles          |0.5807       |0.5334       |0.5102 |   0.4360      |  0.8547       | 
+| Meta-Llama-3-70B | Charles          |0.8043       |0.7808       |0.7379 | 0.7716        |    0.7945     | 
+| OpenBioLLM-70B | Charles          |0.6863       |0.5862       |0.6661 |    0.6955     |  0.8292       | 
+| OpenBioLLM-8B | Charles          |0.5327       |0.4674       |0.4499 | 0.5363        | 0.8629        | 
+| BioMistral-7B | Charles          |0.5353       |0.4564       |0.4402 | 0.3806        | 0.7938        | 
+| Mixtral-8x7B-Instruct-v0.1 | Charles          |0.7023       |0.6002       |0.6033 |  0.6678       |    0.8455     | 
 | Gemini Pro  | Mercy         |         |0.5962         |0.7455        |0.6678         |         |
 | Gemini Ultra  | Mercy        |         |0.7879         |0.7390         |0.7578         |         |         
 |MedLM medium        | Mercy         |         |0.5962         |0.6036         |0.6678         |         |         
