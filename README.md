@@ -20,7 +20,8 @@ Collaborating Organizations:
 [SisonkeBiotik](https://www.sisonkebiotik.africa/),
 [BioRAMP](https://www.bioramp.org),
 [Georgia Institute of Technology](https://www.gatech.edu/),
-[MasakhaneNLP](https://www.masakhane.io/)
+[MasakhaneNLP](https://www.masakhane.io/),
+[Google Research](https://www.research.google.com)
 
 Funded by:
 [Google Research](https://www.research.google.com),
