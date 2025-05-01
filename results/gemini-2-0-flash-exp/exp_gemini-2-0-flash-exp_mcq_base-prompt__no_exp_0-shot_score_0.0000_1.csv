@@ -1,0 +1,33 @@
+sample_id,question,rationale,options_len,answer,A,B,C,D,model_prompt,outputs,preds
+a7ee602bfd80746f73e7ce59d70ab8900b0d7ebe40241007d2d050e27b823d25,"You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+","A duodenal switch is a primarily malabsorptive procedure: biliopancreatic diversion with duodenal switch results in significant nutritional abnormalities including deficiencies in vitamins A, B12, D, E and K, iron and protein. RYGB may produce similar effects, though not typically to the same degree. LAGB and LSG are primarily restrictive procedures.",4,D,Laparoscopic adjustable gastric banding (LAGB),Roux-en-Y gastric bypass (RYGB),laparoscopic sleeve gastrectomy (LSG),biliopancreatic diversion with duodenal switch (BPDS),"###Instruction: The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer. 
+
+###Question: You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+
+###Options:
+A.  Laparoscopic adjustable gastric banding (LAGB)
+B.  Roux-en-Y gastric bypass (RYGB)
+C.  laparoscopic sleeve gastrectomy (LSG)
+D.  biliopancreatic diversion with duodenal switch (BPDS)
+
+###Answer:","**D. biliopancreatic diversion with duodenal switch (BPDS)**
+
+**Rationale:**
+
+Biliopancreatic diversion with duodenal switch (BPDS) is the most likely to produce adverse malabsorptive nutritional sequelae among the options listed. Here's why:
+
+*   **BPDS:** This procedure involves creating a smaller stomach pouch and bypassing a significant portion of the small intestine. This leads to reduced absorption of nutrients, including fat-soluble vitamins (A, D, E, K), calcium, iron, and protein. While it can be very effective for weight loss and diabetes remission, it carries the highest risk of malabsorption and requires lifelong monitoring and supplementation.
+
+*   **Roux-en-Y gastric bypass (RYGB):** RYGB also involves bypassing a portion of the small intestine, leading to some malabsorption. However, the bypassed segment is shorter than in BPDS, and the malabsorption is generally less severe.
+
+*   **Laparoscopic sleeve gastrectomy (LSG):** LSG involves removing a large portion of the stomach, but it does not bypass any part of the small intestine. Therefore, malabsorption is less of a concern compared to RYGB and BPDS.
+
+*   **Laparoscopic adjustable gastric banding (LAGB):** LAGB involves placing a band around the upper part of the stomach to restrict food intake. It does not involve any malabsorption.
+",
