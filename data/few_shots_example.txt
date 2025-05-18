@@ -1,0 +1,36 @@
+Question: A 17-year-old female presents to your department for evaluation.  
+She reports that she has never had menstrual periods. Her pubic  
+hair appeared at 8 years of age. Diagnostic studies with karyotype  
+reveal 45 XO. Which of the following findings is characteristic of this patient’s  
+condition? 
+A) Elevated FSH 
+B) Decreased LH 
+C) Increased estrogen 
+D) Elevated testosterone 
+E) Decreased TSH 
+###Answer: A 
+
+Question: A microbiologist is studying the emergence of a virulent strain of the virus. 
+After a detailed study of the virus and its life cycle, he proposes a theory: Initially, a host cell is co-infected with 2 viruses from the same virus family. 
+Within the host cell, concomitant production of various genome segments from both viruses occurs. 
+Ultimately, the different genome segments from the viruses are packaged into a unique and novel virus particle. 
+The newly formed virus particle is both stable and viable and is a new strain from the virus family that caused the outbreak of infection. 
+Which of the following viruses is capable of undergoing the above-mentioned process?.
+A) Epstein-Barr virus
+B) Human immunodeficiency virus
+C) Rotavirus
+D) Vaccinia virus
+###Answer: C
+
+Question: An 18-year-old man is brought to the emergency department complaining of pain in the right  
+hip and flank after a motor vehicle accident. He is alert and stable. On examination he has  
+abrasions, ecchymoses, and tenderness over the right iliac crest, as well as abrasions on the  
+right flank. Urinalysis shows gross blood and x-ray of the cervical spine is normal. What’s the next appropriate step in the diagnosis?  
+A) CT scan of the abdomen with contrast  
+B) MRI of the pelvis 
+C) Radionuclide renal scan  
+###Answer: A  
+
+
+
+

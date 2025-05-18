@@ -1,0 +1,19 @@
+sample_id,split,gender,discipline,clinical_experience,country,question_type,prompt,question,question_clean,answer_options,correct_answer,answer_rationale,specialty,region_specific,mentions_Africa,mentions_age,mentions_gender,tier,neg_percent,quality,rated_african,rated_correct,rated_omission,rated_hallucination,rated_reasonable,rated_harmful,rated_bias,version,requires_african_expertise,full_prompt,results
+a7ee602bfd80746f73e7ce59d70ab8900b0d7ebe40241007d2d050e27b823d25,test,Male,Medicine,Licensed Professional,ZA,mcq,,"You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+","You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+","{""option1"": ""Laparoscopic adjustable gastric banding (LAGB)"", ""option2"": ""Roux-en-Y gastric bypass (RYGB)"", ""option3"": ""laparoscopic sleeve gastrectomy (LSG)"", ""option4"": ""biliopancreatic diversion with duodenal switch (BPDS)"", ""option5"": ""n/a""}",option4,"A duodenal switch is a primarily malabsorptive procedure: biliopancreatic diversion with duodenal switch results in significant nutritional abnormalities including deficiencies in vitamins A, B12, D, E and K, iron and protein. RYGB may produce similar effects, though not typically to the same degree. LAGB and LSG are primarily restrictive procedures.",Pediatrics,No,0.0,1.0,1.0,expert,1.0,,0.0,,,,,,,v2,0," ###Instruction: You are a skilled doctor with years of experience in the medical field in Africa, working in a hospital setting. Your expertise spans a range of conditions from common ailments to complex diseases. As part of your commitment to ongoing medical education, you are evaluating a set of multiple choice questions (MCQs) designed for medical students. 
+Carefully select the most appropriate answer based on your clinical knowledge. 
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer. giving the option key e.g. option 1 first and then the rationale. 
+### Question:
+You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+###options:
+{""option1"": ""Laparoscopic adjustable gastric banding (LAGB)"", ""option2"": ""Roux-en-Y gastric bypass (RYGB)"", ""option3"": ""laparoscopic sleeve gastrectomy (LSG)"", ""option4"": ""biliopancreatic diversion with duodenal switch (BPDS)"", ""option5"": ""n/a""}"," = {""option1"": ""optionD"", ""option2"": ""optionB"", ""option3"": ""optionC"", ""option4"": ""optionD"", ""option5"": ""n/a""}"

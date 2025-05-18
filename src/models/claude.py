@@ -5,7 +5,6 @@ import traceback
 
 from src.models.models import Model
 
-
 class ClaudeModel(Model):
     def __init__(self, model_name, explanation, **kwargs):
         super().__init__(model_name, **kwargs)
@@ -26,7 +25,7 @@ class ClaudeModel(Model):
         message = self.client.messages.create(
             model=self.model_name,
             max_tokens=1000,
-            temperature=0.2,
+            temperature=1,
             system=self.system_prompt,
             messages=[{"role": "user", "content": [{"type": "text", "text": prompt}]}],
         )
@@ -40,14 +39,33 @@ class ClaudeModel(Model):
         return output
 
     def extract_mcq_answer(self, raw_text_model_output_list):
+        cleaned_res = []
         if self.explanation:
             cleaned_output = [
                 self.pattern_match(text) for text in raw_text_model_output_list
             ]
         else:
-            cleaned_output = [text[0] for text in raw_text_model_output_list]
+            for text in raw_text_model_output_list:
+                if "The correct answer is" in text:
+                    ans = text.split("The correct answer is")[1].split(".")[0].strip()
+                elif "The correct option is" in text:
+                    ans = text.split("The correct option is")[1].split(".")[0].strip()
+                elif "The answer is" in text:
+                    ans = text.split("The answer is")[1].split(".")[0].strip()
+                elif "Answer:" in text:
+                    ans = text.split("Answer:")[1].split(".")[0].strip()
+                elif "I choose option" in text:
+                    ans = text.split("I choose option")[1].split(".")[0].strip()
+                
+                else:
+                    ans = text[0]
+                ans = ans.upper()
+                cleaned_res.append(ans)
+            cleaned_texts = [re.sub(r'[?;:.]', '', text).strip() for text in cleaned_res]
+        return cleaned_texts
+            #cleaned_output = [text[0] for text in raw_text_model_output_list]
         
-        return cleaned_output
+        #return cleaned_output
         
 
     def pattern_match(self, text, n=40):

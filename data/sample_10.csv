@@ -1,0 +1,57 @@
+sample_id,split,gender,discipline,clinical_experience,country,question_type,prompt,question,question_clean,answer_options,correct_answer,answer_rationale,specialty,region_specific,mentions_Africa,mentions_age,mentions_gender,tier,neg_percent,quality,rated_african,rated_correct,rated_omission,rated_hallucination,rated_reasonable,rated_harmful,rated_bias,version,requires_african_expertise
+037e5515c0a07c59245953bc993a6d7d8f2071b8051cc9fb84007cde8f2fed3e,test,Female,Medicine,Licensed Professional,NG,mcq,,"Which of the following is NOT a differential diagnosis for right iliac fossa pain?
+ 
+
+","Which of the following is NOT a differential diagnosis for right iliac fossa pain?
+ 
+
+","{""option1"": ""Tubo-ovarian mass"", ""option2"": ""Acute pyelonephritis"", ""option3"": ""Chron\u2019s disease"", ""option4"": ""Empyema of gall bladder"", ""option5"": ""Splenic vein thrombosis""}",option5,,General_Surgery,No,0.0,0.0,0.0,expert,0.0,,0.0,,,,,,,v2,0
+ae1959faa1e0c8a36e2f6b08f4277ef0728f3884fabe7010e3972830ebb07405,test,Female,Medicine,Licensed Professional,NG,mcq,,"A 50year old woman with Colle’s fracture was treated with a cast for six weeks. She developed swelling of the affected hand, shiny skin and associated pain. What is the most likely diagnosis?
+
+","A 50 year old woman with Colle’s fracture was treated with a cast for six weeks. She developed swelling of the affected hand, shiny skin and associated pain. What is the most likely diagnosis?
+
+","{""option1"": ""Malingering"", ""option2"": ""Rupture of extensor pollicis longus tendon"", ""option3"": ""Myositis ossificans"", ""option4"": ""Reflex sympathetic dystrophy"", ""option5"": ""Malunion""}",option4,,Orthopedic_Surgery,No,0.0,1.0,1.0,expert,0.0,,0.0,,,,,,,v2,0
+abf8468441d8bd17891eeeae3bb974fdef171b3adca7954b40caadc2a8e46ad3,test,Female,Medicine,Licensed Professional,NG,mcq,,"Protective factor for endometriosis:
+                  
+                   
+                   
+                   
+              
+","Protective factor for endometriosis:
+         
+          
+          
+          
+       
+","{""option1"": ""High socio-economic status"", ""option2"": ""Nulliparity"", ""option3"": ""Family history"", ""option4"": ""Smoking"", ""option5"": ""Oestogen""}",option4,,Obstetrics_and_Gynecology,No,0.0,0.0,0.0,expert,0.0,,0.0,,,,,,,v2,0
+97ee47a1b5ae147c754f43efedac42052d7b7ae82dbc8d76219eed37640ae4ee,test,Female,Medicine,Licensed Professional,NG,mcq,,"Which of the following is true regarding the management of multifetal pregnancy:
+
+
+
+","Which of the following is true regarding the management of multifetal pregnancy:
+
+
+
+","{""option1"": ""More frequent antenatal visits are required to avoid preeclampsia"", ""option2"": ""More iron and vitamin supplements is required during pregnancy to avoid neonatal anaemia."", ""option3"": ""If delivery of the second twin is delayed more than 30 minutes, caesarean section is indicated"", ""option4"": ""Ergometrine is given after delivery of the first twin"", ""option5"": ""Caesarean section is indicated if the presentation of the first twin is breech""}",option5,,Obstetrics_and_Gynecology,No,0.0,0.0,0.0,expert,0.0,,0.0,,,,,,,v2,0
+87e2483a12234cf6d4aa47a95802afb834cf9f4fa91b43ac1ec4e78cd6424abc,test,Male,Medicine,Intern,GH,mcq,,Which of the following factors is associated with a higher chance of successful induction?,Which of the following factors is associated with a higher chance of successful induction?,"{""option1"": ""nulliparity"", ""option2"": ""ruptured membranes"", ""option3"": ""fetal macrosomia"", ""option4"": ""short stature"", ""option5"": ""obesity""}",option2,N:A,Obstetrics_and_Gynecology,No,0.0,0.0,0.0,expert,0.0,,0.0,,,,,,,v2,0
+c2bf55cdfde23694be522527ed3d0d2656a4f55a9baa33e9267d75911c1f1a66,test,Female,Medicine,Licensed Professional,GH,mcq,,"Features of catatonia includes all of the following except 
+ 
+  
+ 
+ 
+ 
+
+","Features of catatonia includes all of the following except 
+ 
+ 
+ 
+ 
+ 
+
+","{""option1"": ""Catalepsy"", ""option2"": ""Mutism"", ""option3"": ""Stupor"", ""option4"": ""Cataplexy"", ""option5"": ""Echolalia""}",option4,,Psychiatry,No,0.0,0.0,0.0,expert,0.0,,0.0,,,,,,,v2,0
+01998090cbc7aa93d1d3d7e7aa7e23cff16ca2080f124141f5bbba7ce7f71a3b,test,Male,Medicine,Intern,GH,mcq,,What can make the uterus change position?,What can make the uterus change position?,"{""option1"": ""Body position"", ""option2"": ""The frequency of the probe chosen"", ""option3"": ""The height of the patient"", ""option4"": ""Gravity"", ""option5"": ""Abdominal fat""}",option1,,Obstetrics_and_Gynecology,No,0.0,0.0,0.0,expert,0.0,,0.0,,,,,,,v2,0
+1f2756560b3598b55582e5b66775b17468ba56eabc43c5879720eb252e3ac85a,test,Male,Medicine,Licensed Professional,NG,mcq,, Erectile dysfunction , Erectile dysfunction ,"{""option1"": ""May be caused by cimetidine"", ""option2"": ""Is usually due to physical problem"", ""option3"": ""May be treated with sildenafil"", ""option4"": ""Antihypertensives are common cause"", ""option5"": ""Can be treated with anti-stress""}","option1,option3,option4,option5",,Urology,No,0.0,0.0,0.0,expert,1.0,,0.0,,,,,,,v2,0
+cbf7fa2245676184ba59827ff1c6d9aaa0f025f6a3d16806c7f09a7a99aa33bd,test,Female,Medicine,Student,GH,mcq,,What additional treatment will you give to a patient show sustains an open right tibia and fibula fracture with a wound size of 8 cm,What additional treatment will you give to a patient show sustains an open right tibia and fibula fracture with a wound size of 8 cm,"{""option1"": ""analgesia"", ""option2"": ""IV antibiotics"", ""option3"": ""Calcium supplements"", ""option4"": ""Vitamin C"", ""option5"": ""n/a""}",option2,,General_Surgery,No,0.0,0.0,0.0,expert,0.0,,0.0,,,,,,,v2,0
+9107686d5be6734b2a70b6f0734a446289667359fcc4fc63053a9b1cac56d371,test,Female,Medicine,Student,KE,mcq,,"Which statement about pancreatitis presentation is false?
+","Which statement about pancreatitis presentation is false?
+","{""option1"": ""Loss of appetite is often present"", ""option2"": ""Abdominal pain is usually localized in the left upper quadrant"", ""option3"": ""Nausea and vomiting are often present"", ""option4"": ""Epigastric tenderness can be observed on examination"", ""option5"": ""None of the above""}",option2,,General_Surgery,No,0.0,0.0,0.0,expert,0.0,,0.0,,,,,,,v2,0

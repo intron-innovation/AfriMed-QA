@@ -1,12 +1,10 @@
 import os
 import re
-from openai import OpenAI
 import traceback
-
+from openai import OpenAI
 from src.models.models import Model
 
-
-class OpenAIModel(Model):
+class GPTo1Model(Model):
     def __init__(self, model_name, explanation, **kwargs):
         super().__init__(model_name, **kwargs)
         from src.models.models import Model
@@ -24,7 +22,8 @@ class OpenAIModel(Model):
 
     def predict(self, prompt) -> str:
         completion = self.client.chat.completions.create(
-            model=self.model_name,  # "gpt-4-turbo-preview",
+            model=self.model_name,
+            reasoning_effort="medium",  # "gpt-4-turbo-preview",
             messages=[
                 {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": prompt},
@@ -47,8 +46,7 @@ class OpenAIModel(Model):
                 self.pattern_match(text) for text in raw_text_model_output_list
             ]
         else:
-            #cleaned_output = [text[0] for text in raw_text_model_output_list]
-            cleaned_output = [text for text in raw_text_model_output_list]
+            cleaned_output = [text[0] for text in raw_text_model_output_list]
         
         return cleaned_output
 

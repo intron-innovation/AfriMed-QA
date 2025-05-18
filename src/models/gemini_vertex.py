@@ -7,9 +7,9 @@ class GeminiVertexAIModel(Model):
     def __init__(
         self,
         explanation,
-        project="project_id",
-        location="project_location",
-        model_name="gemini-2.0-pro-exp-02-05",
+        project="afrimed-qa",
+        location="us-central1",
+        model_name="gemini-2.5-pro-preview-05-06",
         **kwargs
     ):
         super().__init__(model_name, **kwargs)

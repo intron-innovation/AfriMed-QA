@@ -9,7 +9,11 @@ from src.models.phi3 import Phi3
 from src.models.llama import Llama
 from src.models.llama_405b import Llama405B
 from src.models.openai import OpenAIModel
+from src.models.meditron_70b import Meditron70B
 from src.models.claude import ClaudeModel
+from src.models.gpt import GPTo1Model
+from src.models.gemini_vertex import GeminiVertexAIModel
+from src.models.vertexai import VertexAIModel
 from src.inference.inference import run_inference
 from src.evals.evaluate import compute_score
 from transformers import set_seed
@@ -37,7 +41,10 @@ def main():
 
     logger.info(f"Loading model from {args.pretrained_model_path}")
     # please define your own model class
-    if "gpt" in args.pretrained_model_path:
+    
+    if "o3" in args.pretrained_model_path:
+        model = GPTo1Model(args.pretrained_model_path, args.explanation)    
+    elif "gpt" in args.pretrained_model_path:
         model = OpenAIModel(args.pretrained_model_path, args.explanation)
     elif "claude" in args.pretrained_model_path:
         model = ClaudeModel(args.pretrained_model_path, args.explanation)
@@ -45,8 +52,18 @@ def main():
         model = Phi3(args.pretrained_model_path)
     elif "405b" in args.pretrained_model_path:
         model = Llama405B(args.pretrained_model_path)
+    elif "meditron" in args.pretrained_model_path:
+        model = Meditron70B(args.pretrained_model_path)
     elif "llama" in args.pretrained_model_path:
-        model = Llama(args.pretrained_model_path)
+        model = VertexAIModel(args.pretrained_model_path)
+    elif "gemma" in args.pretrained_model_path:
+        model = VertexAIModel(args.pretrained_model_path)
+    elif "gemini" in args.pretrained_model_path:
+        model = GeminiVertexAIModel(args.pretrained_model_path)
+    elif "phi-4" in args.pretrained_model_path:
+        model = VertexAIModel(args.pretrained_model_path)
+    elif "deepseek" in args.pretrained_model_path:
+        model = VertexAIModel(args.pretrained_model_path)
     else:
         raise NotImplementedError(
             f"No model class defined for {args.pretrained_model_path}"
