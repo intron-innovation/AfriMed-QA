@@ -4,7 +4,7 @@ declare -A data_paths
 # data_paths["medqa"]="data/MedQA-USMLE-4-options-test.csv"
 # data_paths["afrimed-qa-v1"]="data/afri_med_qa_10k_v1_1_phase_1.csv"
 #data_paths["afrimed-qa-v2"]="data/afri_med_qa_24k_v2.3_phase_2_24348_expert.csv"
-data_paths["afrimed-qa-v2.5"]="/mnt/external/data/AfriMed-QA/data/afri_med_qa_15k_v2.5_phase_2_15275.csv"
+data_paths["afrimed-qa-v2.5"]="/home/chinemelu/AfriMed-QA/data/afri_med_qa_15k_v2.5_phase_2_15275.csv"
 # data_paths["afrimed-qa-v2.5"]="/mnt/external_aka/data/AfriMed-QA/data/sample_10.csv"
 #data_paths["test_data"]="data/sample_10.csv"
 
@@ -22,17 +22,20 @@ declare -A model_paths
 #model_paths["Meta-Llama-3-70B-Instruct"]="meta-llama/Meta-Llama-3-70B-Instruct"
 #model_paths["gemma-2-2b"]="gemma-2-2b"
 # model_paths["gemma-3-27b-it"]="gemma-3-27b-it"
-#model_paths["llama-4-maverick-17b-128e-it"]="llama-4-maverick-17b-128e-it"
+model_paths["google/medgemma-4b-it"]="google/medgemma-4b-it"
 #model_paths["Meditron-70B"]="epfl-llm/meditron-70b"
-model_paths["gpt-o3"]="o3"
-# model_paths["deepseek-distill-qwen32b"]="deepseek-distill-qwen32b"
+#model_paths["gpt-o3"]="o3"
+#model_paths["gemini-2.5-pro-preview-05-06"]="gemini-2.5-pro-preview-05-06"
+#model_paths["gemini-2.5-flash-preview-04-17"]="gemini-2.5-flash-preview-04-17"
+# model_paths["deepseek-R1"]="deepseek-R1"
 
 #source="test_data"
 source="afrimed-qa-v2.5"
 
 #pretrained_model_choice="gemma-3-27b-it"
 #source="afrimed-qa-v1"
-pretrained_model_choice="gpt-o3"
+pretrained_model_choice="google/medgemma-4b-it"
+#pretrained_model_choice="gpt-o3"
 #pretrained_model_choice="Meta-Llama-3-70B-Instruct"
 
 # Retrieve paths 

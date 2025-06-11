@@ -14,7 +14,7 @@ model_name = 'qwen2.5-32b'
 
 def predict_with_backoff(
     question: str,
-    project="991221573547",
+    project="project_id",  # Replace with your actual project ID
     endpoint_id="6895772991062278144",
     location="us-central1",
     api_endpoint="us-central1-aiplatform.googleapis.com",

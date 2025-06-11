@@ -12,6 +12,7 @@ from src.models.openai import OpenAIModel
 from src.models.meditron_70b import Meditron70B
 from src.models.claude import ClaudeModel
 from src.models.gpt import GPTo1Model
+from src.models.deepseek import DeepseekModel
 from src.models.gemini_vertex import GeminiVertexAIModel
 from src.models.vertexai import VertexAIModel
 from src.inference.inference import run_inference
@@ -62,7 +63,7 @@ def main():
         model = GeminiVertexAIModel(args.pretrained_model_path)
     elif "phi-4" in args.pretrained_model_path:
         model = VertexAIModel(args.pretrained_model_path)
-    elif "deepseek" in args.pretrained_model_path:
+    elif "medgemma" in args.pretrained_model_path:
         model = VertexAIModel(args.pretrained_model_path)
     else:
         raise NotImplementedError(

@@ -6,7 +6,7 @@ from google.protobuf.struct_pb2 import Value
 from google.cloud import aiplatform
 from typing import Dict, List, Union
 from huggingface_hub import login
- 
+hf_token = "hf_token"
 login(token=hf_token)
 
 class VertexAIModel(Model):
@@ -14,9 +14,9 @@ class VertexAIModel(Model):
         self,
         explanation,
         project="991221573547",
-        endpoint_id="1279897505428930560",
-        location="us-west1",
-        api_endpoint="us-west1-aiplatform.googleapis.com",
+        endpoint_id="2393325651877691392",
+        location="us-central1",
+        api_endpoint="us-central1-aiplatform.googleapis.com",
         **kwargs
     ):
         super().__init__("vertex_ai", **kwargs)
@@ -43,8 +43,8 @@ class VertexAIModel(Model):
             full_prompt = f"{self.system_prompt}\n\n{prompt}"
             
             # Prepare the instance with the full prompt and token limit.
-            #instance_dict = {"prompt": full_prompt, "max_tokens": 512, "temperature":1}
-            instance_dict = {"inputs": full_prompt, "max_tokens": 512,  "temperature":1}
+            instance_dict = {"prompt": full_prompt, "max_tokens": 512, "temperature":1}
+            #instance_dict = {"inputs": full_prompt, "max_tokens": 512,  "temperature":1}
 
             instances = [instance_dict]
             # Convert each instance dictionary to a Protobuf Value.

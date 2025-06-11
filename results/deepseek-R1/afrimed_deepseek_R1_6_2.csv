@@ -1,0 +1,379 @@
+sample_id,split,gender,discipline,clinical_experience,country,question_type,prompt,question,question_clean,answer_options,correct_answer,answer_rationale,specialty,region_specific,mentions_Africa,mentions_age,mentions_gender,tier,neg_percent,quality,rated_african,rated_correct,rated_omission,rated_hallucination,rated_reasonable,rated_harmful,rated_bias,version,requires_african_expertise,model_prompt,A,B,C,D,E,outputs,inference_time,reasoning
+a7ee602bfd80746f73e7ce59d70ab8900b0d7ebe40241007d2d050e27b823d25,test,Male,Medicine,Licensed Professional,ZA,mcq,,"You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+","You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+","
+A. Laparoscopic adjustable gastric banding (LAGB), 
+B. Roux-en-Y gastric bypass (RYGB), 
+C. laparoscopic sleeve gastrectomy (LSG), 
+D. biliopancreatic diversion with duodenal switch (BPDS), 
+E. n/a",D,"A duodenal switch is a primarily malabsorptive procedure: biliopancreatic diversion with duodenal switch results in significant nutritional abnormalities including deficiencies in vitamins A, B12, D, E and K, iron and protein. RYGB may produce similar effects, though not typically to the same degree. LAGB and LSG are primarily restrictive procedures.",Pediatrics,No,0.0,1.0,1.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+
+
+###Options:
+A. Laparoscopic adjustable gastric banding (LAGB), 
+B. Roux-en-Y gastric bypass (RYGB), 
+C. laparoscopic sleeve gastrectomy (LSG), 
+D. biliopancreatic diversion with duodenal switch (BPDS), 
+E. n/a
+
+###Answer:",Laparoscopic adjustable gastric banding (LAGB),Roux-en-Y gastric bypass (RYGB),laparoscopic sleeve gastrectomy (LSG),biliopancreatic diversion with duodenal switch (BPDS),,"###Answer:
+D. biliopancreatic diversion with duodenal switch (BPDS)
+
+###Rationale:
+Bariatric procedures vary in their mechanisms and associated nutritional risks:
+- **LAGB (A)** is purely restrictive, reducing stomach capacity without altering digestion/absorption pathways. Malabsorption is minimal.  
+- **RYGB (B)** combines restriction",29.233633279800415,"Okay, let's tackle this multiple-choice question. The question is about identifying which bariatric procedure is most likely to cause malabsorptive nutritional issues. The patient is a 15-year-old female with a BMI of 38 and type II diabetes. The options are LAGB, RYGB, LSG, BPDS, or n/a.
+
+First, I need to recall what each procedure entails. Laparoscopic adjustable gastric banding (LAGB) involves placing a band around the stomach to create a small pouch. It's restrictive, meaning it limits food intake but doesn't interfere with digestion. So, malabsorption isn't a concern here.
+
+Roux-en-Y gastric bypass (RYGB) is a mixed restrictive and malabsorptive procedure. Part of the stomach is made into a small pouch, and the small intestine is rerouted. This bypasses parts of the intestine, leading to reduced absorption of nutrients. So, there's a risk of deficiencies, but it's not the most severe.
+
+Laparoscopic sleeve gastrectomy (LSG) removes about 80% of the stomach, leaving a tube-like structure. It's primarily restrictive. While some malabsorption might occur, especially for vitamins like B12, it's not as significant as in other procedures.
+
+Biliopancreatic diversion with duodenal switch (BPDS) combines removing part of the stomach and rerouting the intestines. The rerouting is more extensive than in RYGB, bypassing a larger portion of the small intestine. This significantly reduces the absorption area, leading to high risks of malabsorption. Nutrients like fats, proteins, vitamins, and minerals aren't absorbed well, causing deficiencies in vitamins A, D, E, K, calcium, iron, and more.
+
+Comparing all options, BPDS is designed to be malabsorptive. While RYGB has some malabsorption, BPDS is more extreme. So, the procedure most likely to cause adverse malabsorptive sequelae is BPDS. The other options either don't cause malabsorption or do so to a lesser extent."
+06bcc20456d81d9d68cb646e92aba0a4718b0088899d09b3effb7a43f52531d3,test,Male,Medicine,Licensed Professional,ZA,mcq,,"A 14-year-old male is being assessed for weight loss surgery.
+
+Which of the following is an indication for surgical management?
+
+","A 14-year-old male is being assessed for weight loss surgery.
+
+Which of the following is an indication for surgical management?
+
+","
+A. BMI 32 and Type II diabetes, 
+B. BMI 37 and obstructive sleep apnea, 
+C. BMI 37 and hypertension, 
+D. BMI 46 and no identifiable co-morbidities, 
+E. n/a",B,Diabetes and obstructive sleep apnea are considered sever co-morbidities. Hypertension is considered a less severe co-morbidity. ,Pediatrics,No,0.0,1.0,1.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: A 14-year-old male is being assessed for weight loss surgery.
+
+Which of the following is an indication for surgical management?
+
+
+
+###Options:
+A. BMI 32 and Type II diabetes, 
+B. BMI 37 and obstructive sleep apnea, 
+C. BMI 37 and hypertension, 
+D. BMI 46 and no identifiable co-morbidities, 
+E. n/a
+
+###Answer:",BMI 32 and Type II diabetes,BMI 37 and obstructive sleep apnea,BMI 37 and hypertension,BMI 46 and no identifiable co-morbidities,,,32.060481786727905,"First, the question is about a 14-year-old male being assessed for weight loss surgery. I need to determine which option is an indication for surgical management. The options are:
+
+A. BMI 32 and Type II diabetes
+
+B. BMI 37 and obstructive sleep apnea
+
+C. BMI 37 and hypertension
+
+D. BMI 46 and no identifiable co-morbidities
+
+E. n/a
+
+I should recall the guidelines for bariatric surgery in adolescents. I think the most relevant guidelines come from organizations like the American Society for Metabolic and Bariatric Surgery (ASMBS) or the American Academy of Pediatrics (AAP).
+
+From my knowledge, the indications for bariatric surgery in adolescents typically include:
+
+- A BMI of 40 or higher with no co-morbidities, or
+
+- A BMI of 35 or higher with significant co-morbidities such as type 2 diabetes, obstructive sleep apnea, hypertension, etc.
+
+I need to be precise. Let me think about the specific criteria.
+
+For adults, the standard is BMI ≥40 or BMI ≥35 with co-morbidities. For adolescents, it's similar but often more conservative, and there might be age considerations.
+
+For adolescents, bariatric surgery is considered when:
+
+- BMI ≥35 with major co-morbidities (e.g., type 2 diabetes, moderate to severe sleep apnea, hypertension), or
+
+- BMI ≥40 with or without co-morbidities.
+
+The patient is 14 years old, so I should confirm pediatric guidelines.
+
+According to the ASMBS Pediatric Committee recommendations, bariatric surgery may be indicated for adolescents with:
+
+- BMI ≥35 with serious co-morbidities, or
+
+- BMI ≥40 with less severe co-morbidities.
+
+I think for adolescents, the threshold might be higher or there might be additional criteria.
+
+Upon second thought, the 2019 ASMBS guidelines for adolescents state:
+
+- Class III obesity (BMI ≥120% of the 95th percentile or BMI ≥35, whichever is lower) with co-morbidities, or
+
+- BMI ≥40 or ≥140% of the 95th percentile without co-morbidities.
+
+BMI percentiles are important for adolescents because BMI changes with age.
+
+For a 14-year-old, we need to consider BMI percentiles based on age and sex.
+
+But in this question, the options give absolute BMI values, not percentiles. So, I should work with the given BMI numbers,"
+2d6206ab0285667d016ba210e1aeaf3caed81db107fb32e0fa4e194948f1bebf,test,Male,Medicine,Licensed Professional,ZA,mcq,,"
+ A 15-year-old female presents to a specialised adolescent unit for assessment for weight-loss surgery. Her BMI for age falls on the 90th centile. 
+
+By definition how would you classify this patient?
+
+","
+ A 15-year-old female presents to a specialised adolescent unit for assessment for weight-loss surgery. Her BMI for age falls on the 90 th centile. 
+
+By definition how would you classify this patient?
+
+","
+A. Obese, 
+B. Normal, 
+C. Overweight, 
+D. Severely obese, 
+E. n/a",C,"The terms overweight (BMI for age and gender ≥85th percentile), obese (BMI for age and gender ≥95th percentile), and severely obese (BMI for age and gender >120% of the 95th percentile) have been used to refer to increasing grades of excess weight in children. ",Pediatrics,No,0.0,1.0,1.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: 
+ A 15-year-old female presents to a specialised adolescent unit for assessment for weight-loss surgery. Her BMI for age falls on the 90th centile. 
+
+By definition how would you classify this patient?
+
+
+
+###Options:
+A. Obese, 
+B. Normal, 
+C. Overweight, 
+D. Severely obese, 
+E. n/a
+
+###Answer:",Obese,Normal,Overweight,Severely obese,,,26.756134748458862,"First, the question is about a 15-year-old female with a BMI for age at the 90th centile. I need to classify her based on that.
+
+I recall that BMI percentiles are used for children and adolescents to define weight categories because their bodies are still growing. The classifications are based on CDC guidelines or similar standards.
+
+Here's a quick refresher on BMI categories for children and teens:
+
+- Underweight: Less than the 5th percentile
+
+- Healthy weight: 5th percentile to less than the 85th percentile
+
+- Overweight: 85th percentile to less than the 95th percentile
+
+- Obese: 95th percentile or greater
+
+- Severely obese: 120% of the 95th percentile or greater, or BMI ≥35, but I think for adolescents, it's often defined as BMI at or above the 95th percentile for obesity, and then severe obesity might be a higher threshold.
+
+For this question, the options are:
+
+A. Obese
+
+B. Normal
+
+C. Overweight
+
+D. Severely obese
+
+E. n/a
+
+Her BMI is at the 90th centile. According to the standard:
+
+- 85th to less than 95th percentile is overweight.
+
+- 95th percentile or above is obese.
+
+90th percentile falls within the 85th to 95th range, so it should be classified as overweight.
+
+Is there a specific definition for adolescents? Yes, the CDC uses:
+
+- Overweight: BMI for age ≥ 85th percentile and < 95th percentile
+
+- Obese: BMI for age ≥ 95th percentile
+
+Severely obese might be defined as BMI ≥ 120% of the 95th percentile or BMI ≥ 35 kg/m², but that's not specified here. Since her BMI is at 90th, it's not in the obese or severely obese range.
+
+Normal would be 5th to 85th percentile, so 90th is above that.
+
+The question says ""her BMI for age falls on the 90th centile."" So, exactly at 90th percentile.
+
+Based on CDC:
+
+- 85th to 94.99th percentile is overweight.
+
+- 95th and above is obese.
+
+90th is between 85 and 95, so overweight.
+
+Option C is ""Overweight,"" which should be correct.
+
+But let me double-check the options. Option A is """
+85de0d8a61bbf0c8007362fc23c17cb4cd515bf75afe1ab4b0ec185acd529b17,test,Male,Medicine,Licensed Professional,ZA,mcq,,"Following resection of a patent urachus and bladder closure in a male infant, a transurethral catheter is lest in situ.
+
+What is your post-operative plan for this patient?
+
+","Following resection of a patent urachus and bladder closure in a male infant, a transurethral catheter is lest in situ.
+
+What is your post-operative plan for this patient?
+
+","
+A. Discharge when well with catheter in situ, and follow up at 1 week for removal, 
+B. Removal of catheter 24 to 48 hours post op and discharge if good urinary stream, 
+C. Inpatient ultrasound and discharge if normal, 
+D. Voiding cystourethrogram after removal of catheter at 10 to 14 days post op, 
+E. n/a",D,A patent urachus requires investigation of the urinary tract to look for bladder outlet obstruction in which the urachus is functioning as a relief valve. ,Pediatrics,No,0.0,0.0,1.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: Following resection of a patent urachus and bladder closure in a male infant, a transurethral catheter is lest in situ.
+
+What is your post-operative plan for this patient?
+
+
+
+###Options:
+A. Discharge when well with catheter in situ, and follow up at 1 week for removal, 
+B. Removal of catheter 24 to 48 hours post op and discharge if good urinary stream, 
+C. Inpatient ultrasound and discharge if normal, 
+D. Voiding cystourethrogram after removal of catheter at 10 to 14 days post op, 
+E. n/a
+
+###Answer:","Discharge when well with catheter in situ, and follow up at 1 week for removal",Removal of catheter 24 to 48 hours post op and discharge if good urinary stream,Inpatient ultrasound and discharge if normal,Voiding cystourethrogram after removal of catheter at 10 to 14 days post op,,,28.661611557006836,"First, the question is about a male infant who had a resection of a patent urachus and bladder closure. A transurethral catheter is left in place. I need to decide the post-operative plan.
+
+The options are:
+
+A. Discharge when well with catheter in situ, and follow up at 1 week for removal,
+
+B. Removal of catheter 24 to 48 hours post op and discharge if good urinary stream,
+
+C. Inpatient ultrasound and discharge if normal,
+
+D. Voiding cystourethrogram after removal of catheter at 10 to 14 days post op,
+
+E. n/a
+
+I should recall what a patent urachus is. The urachus is a remnant of the allantois that normally closes after birth, but if it remains patent, it can lead to issues like urine leakage from the umbilicus. Surgery involves resecting the patent urachus and closing the bladder.
+
+After such surgery, a catheter is often left to allow the bladder closure to heal without pressure from urine. The key concern is ensuring that the bladder heals properly and that there's no leakage or obstruction.
+
+Now, let's evaluate the options:
+
+Option A: Discharge with catheter in place and remove at 1 week. This might be risky because having a catheter at home could increase infection risk, and infants might pull at it. Also, the bladder needs time to heal, but one week might be longer than necessary.
+
+Option B: Remove catheter 24-48 hours post-op and discharge if good urinary stream. This seems reasonable because after bladder surgery, a short period of catheterization is often sufficient to allow initial healing. If the infant voids well after removal, it indicates that the closure is holding and there's no obstruction.
+
+Option C: Inpatient ultrasound and discharge if normal. Ultrasound could check for complications like hematoma or residual issues, but it might not directly assess the bladder closure or urethral patency. Also, ultrasound might not be necessary immediately post-op unless there's a specific concern.
+
+Option D: Voiding cystourethrogram (VCUG) after removal at 10-14 days. VCUG is used to evaluate for vesicoureteral reflux or bladder abnormalities, but after urachus resection, the primary concern is healing of the bladder dome. VCUG might be overkill and is not routinely indicated unless there's suspicion of reflux or other issues. Waiting 10-14 days seems long for catheter removal; typically,"
+7482c32ae9a860247b3449a230e5eee576e5284cd9a57f8708e22216868cbdd4,test,Male,Medicine,Licensed Professional,ZA,mcq,,"A 1-week old term baby presents with clear fluid draining from t the umbilicus. At exploration, you confirm a patent urachus
+
+What is the most correct description of the operation required for this anomaly?","A 1-week old term baby presents with clear fluid draining from t the umbilicus. At exploration, you confirm a patent urachus
+
+What is the most correct description of the operation required for this anomaly?","
+A. Suture ligate the patent urachus at the umbilicus, 
+B. Ligate and divide the patent urachus at the dome of the bladder, 
+C. Resect the entire patent urachus and ligate and divide at the dome of the bladder, 
+D. Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair, 
+E. n/a",D,Failure to adequately resect the patent urachus at dome of bladder may increase the risk of future malignancies,Pediatrics,No,0.0,0.0,0.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: A 1-week old term baby presents with clear fluid draining from t the umbilicus. At exploration, you confirm a patent urachus
+
+What is the most correct description of the operation required for this anomaly?
+
+###Options:
+A. Suture ligate the patent urachus at the umbilicus, 
+B. Ligate and divide the patent urachus at the dome of the bladder, 
+C. Resect the entire patent urachus and ligate and divide at the dome of the bladder, 
+D. Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair, 
+E. n/a
+
+###Answer:",Suture ligate the patent urachus at the umbilicus,Ligate and divide the patent urachus at the dome of the bladder,Resect the entire patent urachus and ligate and divide at the dome of the bladder,"Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair",,,27.740986824035645,"First, the question is about a 1-week old term baby with clear fluid draining from the umbilicus. Exploration confirms a patent urachus. I need to recall what a patent urachus is. The urachus is a remnant of the allantois that normally obliterates before birth, forming the median umbilical ligament. If it remains patent, it can lead to drainage from the umbilicus, which is what's happening here.
+
+Now, the question asks for the most correct description of the operation required for this anomaly. The options are:
+
+A. Suture ligate the patent urachus at the umbilicus
+
+B. Ligate and divide the patent urachus at the dome of the bladder
+
+C. Resect the entire patent urachus and ligate and divide at the dome of the bladder
+
+D. Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair
+
+E. n/a
+
+I need to think about the standard surgical treatment for a patent urachus. From my knowledge, the urachus connects the bladder to the umbilicus. If it's patent, it can cause infections or other complications, so surgery is usually indicated.
+
+The goal of surgery is to completely excise the urachal remnant to prevent recurrence or complications. Since the urachus is attached to the bladder dome, simply ligating it at one end might not be sufficient because there could be residual tissue that could lead to problems.
+
+Option A: Suture ligate at the umbilicus. This might not address the bladder end, so it could leave a remnant that might cause issues.
+
+Option B: Ligate and divide at the dome of the bladder. This focuses on the bladder end but might not remove the entire tract. Dividing it might leave the urachal tissue in place.
+
+Option C: Resect the entire patent urachus and ligate and divide at the dome of the bladder. This sounds better because it involves resection of the entire urachus. But the phrasing is a bit redundant; if you resect the entire urachus, you would naturally ligate and divide at the bladder end.
+
+Option D: Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair. This seems more extensive. A wedge resection might be done if there's involvement or to ensure complete removal, but is it necessary for a"
+03833fa3fcd1dc1c02317c0359804bf36433f93412fc7c0e5e42d4f3cca611b9,test,Male,Medicine,Licensed Professional,ZA,mcq,,"A 3-year-old child with no significant medical or surgical history presents with bowel obstruction and is taken to theatre for exploratory laparotomy. At laparotomy you find a loop of small intestine volved around a fibrous band which extends from the umbilicus to the jejunum. 
+
+What is the most likely cause of this finding?
+
+","A 3-year-old child with no significant medical or surgical history presents with bowel obstruction and is taken to theatre for exploratory laparotomy. At laparotomy you find a loop of small intestine volved around a fibrous band which extends from the umbilicus to the jejunum. 
+
+What is the most likely cause of this finding?
+
+","
+A. adhesive bowel obstruction, 
+B. omphalomesenteric duct remnant, 
+C. internal hernia, 
+D. remnant of the omphalomesenteric artery, 
+E. n/a",D,The child has no history of previous surgery making adhesive bowel obstruction unlikely. Failure of regression of a dominant omphalomesenteric artery may result in a fibrous band extending from the umbilicus to the small intestine. ,Pediatrics,No,0.0,1.0,0.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: A 3-year-old child with no significant medical or surgical history presents with bowel obstruction and is taken to theatre for exploratory laparotomy. At laparotomy you find a loop of small intestine volved around a fibrous band which extends from the umbilicus to the jejunum. 
+
+What is the most likely cause of this finding?
+
+
+
+###Options:
+A. adhesive bowel obstruction, 
+B. omphalomesenteric duct remnant, 
+C. internal hernia, 
+D. remnant of the omphalomesenteric artery, 
+E. n/a
+
+###Answer:",adhesive bowel obstruction,omphalomesenteric duct remnant,internal hernia,remnant of the omphalomesenteric artery,,,29.07622766494751,"First, the question is about a 3-year-old child with bowel obstruction. During exploratory laparotomy, they find a loop of small intestine volved around a fibrous band. The band extends from the umbilicus to the jejunum. I need to figure out the most likely cause from the options.
+
+The options are:
+A. adhesive bowel obstruction
+B. omphalomesenteric duct remnant
+C. internal hernia
+D. remnant of the omphalomesenteric artery
+E. n/a
+
+I should recall what each term means in the context of pediatric surgery or bowel obstructions.
+
+Starting with A: Adhesive bowel obstruction. This is usually caused by adhesions from previous surgeries or infections. But the child has no significant medical or surgical history, so there's no prior surgery or known cause for adhesions. Adhesions are common in adults after abdominal surgery, but in a child with no history, it's less likely.
+
+B: Omphalomesenteric duct remnant. The omphalomesenteric duct (also known as the vitelline duct) is an embryonic structure that connects the yolk sac to the midgut during fetal development. It normally obliterates by the 5th to 6th week of gestation. Remnants can include Meckel's diverticulum, fibrous bands, or cysts. A fibrous band from the umbilicus to the intestine could be a remnant of this duct. That sounds very relevant here because the band is described as extending from the umbilicus to the jejunum.
+
+C: Internal hernia. This is when there's a defect in the peritoneum or mesentery that allows intestines to herniate through, causing obstruction. But in this case, it's specifically a fibrous band causing the volvulus, not necessarily a hernial defect. The finding is a band, not a hernia sac or defect.
+
+D: Remnant of the omphalomesenteric artery. The omphalomesenteric artery is part of the same embryonic development; it's the artery associated with the vitelline duct. Remnants might persist, but they are less common than duct remnants. Typically, it's the duct that can leave fibrous bands, not specifically the artery. The artery might regress, and bands are more associated with the duct.
+
+E: n/a – This probably means not applicable or none of the above.
+
+Now, focusing on the key point: the fibrous band extends"

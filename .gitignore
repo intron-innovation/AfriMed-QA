@@ -10,3 +10,5 @@ results/medlm_old*
 notebooks/
 bin/compute_score.py
 results/human_evals/
+*.env
+src/models/*.env

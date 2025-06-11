@@ -1,0 +1,94 @@
+sample_id,question,rationale,options_len,answer,A,B,C,D,E,model_prompt,outputs,preds,correct
+a7ee602bfd80746f73e7ce59d70ab8900b0d7ebe40241007d2d050e27b823d25,"You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+","A duodenal switch is a primarily malabsorptive procedure: biliopancreatic diversion with duodenal switch results in significant nutritional abnormalities including deficiencies in vitamins A, B12, D, E and K, iron and protein. RYGB may produce similar effects, though not typically to the same degree. LAGB and LSG are primarily restrictive procedures.",4,D,Laparoscopic adjustable gastric banding (LAGB),Roux-en-Y gastric bypass (RYGB),laparoscopic sleeve gastrectomy (LSG),biliopancreatic diversion with duodenal switch (BPDS),,"###Instruction: The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer. 
+
+###Question: You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+
+###Options:
+A.  Laparoscopic adjustable gastric banding (LAGB)
+B.  Roux-en-Y gastric bypass (RYGB)
+C.  laparoscopic sleeve gastrectomy (LSG)
+D.  biliopancreatic diversion with duodenal switch (BPDS)
+
+###Answer:",,,False
+06bcc20456d81d9d68cb646e92aba0a4718b0088899d09b3effb7a43f52531d3,"A 14-year-old male is being assessed for weight loss surgery.
+
+Which of the following is an indication for surgical management?
+
+",Diabetes and obstructive sleep apnea are considered sever co-morbidities. Hypertension is considered a less severe co-morbidity. ,4,B,BMI 32 and Type II diabetes,BMI 37 and obstructive sleep apnea,BMI 37 and hypertension,BMI 46 and no identifiable co-morbidities,,"###Instruction: The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer. 
+
+###Question: A 14-year-old male is being assessed for weight loss surgery.
+
+Which of the following is an indication for surgical management?
+
+
+###Options:
+A.  BMI 32 and Type II diabetes
+B.  BMI 37 and obstructive sleep apnea
+C.  BMI 37 and hypertension
+D.  BMI 46 and no identifiable co-morbidities
+
+###Answer:",,,False
+2d6206ab0285667d016ba210e1aeaf3caed81db107fb32e0fa4e194948f1bebf,"
+ A 15-year-old female presents to a specialised adolescent unit for assessment for weight-loss surgery. Her BMI for age falls on the 90th centile. 
+
+By definition how would you classify this patient?
+
+","The terms overweight (BMI for age and gender ≥85th percentile), obese (BMI for age and gender ≥95th percentile), and severely obese (BMI for age and gender >120% of the 95th percentile) have been used to refer to increasing grades of excess weight in children. ",4,C,Obese,Normal,Overweight,Severely obese,,"###Instruction: The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer. 
+
+###Question: 
+ A 15-year-old female presents to a specialised adolescent unit for assessment for weight-loss surgery. Her BMI for age falls on the 90th centile. 
+
+By definition how would you classify this patient?
+
+
+###Options:
+A.  Obese
+B.  Normal
+C.  Overweight
+D.  Severely obese
+
+###Answer:",,,False
+85de0d8a61bbf0c8007362fc23c17cb4cd515bf75afe1ab4b0ec185acd529b17,"Following resection of a patent urachus and bladder closure in a male infant, a transurethral catheter is lest in situ.
+
+What is your post-operative plan for this patient?
+
+",A patent urachus requires investigation of the urinary tract to look for bladder outlet obstruction in which the urachus is functioning as a relief valve. ,4,D,"Discharge when well with catheter in situ, and follow up at 1 week for removal",Removal of catheter 24 to 48 hours post op and discharge if good urinary stream,Inpatient ultrasound and discharge if normal,Voiding cystourethrogram after removal of catheter at 10 to 14 days post op,,"###Instruction: The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer. 
+
+###Question: Following resection of a patent urachus and bladder closure in a male infant, a transurethral catheter is lest in situ.
+
+What is your post-operative plan for this patient?
+
+
+###Options:
+A.  Discharge when well with catheter in situ, and follow up at 1 week for removal
+B.  Removal of catheter 24 to 48 hours post op and discharge if good urinary stream
+C.  Inpatient ultrasound and discharge if normal
+D.  Voiding cystourethrogram after removal of catheter at 10 to 14 days post op
+
+###Answer:",,,False
+7482c32ae9a860247b3449a230e5eee576e5284cd9a57f8708e22216868cbdd4,"A 1-week old term baby presents with clear fluid draining from t the umbilicus. At exploration, you confirm a patent urachus
+
+What is the most correct description of the operation required for this anomaly?",Failure to adequately resect the patent urachus at dome of bladder may increase the risk of future malignancies,4,D,Suture ligate the patent urachus at the umbilicus,Ligate and divide the patent urachus at the dome of the bladder,Resect the entire patent urachus and ligate and divide at the dome of the bladder,"Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair",,"###Instruction: The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer. 
+
+###Question: A 1-week old term baby presents with clear fluid draining from t the umbilicus. At exploration, you confirm a patent urachus
+
+What is the most correct description of the operation required for this anomaly?
+###Options:
+A.  Suture ligate the patent urachus at the umbilicus
+B.  Ligate and divide the patent urachus at the dome of the bladder
+C.  Resect the entire patent urachus and ligate and divide at the dome of the bladder
+D.  Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair
+
+###Answer:",,,False

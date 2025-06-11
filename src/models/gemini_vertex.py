@@ -1,6 +1,7 @@
 import traceback
 import vertexai
-from vertexai.generative_models import GenerativeModel
+from vertexai.generative_models import GenerativeModel,SafetySetting
+from vertexai.generative_models import HarmCategory, HarmBlockThreshold
 from src.models.models import Model
 
 class GeminiVertexAIModel(Model):
@@ -25,12 +26,19 @@ class GeminiVertexAIModel(Model):
         self.system_prompt = "You are a skillful expert medical assistant"
     
     def predict(self, prompt: str) -> str:
+        safety_settings = [
+        SafetySetting(category=HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=HarmBlockThreshold.BLOCK_NONE),
+        SafetySetting(category=HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=HarmBlockThreshold.BLOCK_NONE),
+        SafetySetting(category=HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold=HarmBlockThreshold.BLOCK_NONE),
+        SafetySetting(category=HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=HarmBlockThreshold.BLOCK_NONE),
+        SafetySetting(category=HarmCategory.HARM_CATEGORY_CIVIC_INTEGRITY, threshold=HarmBlockThreshold.BLOCK_NONE),
+        ]
         try:
             full_prompt = f"{self.system_prompt}\n\n{prompt}"
-            generation_config = {"max_output_tokens": 1024, "temperature": 1}
+            generation_config = {"max_output_tokens": 8192, "temperature": 1}
             
             responses = self.model.generate_content(
-                [full_prompt], generation_config=generation_config, stream=True
+                [full_prompt], generation_config=generation_config, safety_settings=safety_settings, stream=True
             )
             
             output = "".join(response.text for response in responses)

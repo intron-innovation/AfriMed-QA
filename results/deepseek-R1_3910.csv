@@ -1,0 +1,225 @@
+sample_id,split,gender,discipline,clinical_experience,country,question_type,prompt,question,question_clean,answer_options,correct_answer,answer_rationale,specialty,region_specific,mentions_Africa,mentions_age,mentions_gender,tier,neg_percent,quality,rated_african,rated_correct,rated_omission,rated_hallucination,rated_reasonable,rated_harmful,rated_bias,version,requires_african_expertise,model_prompt,A,B,C,D,E,outputs
+a7ee602bfd80746f73e7ce59d70ab8900b0d7ebe40241007d2d050e27b823d25,test,Male,Medicine,Licensed Professional,ZA,mcq,,"You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+","You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+","
+A. Laparoscopic adjustable gastric banding (LAGB), 
+B. Roux-en-Y gastric bypass (RYGB), 
+C. laparoscopic sleeve gastrectomy (LSG), 
+D. biliopancreatic diversion with duodenal switch (BPDS), 
+E. n/a",D,"A duodenal switch is a primarily malabsorptive procedure: biliopancreatic diversion with duodenal switch results in significant nutritional abnormalities including deficiencies in vitamins A, B12, D, E and K, iron and protein. RYGB may produce similar effects, though not typically to the same degree. LAGB and LSG are primarily restrictive procedures.",Pediatrics,No,0.0,1.0,1.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: You are counseling the family of a 15-year-old female with a BMI of 38 and type II diabetes on the surgical options for weight loss. 
+
+Of the following bariatric procedures, which is most likely to produce adverse malabsorptive nutritional sequelae?
+
+
+
+###Options:
+A. Laparoscopic adjustable gastric banding (LAGB), 
+B. Roux-en-Y gastric bypass (RYGB), 
+C. laparoscopic sleeve gastrectomy (LSG), 
+D. biliopancreatic diversion with duodenal switch (BPDS), 
+E. n/a
+
+###Answer:",Laparoscopic adjustable gastric banding (LAGB),Roux-en-Y gastric bypass (RYGB),laparoscopic sleeve gastrectomy (LSG),biliopancreatic diversion with duodenal switch (BPDS),,"The correct answer is: 
+
+**D. biliopancreatic diversion with duodenal switch (BPDS)**  
+
+###Rationale:  
+Bariatric procedures can be broadly categorized as **restrictive** (e.g., laparoscopic adjustable gastric banding [LAGB], laparoscopic sleeve gastrectomy [LSG]), **malabsorptive** (e.g., biliopancreatic diversion with duodenal switch [BPDS]), or **combined restrictive and malabsorptive** (e.g., Roux-en-Y gastric bypass [RYGB]).  
+
+- **BPDS** is the most malabsorptive procedure, as it involves both a sleeve gastrectomy and diversion of the biliopancreatic juices to the distal ileum, significantly reducing the absorption of fats, fat-soluble vitamins (A, D, E, K), and other nutrients. This makes it the procedure most likely to cause **severe nutritional deficiencies** (e.g., protein malnutrition, vitamin deficiencies, and mineral deficiencies like calcium and iron).  
+
+- **RYGB** has a malabsorptive component but is less severe than BPDS, as it primarily restricts stomach size and bypasses a portion of the small intestine.  
+
+- **LAGB and LSG** are purely restrictive procedures and do not significantly alter nutrient absorption.  
+
+Thus, BPDS carries the highest risk of adverse malabsorptive sequelae.  
+
+**Answer: D**"
+06bcc20456d81d9d68cb646e92aba0a4718b0088899d09b3effb7a43f52531d3,test,Male,Medicine,Licensed Professional,ZA,mcq,,"A 14-year-old male is being assessed for weight loss surgery.
+
+Which of the following is an indication for surgical management?
+
+","A 14-year-old male is being assessed for weight loss surgery.
+
+Which of the following is an indication for surgical management?
+
+","
+A. BMI 32 and Type II diabetes, 
+B. BMI 37 and obstructive sleep apnea, 
+C. BMI 37 and hypertension, 
+D. BMI 46 and no identifiable co-morbidities, 
+E. n/a",B,Diabetes and obstructive sleep apnea are considered sever co-morbidities. Hypertension is considered a less severe co-morbidity. ,Pediatrics,No,0.0,1.0,1.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: A 14-year-old male is being assessed for weight loss surgery.
+
+Which of the following is an indication for surgical management?
+
+
+
+###Options:
+A. BMI 32 and Type II diabetes, 
+B. BMI 37 and obstructive sleep apnea, 
+C. BMI 37 and hypertension, 
+D. BMI 46 and no identifiable co-morbidities, 
+E. n/a
+
+###Answer:",BMI 32 and Type II diabetes,BMI 37 and obstructive sleep apnea,BMI 37 and hypertension,BMI 46 and no identifiable co-morbidities,,"The correct answer is:  
+
+**B. BMI 37 and obstructive sleep apnea**  
+
+### Rationale:  
+The indications for bariatric surgery in adolescents generally align with those for adults but are more conservative. According to the American Society for Metabolic and Bariatric Surgery (ASMBS) and other pediatric guidelines, the criteria include:  
+1. **BMI ≥ 35 with significant obesity-related comorbidities** (e.g., type 2 diabetes, obstructive sleep apnea, hypertension, or severe steatohepatitis).  
+2. **BMI ≥ 40 (or ≥ 120% of the 95th percentile for age/sex) with or without comorbidities**.  
+
+- **Option A (BMI 32 and Type II diabetes)**: BMI is below the threshold (≥ 35 required for comorbidities).  
+- **Option B (BMI 37 and obstructive sleep apnea)**: Meets criteria (BMI ≥ 35 with a significant comorbidity).  
+- **Option C (BMI 37 and hypertension)**: While hypertension is a comorbidity, some guidelines prioritize more severe conditions (e.g., OSA or type 2 diabetes) for surgery in adolescents. However, this could still be considered in some cases.  
+- **Option D (BMI 46 and no identifiable comorbidities)**: Meets the BMI ≥ 40 criterion, even without comorbidities. However, **Option B** is a stronger indication due to the presence of a significant comorbidity.  
+- **Option E (n/a)**: Incorrect, as there is a valid choice.  
+
+**Conclusion**: The clearest indication is **B**, as it satisfies the BMI threshold with a major comorbidity (obstructive sleep apnea). While **D** is also correct, the question likely emphasizes the importance of comorbidities in decision-making for adolescents."
+2d6206ab0285667d016ba210e1aeaf3caed81db107fb32e0fa4e194948f1bebf,test,Male,Medicine,Licensed Professional,ZA,mcq,,"
+ A 15-year-old female presents to a specialised adolescent unit for assessment for weight-loss surgery. Her BMI for age falls on the 90th centile. 
+
+By definition how would you classify this patient?
+
+","
+ A 15-year-old female presents to a specialised adolescent unit for assessment for weight-loss surgery. Her BMI for age falls on the 90 th centile. 
+
+By definition how would you classify this patient?
+
+","
+A. Obese, 
+B. Normal, 
+C. Overweight, 
+D. Severely obese, 
+E. n/a",C,"The terms overweight (BMI for age and gender ≥85th percentile), obese (BMI for age and gender ≥95th percentile), and severely obese (BMI for age and gender >120% of the 95th percentile) have been used to refer to increasing grades of excess weight in children. ",Pediatrics,No,0.0,1.0,1.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: 
+ A 15-year-old female presents to a specialised adolescent unit for assessment for weight-loss surgery. Her BMI for age falls on the 90th centile. 
+
+By definition how would you classify this patient?
+
+
+
+###Options:
+A. Obese, 
+B. Normal, 
+C. Overweight, 
+D. Severely obese, 
+E. n/a
+
+###Answer:",Obese,Normal,Overweight,Severely obese,,"The correct answer is C. Overweight.
+
+###Rationale:
+The classification of weight status in children and adolescents is based on BMI-for-age percentiles, as follows:
+- **Underweight**: BMI <5th percentile
+- **Normal weight**: BMI 5th to <85th percentile
+- **Overweight**: BMI 85th to <95th percentile
+- **Obese**: BMI ≥95th percentile
+- **Severely obese**: BMI ≥120% of the 95th percentile or BMI ≥35 (whichever is lower).
+
+In this case, the patient's BMI-for-age falls on the 90th percentile, which places her in the **overweight** category (85th to <95th percentile). She does not meet the criteria for obese or severely obese. 
+
+Thus, the correct classification is **C. Overweight**."
+85de0d8a61bbf0c8007362fc23c17cb4cd515bf75afe1ab4b0ec185acd529b17,test,Male,Medicine,Licensed Professional,ZA,mcq,,"Following resection of a patent urachus and bladder closure in a male infant, a transurethral catheter is lest in situ.
+
+What is your post-operative plan for this patient?
+
+","Following resection of a patent urachus and bladder closure in a male infant, a transurethral catheter is lest in situ.
+
+What is your post-operative plan for this patient?
+
+","
+A. Discharge when well with catheter in situ, and follow up at 1 week for removal, 
+B. Removal of catheter 24 to 48 hours post op and discharge if good urinary stream, 
+C. Inpatient ultrasound and discharge if normal, 
+D. Voiding cystourethrogram after removal of catheter at 10 to 14 days post op, 
+E. n/a",D,A patent urachus requires investigation of the urinary tract to look for bladder outlet obstruction in which the urachus is functioning as a relief valve. ,Pediatrics,No,0.0,0.0,1.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: Following resection of a patent urachus and bladder closure in a male infant, a transurethral catheter is lest in situ.
+
+What is your post-operative plan for this patient?
+
+
+
+###Options:
+A. Discharge when well with catheter in situ, and follow up at 1 week for removal, 
+B. Removal of catheter 24 to 48 hours post op and discharge if good urinary stream, 
+C. Inpatient ultrasound and discharge if normal, 
+D. Voiding cystourethrogram after removal of catheter at 10 to 14 days post op, 
+E. n/a
+
+###Answer:","Discharge when well with catheter in situ, and follow up at 1 week for removal",Removal of catheter 24 to 48 hours post op and discharge if good urinary stream,Inpatient ultrasound and discharge if normal,Voiding cystourethrogram after removal of catheter at 10 to 14 days post op,,"The correct answer is: 
+
+**B. Removal of catheter 24 to 48 hours post op and discharge if good urinary stream.**
+
+###Rationale: 
+1. **Patent urachus resection and bladder closure** is a relatively straightforward procedure in infants. The bladder heals quickly, and prolonged catheterization is typically unnecessary.  
+2. **24 to 48 hours** of catheterization is sufficient to ensure bladder decompression and allow initial healing of the bladder closure site.  
+3. **Early catheter removal** reduces the risk of catheter-associated infections and promotes normal voiding.  
+4. **Discharge criteria** include confirmation of a **good urinary stream** after catheter removal, indicating no obstruction or significant edema.  
+5. **Other options are less appropriate:**  
+   - **A (Discharge with catheter in situ):** Unnecessary and increases infection risk.  
+   - **C (Inpatient ultrasound):** Not routinely required unless there are concerns about residual urine or hydronephrosis.  
+   - **D (Voiding cystourethrogram at 10–14 days):** Only indicated if there is suspicion of bladder outlet obstruction or vesicoureteral reflux, which is not routine post-urachus resection.  
+
+Thus, **B** is the most evidence-based and practical approach."
+7482c32ae9a860247b3449a230e5eee576e5284cd9a57f8708e22216868cbdd4,test,Male,Medicine,Licensed Professional,ZA,mcq,,"A 1-week old term baby presents with clear fluid draining from t the umbilicus. At exploration, you confirm a patent urachus
+
+What is the most correct description of the operation required for this anomaly?","A 1-week old term baby presents with clear fluid draining from t the umbilicus. At exploration, you confirm a patent urachus
+
+What is the most correct description of the operation required for this anomaly?","
+A. Suture ligate the patent urachus at the umbilicus, 
+B. Ligate and divide the patent urachus at the dome of the bladder, 
+C. Resect the entire patent urachus and ligate and divide at the dome of the bladder, 
+D. Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair, 
+E. n/a",D,Failure to adequately resect the patent urachus at dome of bladder may increase the risk of future malignancies,Pediatrics,No,0.0,0.0,0.0,expert,1.0,,0.0,,,,,,,v2,0,"###Instruction: 
+The following are multiple choice questions (MCQs).
+You should directly answer the question by choosing the correct option and then provide a rationale for your answer.
+
+###Question: A 1-week old term baby presents with clear fluid draining from t the umbilicus. At exploration, you confirm a patent urachus
+
+What is the most correct description of the operation required for this anomaly?
+
+###Options:
+A. Suture ligate the patent urachus at the umbilicus, 
+B. Ligate and divide the patent urachus at the dome of the bladder, 
+C. Resect the entire patent urachus and ligate and divide at the dome of the bladder, 
+D. Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair, 
+E. n/a
+
+###Answer:",Suture ligate the patent urachus at the umbilicus,Ligate and divide the patent urachus at the dome of the bladder,Resect the entire patent urachus and ligate and divide at the dome of the bladder,"Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair",,"The correct answer is: 
+
+**D. Excision of the patent urachus, with wedge resection at dome of bladder and formal bladder repair.**
+
+###Rationale: 
+A patent urachus is a remnant of the embryonic connection between the bladder and the umbilicus. The definitive treatment involves complete surgical excision of the urachal tract to prevent complications such as infection or malignancy later in life. The procedure includes:
+
+1. **Excision of the entire patent urachus** – Ensures no residual tissue remains.  
+2. **Wedge resection at the dome of the bladder** – The urachus typically attaches to the bladder dome, so a small portion of the bladder must be removed to ensure complete excision.  
+3. **Formal bladder repair** – The bladder is then closed in layers to prevent leakage and ensure proper healing.  
+
+- **Option A** (suture ligation at the umbilicus) is insufficient because it leaves the distal urachus and bladder connection intact, risking recurrent issues.  
+- **Option B** (ligation at the bladder dome) does not fully excise the urachal tract, leaving remnants that could lead to complications.  
+- **Option C** (resection and ligation at the bladder dome) is incomplete because it does not include formal bladder repair, increasing the risk of urinary leakage.  
+- **Option E** (n/a) is incorrect as surgical intervention is required.  
+
+Thus, **Option D** is the most anatomically and surgically correct approach."
